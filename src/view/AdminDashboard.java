@@ -51,7 +51,6 @@ public class AdminDashboard extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Parent");
-        setMaximumSize(new java.awt.Dimension(1120, 630));
         setMinimumSize(new java.awt.Dimension(1120, 630));
         setResizable(false);
 
@@ -193,7 +192,7 @@ public class AdminDashboard extends javax.swing.JFrame {
         managementButton.addActionListener(this::managementButtonActionPerformed);
         Menu.add(managementButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, -1, -1));
 
-        parentContent.setLayout(new java.awt.CardLayout());
+        parentContent.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         javax.swing.GroupLayout profilePanelLayout = new javax.swing.GroupLayout(profilePanel);
         profilePanel.setLayout(profilePanelLayout);
@@ -206,7 +205,7 @@ public class AdminDashboard extends javax.swing.JFrame {
             .addGap(0, 630, Short.MAX_VALUE)
         );
 
-        parentContent.add(profilePanel, "card2");
+        parentContent.add(profilePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout attendancePanelLayout = new javax.swing.GroupLayout(attendancePanel);
         attendancePanel.setLayout(attendancePanelLayout);
@@ -219,7 +218,7 @@ public class AdminDashboard extends javax.swing.JFrame {
             .addGap(0, 630, Short.MAX_VALUE)
         );
 
-        parentContent.add(attendancePanel, "card3");
+        parentContent.add(attendancePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout modulePanelLayout = new javax.swing.GroupLayout(modulePanel);
         modulePanel.setLayout(modulePanelLayout);
@@ -232,7 +231,7 @@ public class AdminDashboard extends javax.swing.JFrame {
             .addGap(0, 630, Short.MAX_VALUE)
         );
 
-        parentContent.add(modulePanel, "card4");
+        parentContent.add(modulePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout routinePanelLayout = new javax.swing.GroupLayout(routinePanel);
         routinePanel.setLayout(routinePanelLayout);
@@ -245,7 +244,7 @@ public class AdminDashboard extends javax.swing.JFrame {
             .addGap(0, 630, Short.MAX_VALUE)
         );
 
-        parentContent.add(routinePanel, "card5");
+        parentContent.add(routinePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout noticePanelLayout = new javax.swing.GroupLayout(noticePanel);
         noticePanel.setLayout(noticePanelLayout);
@@ -258,7 +257,7 @@ public class AdminDashboard extends javax.swing.JFrame {
             .addGap(0, 630, Short.MAX_VALUE)
         );
 
-        parentContent.add(noticePanel, "card6");
+        parentContent.add(noticePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout enrollPanelLayout = new javax.swing.GroupLayout(enrollPanel);
         enrollPanel.setLayout(enrollPanelLayout);
@@ -271,7 +270,7 @@ public class AdminDashboard extends javax.swing.JFrame {
             .addGap(0, 630, Short.MAX_VALUE)
         );
 
-        parentContent.add(enrollPanel, "card7");
+        parentContent.add(enrollPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout managementPanelLayout = new javax.swing.GroupLayout(managementPanel);
         managementPanel.setLayout(managementPanelLayout);
@@ -284,7 +283,7 @@ public class AdminDashboard extends javax.swing.JFrame {
             .addGap(0, 630, Short.MAX_VALUE)
         );
 
-        parentContent.add(managementPanel, "card8");
+        parentContent.add(managementPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout BodyLayout = new javax.swing.GroupLayout(Body);
         Body.setLayout(BodyLayout);
