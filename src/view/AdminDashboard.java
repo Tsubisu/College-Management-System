@@ -4,6 +4,8 @@
  */
 package view;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author subas
@@ -18,7 +20,41 @@ public class AdminDashboard extends javax.swing.JFrame {
     public AdminDashboard() {
         initComponents();
     }
+    public void addProflileButtonListener(ActionListener actionListener)
+    {
+        profileButton.addActionListener(actionListener);
+    }
 
+    public void addModuleButtonListener(ActionListener actionListener)
+    {
+        moduleButton.addActionListener(actionListener);
+    }
+
+    public void addAttendanceButtonListener(ActionListener actionListener)
+    {
+        attendanceButton.addActionListener(actionListener);
+    }
+
+    public void addRoutineButtonListener(ActionListener actionListener)
+    {
+        routineButton.addActionListener(actionListener);
+    }
+    public void addNoticeButtonListener(ActionListener actionListener)
+    {
+        noticeButton.addActionListener(actionListener);
+    }
+    public void addLogOutButtonListener(ActionListener actionListener)
+    {
+        logoutButton.addActionListener(actionListener);
+    }
+    public void addEnrollButtonListener(ActionListener actionListener)
+    {
+        enrollButton.addActionListener(actionListener);
+    }
+    public void addManagementButtonListener(ActionListener actionListener)
+    {
+        managementButton.addActionListener(actionListener);
+       }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
