@@ -4,13 +4,11 @@
  */
 package view;
 
-import java.awt.event.ActionListener;
-
 /**
  *
  * @author subas
  */
-public class AdminDashboard extends javax.swing.JFrame {
+public class AdminDashboard extends Dashboard {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AdminDashboard.class.getName());
 
@@ -19,42 +17,10 @@ public class AdminDashboard extends javax.swing.JFrame {
      */
     public AdminDashboard() {
         initComponents();
+        dashPanel=adminDashboardPanel1;
+        super.menuButtonList();
     }
-    public void addProflileButtonListener(ActionListener actionListener)
-    {
-        profileButton.addActionListener(actionListener);
-    }
-
-    public void addModuleButtonListener(ActionListener actionListener)
-    {
-        moduleButton.addActionListener(actionListener);
-    }
-
-    public void addAttendanceButtonListener(ActionListener actionListener)
-    {
-        attendanceButton.addActionListener(actionListener);
-    }
-
-    public void addRoutineButtonListener(ActionListener actionListener)
-    {
-        routineButton.addActionListener(actionListener);
-    }
-    public void addNoticeButtonListener(ActionListener actionListener)
-    {
-        noticeButton.addActionListener(actionListener);
-    }
-    public void addLogOutButtonListener(ActionListener actionListener)
-    {
-        logoutButton.addActionListener(actionListener);
-    }
-    public void addEnrollButtonListener(ActionListener actionListener)
-    {
-        enrollButton.addActionListener(actionListener);
-    }
-    public void addManagementButtonListener(ActionListener actionListener)
-    {
-        managementButton.addActionListener(actionListener);
-       }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -64,323 +30,28 @@ public class AdminDashboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Body = new javax.swing.JPanel();
-        Menu = new javax.swing.JPanel();
-        logo = new javax.swing.JLabel();
-        collegeName = new javax.swing.JLabel();
-        attendanceButton = new javax.swing.JButton();
-        profileButton = new javax.swing.JButton();
-        moduleButton = new javax.swing.JButton();
-        logoutButton = new javax.swing.JButton();
-        routineButton = new javax.swing.JButton();
-        noticeButton = new javax.swing.JButton();
-        enrollButton = new javax.swing.JButton();
-        managementButton = new javax.swing.JButton();
-        parentContent = new javax.swing.JPanel();
-        profilePanel = new javax.swing.JPanel();
-        attendancePanel = new javax.swing.JPanel();
-        modulePanel = new javax.swing.JPanel();
-        routinePanel = new javax.swing.JPanel();
-        noticePanel = new javax.swing.JPanel();
-        enrollPanel = new javax.swing.JPanel();
-        managementPanel = new javax.swing.JPanel();
+        adminDashboardPanel1 = new view.AdminDashboardPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Parent");
         setMinimumSize(new java.awt.Dimension(1120, 630));
         setResizable(false);
 
-        Body.setMaximumSize(new java.awt.Dimension(1120, 630));
-        Body.setMinimumSize(new java.awt.Dimension(1120, 630));
-        Body.setPreferredSize(new java.awt.Dimension(1120, 630));
-        Body.setRequestFocusEnabled(false);
-
-        Menu.setBackground(new java.awt.Color(48, 139, 222));
-        Menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        logo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        logo.setForeground(new java.awt.Color(255, 255, 255));
-        logo.setText("Logo");
-        Menu.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 69, 49));
-
-        collegeName.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        collegeName.setForeground(new java.awt.Color(255, 255, 255));
-        collegeName.setText("Hardwarica");
-        Menu.add(collegeName, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 182, 58));
-
-        attendanceButton.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
-        attendanceButton.setForeground(new java.awt.Color(255, 255, 255));
-        attendanceButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/attendance.png"))); // NOI18N
-        attendanceButton.setText("Attendance");
-        attendanceButton.setBorderPainted(false);
-        attendanceButton.setContentAreaFilled(false);
-        attendanceButton.setDefaultCapable(false);
-        attendanceButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        attendanceButton.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        attendanceButton.setIconTextGap(18);
-        attendanceButton.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        attendanceButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        attendanceButton.addActionListener(this::attendanceButtonActionPerformed);
-        Menu.add(attendanceButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, -1, -1));
-
-        profileButton.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
-        profileButton.setForeground(new java.awt.Color(255, 255, 255));
-        profileButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/profileIcon.png"))); // NOI18N
-        profileButton.setText("Profle");
-        profileButton.setBorderPainted(false);
-        profileButton.setContentAreaFilled(false);
-        profileButton.setDefaultCapable(false);
-        profileButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        profileButton.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        profileButton.setIconTextGap(18);
-        profileButton.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        profileButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        profileButton.addActionListener(this::profileButtonActionPerformed);
-        Menu.add(profileButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 162, -1));
-
-        moduleButton.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
-        moduleButton.setForeground(new java.awt.Color(255, 255, 255));
-        moduleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/book.png"))); // NOI18N
-        moduleButton.setText("Modules");
-        moduleButton.setBorderPainted(false);
-        moduleButton.setContentAreaFilled(false);
-        moduleButton.setDefaultCapable(false);
-        moduleButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        moduleButton.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        moduleButton.setIconTextGap(18);
-        moduleButton.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        moduleButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        moduleButton.addActionListener(this::moduleButtonActionPerformed);
-        Menu.add(moduleButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, -1, -1));
-
-        logoutButton.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
-        logoutButton.setForeground(new java.awt.Color(255, 255, 255));
-        logoutButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logout.png"))); // NOI18N
-        logoutButton.setText("LogOut");
-        logoutButton.setBorderPainted(false);
-        logoutButton.setContentAreaFilled(false);
-        logoutButton.setDefaultCapable(false);
-        logoutButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        logoutButton.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        logoutButton.setIconTextGap(18);
-        logoutButton.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        logoutButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        logoutButton.addActionListener(this::logoutButtonActionPerformed);
-        Menu.add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 550, -1, -1));
-
-        routineButton.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
-        routineButton.setForeground(new java.awt.Color(255, 255, 255));
-        routineButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/calendar.png"))); // NOI18N
-        routineButton.setText("Routine");
-        routineButton.setBorderPainted(false);
-        routineButton.setContentAreaFilled(false);
-        routineButton.setDefaultCapable(false);
-        routineButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        routineButton.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        routineButton.setIconTextGap(18);
-        routineButton.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        routineButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        routineButton.addActionListener(this::routineButtonActionPerformed);
-        Menu.add(routineButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, -1, -1));
-
-        noticeButton.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
-        noticeButton.setForeground(new java.awt.Color(255, 255, 255));
-        noticeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/notification.png"))); // NOI18N
-        noticeButton.setText("Notice");
-        noticeButton.setBorderPainted(false);
-        noticeButton.setContentAreaFilled(false);
-        noticeButton.setDefaultCapable(false);
-        noticeButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        noticeButton.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        noticeButton.setIconTextGap(18);
-        noticeButton.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        noticeButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        noticeButton.addActionListener(this::noticeButtonActionPerformed);
-        Menu.add(noticeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, -1, -1));
-
-        enrollButton.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
-        enrollButton.setForeground(new java.awt.Color(255, 255, 255));
-        enrollButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/enroll.png"))); // NOI18N
-        enrollButton.setText("Enroll");
-        enrollButton.setBorderPainted(false);
-        enrollButton.setContentAreaFilled(false);
-        enrollButton.setDefaultCapable(false);
-        enrollButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        enrollButton.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        enrollButton.setIconTextGap(18);
-        enrollButton.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        enrollButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        enrollButton.addActionListener(this::enrollButtonActionPerformed);
-        Menu.add(enrollButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, -1, -1));
-
-        managementButton.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
-        managementButton.setForeground(new java.awt.Color(255, 255, 255));
-        managementButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/managementpng.png"))); // NOI18N
-        managementButton.setText("Management");
-        managementButton.setBorderPainted(false);
-        managementButton.setContentAreaFilled(false);
-        managementButton.setDefaultCapable(false);
-        managementButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        managementButton.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        managementButton.setIconTextGap(18);
-        managementButton.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        managementButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        managementButton.addActionListener(this::managementButtonActionPerformed);
-        Menu.add(managementButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, -1, -1));
-
-        parentContent.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        javax.swing.GroupLayout profilePanelLayout = new javax.swing.GroupLayout(profilePanel);
-        profilePanel.setLayout(profilePanelLayout);
-        profilePanelLayout.setHorizontalGroup(
-            profilePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 905, Short.MAX_VALUE)
-        );
-        profilePanelLayout.setVerticalGroup(
-            profilePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 630, Short.MAX_VALUE)
-        );
-
-        parentContent.add(profilePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        javax.swing.GroupLayout attendancePanelLayout = new javax.swing.GroupLayout(attendancePanel);
-        attendancePanel.setLayout(attendancePanelLayout);
-        attendancePanelLayout.setHorizontalGroup(
-            attendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 905, Short.MAX_VALUE)
-        );
-        attendancePanelLayout.setVerticalGroup(
-            attendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 630, Short.MAX_VALUE)
-        );
-
-        parentContent.add(attendancePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        javax.swing.GroupLayout modulePanelLayout = new javax.swing.GroupLayout(modulePanel);
-        modulePanel.setLayout(modulePanelLayout);
-        modulePanelLayout.setHorizontalGroup(
-            modulePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 905, Short.MAX_VALUE)
-        );
-        modulePanelLayout.setVerticalGroup(
-            modulePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 630, Short.MAX_VALUE)
-        );
-
-        parentContent.add(modulePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        javax.swing.GroupLayout routinePanelLayout = new javax.swing.GroupLayout(routinePanel);
-        routinePanel.setLayout(routinePanelLayout);
-        routinePanelLayout.setHorizontalGroup(
-            routinePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 905, Short.MAX_VALUE)
-        );
-        routinePanelLayout.setVerticalGroup(
-            routinePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 630, Short.MAX_VALUE)
-        );
-
-        parentContent.add(routinePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        javax.swing.GroupLayout noticePanelLayout = new javax.swing.GroupLayout(noticePanel);
-        noticePanel.setLayout(noticePanelLayout);
-        noticePanelLayout.setHorizontalGroup(
-            noticePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 905, Short.MAX_VALUE)
-        );
-        noticePanelLayout.setVerticalGroup(
-            noticePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 630, Short.MAX_VALUE)
-        );
-
-        parentContent.add(noticePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        javax.swing.GroupLayout enrollPanelLayout = new javax.swing.GroupLayout(enrollPanel);
-        enrollPanel.setLayout(enrollPanelLayout);
-        enrollPanelLayout.setHorizontalGroup(
-            enrollPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 905, Short.MAX_VALUE)
-        );
-        enrollPanelLayout.setVerticalGroup(
-            enrollPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 630, Short.MAX_VALUE)
-        );
-
-        parentContent.add(enrollPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        javax.swing.GroupLayout managementPanelLayout = new javax.swing.GroupLayout(managementPanel);
-        managementPanel.setLayout(managementPanelLayout);
-        managementPanelLayout.setHorizontalGroup(
-            managementPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 905, Short.MAX_VALUE)
-        );
-        managementPanelLayout.setVerticalGroup(
-            managementPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 630, Short.MAX_VALUE)
-        );
-
-        parentContent.add(managementPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        javax.swing.GroupLayout BodyLayout = new javax.swing.GroupLayout(Body);
-        Body.setLayout(BodyLayout);
-        BodyLayout.setHorizontalGroup(
-            BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BodyLayout.createSequentialGroup()
-                .addComponent(Menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(parentContent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        BodyLayout.setVerticalGroup(
-            BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(parentContent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Body, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(adminDashboardPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Body, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(adminDashboardPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void attendanceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_attendanceButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_attendanceButtonActionPerformed
-
-    private void profileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_profileButtonActionPerformed
-
-    private void moduleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moduleButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_moduleButtonActionPerformed
-
-    private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_logoutButtonActionPerformed
-
-    private void routineButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_routineButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_routineButtonActionPerformed
-
-    private void noticeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noticeButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_noticeButtonActionPerformed
-
-    private void enrollButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrollButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_enrollButtonActionPerformed
-
-    private void managementButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managementButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_managementButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -408,25 +79,6 @@ public class AdminDashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Body;
-    private javax.swing.JPanel Menu;
-    private javax.swing.JButton attendanceButton;
-    private javax.swing.JPanel attendancePanel;
-    private javax.swing.JLabel collegeName;
-    private javax.swing.JButton enrollButton;
-    private javax.swing.JPanel enrollPanel;
-    private javax.swing.JLabel logo;
-    private javax.swing.JButton logoutButton;
-    private javax.swing.JButton managementButton;
-    private javax.swing.JPanel managementPanel;
-    private javax.swing.JButton moduleButton;
-    private javax.swing.JPanel modulePanel;
-    private javax.swing.JButton noticeButton;
-    private javax.swing.JPanel noticePanel;
-    private javax.swing.JPanel parentContent;
-    private javax.swing.JButton profileButton;
-    private javax.swing.JPanel profilePanel;
-    private javax.swing.JButton routineButton;
-    private javax.swing.JPanel routinePanel;
+    private view.AdminDashboardPanel adminDashboardPanel1;
     // End of variables declaration//GEN-END:variables
 }
