@@ -1,8 +1,6 @@
 package view;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.GroupLayout;
@@ -28,7 +26,7 @@ public abstract class DashboardPanel extends javax.swing.JPanel{
     
     protected List<MenuComponents> componentList = new ArrayList<>();
     private GroupLayout menuLayout;
-    private GroupLayout contentLayout;
+    private CardLayout contentLayout;
     
     
 
@@ -53,7 +51,7 @@ public abstract class DashboardPanel extends javax.swing.JPanel{
         
         
         contentPanel= new javax.swing.JPanel();
-        contentLayout = new GroupLayout(contentPanel);
+        contentLayout = new CardLayout();
         contentPanel.setLayout(contentLayout);
         contentPanel.setMinimumSize(new Dimension(1120-210,630));
         contentPanel.setMaximumSize(new Dimension(1120-210,630));
@@ -92,7 +90,14 @@ public abstract class DashboardPanel extends javax.swing.JPanel{
         buttonDecorator(notice, "Notice");
         buttonDecorator(logout, "Logout");
     }
-    
+    public CardLayout getContentLayout()
+    {
+        return contentLayout;
+    }
+
+    public javax.swing.JPanel getContentPanel(){
+        return contentPanel;
+    }
     protected final void menuBuilder(List<MenuComponents> menuComponents)
     {
     GroupLayout.ParallelGroup hGroup = menuLayout.createParallelGroup();
