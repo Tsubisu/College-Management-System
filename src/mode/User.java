@@ -6,7 +6,7 @@ public class User {
     private String password;
     private String address;
     private String gender;
-    private int contact;
+    private String contact;
     private String role;
 
     public String getFirstName() {
@@ -49,11 +49,11 @@ public class User {
         this.address = address;
     }
 
-    public int getContact() {
+    public String getContact() {
         return contact;
     }
 
-    public void setContact(int contact) {
+    public void setContact(String contact) {
         this.contact = contact;
     }
 

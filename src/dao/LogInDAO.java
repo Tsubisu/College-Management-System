@@ -28,4 +28,28 @@ public class LogInDAO {
         }
         return false;
     }
+    public void userSetup(User user)
+    {
+        Connection conn = mysql.openConnection();
+        String sql = "Select * from users where email = ? and password = ?";
+        try(PreparedStatement pstm = conn.prepareStatement(sql)) {
+            pstm.setString(1, user.getEmail());
+            pstm.setString(2, user.getPassword());
+            ResultSet result = pstm.executeQuery();
+            result.next();
+            user.setFirstName(result.getString(2));
+            user.setLastName(result.getString(3));
+            user.setAddress(result.getString(6));
+            user.setContact(result.getString(7));
+            user.setGender(result.getString(8));
+            user.setRole(result.getString(9));
+
+        }
+        catch(SQLException e){
+            System.out.print(e);
+        }
+        finally {
+            mysql.closeConnection(conn);
+        }
+    }
 }
