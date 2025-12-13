@@ -1,2 +1,3 @@
-package model;public class Student extends User{
+package model;
+public class Student extends User{
 }

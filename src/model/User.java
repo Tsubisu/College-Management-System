@@ -1,12 +1,13 @@
 package model;
-public abstract class User {
+public class User {
     private String firstName;
     private String lastName;
     private String email;
     private String password;
     private String address;
     private String gender;
-    private int contact;
+    private String contact;
+    private String role;
 
     public String getFirstName() {
         return firstName;
@@ -48,19 +49,31 @@ public abstract class User {
         this.address = address;
     }
 
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public int getContact() {
+    public String getContact() {
         return contact;
     }
 
-    public void setContact(int contact) {
+    public void setContact(String contact) {
         this.contact = contact;
     }
+
+    public void setGender(String gender){
+        this.gender= gender;
+    }
+
+    public String getGender()
+    {
+        return gender;
+    }
+
+    public void setRole(String role)
+    {
+        this.role= role;
+    }
+
+    public String getRole()
+    {
+        return role;
+    }
+
 }
