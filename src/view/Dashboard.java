@@ -28,4 +28,7 @@ public abstract class Dashboard extends javax.swing.JFrame {
         }
     }
 
+    public DashboardPanel getDashPanel() {
+        return dashPanel;
+    }
 }
