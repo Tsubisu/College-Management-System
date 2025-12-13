@@ -65,6 +65,7 @@ public class Profile extends javax.swing.JPanel {
         firstNameTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         firstNameTextField.setText("  Random Name");
         firstNameTextField.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+        firstNameTextField.setRequestFocusEnabled(false);
         firstNameTextField.addActionListener(this::firstNameTextFieldActionPerformed);
 
         email.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -240,4 +241,32 @@ public class Profile extends javax.swing.JPanel {
     private javax.swing.JTextField lastNameTextField;
     private javax.swing.JLabel photo;
     // End of variables declaration//GEN-END:variables
+  public void setFirstName(String firstName)
+  {
+      firstNameTextField.setText(firstName);
+  }
+    public void setLastName(String lastName)
+    {
+        firstNameTextField.setText(lastName);
+    }
+
+  public void setEmail(String email)
+  {
+      emailTextField.setText(email);
+  }
+
+  public void setAddress(String address)
+  {
+      addressTextField.setText(address);
+  }
+
+  public void setContact(String contact)
+  {
+      contactTextField.setText(contact);
+  }
+
+  public void setGender(String gender)
+  {
+      genderTextField.setText(gender);
+  }
 }

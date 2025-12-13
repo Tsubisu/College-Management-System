@@ -6,8 +6,9 @@ public class demo
 {
     public static void main(String[] args)
     {
-        AdminDashboard adminDashboard = new AdminDashboard();
-        DashboardController dashboardController = new AdminDashboardController(adminDashboard);
-        adminDashboard.setVisible(true);
+
+        logIn loginView = new logIn();
+        LoginController loginController = new LoginController(loginView);
+        loginController.openView();
     }
 }

@@ -27,6 +27,12 @@ public abstract class DashboardPanel extends javax.swing.JPanel{
     protected List<MenuComponents> componentList = new ArrayList<>();
     private GroupLayout menuLayout;
     private CardLayout contentLayout;
+
+    public Profile getProfilePanel() {
+        return profilePanel;
+    }
+
+    protected Profile profilePanel;
     
     
 
@@ -81,6 +87,9 @@ public abstract class DashboardPanel extends javax.swing.JPanel{
         routine = new javax.swing.JButton();
         notice = new javax.swing.JButton();
         logout = new javax.swing.JButton();
+
+        profilePanel = new Profile();
+        contentPanel.add(profilePanel, "Profile");
 
       
         buttonDecorator(profile, "Profile");
