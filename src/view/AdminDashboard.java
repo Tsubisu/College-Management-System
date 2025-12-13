@@ -17,8 +17,8 @@ public class AdminDashboard extends Dashboard {
      */
     public AdminDashboard() {
         initComponents();
-//        dashPanel=adminDashboardPanel1;
-//        super.menuButtonList();
+        dashPanel=adminDashboardPanel1;
+        super.menuButtonList();
     }
     
     /**

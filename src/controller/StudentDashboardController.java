@@ -4,6 +4,7 @@ package controller;
 import view.StudentDashboard;
 
 
+
 public class StudentDashboardController extends DashboardController{
     StudentDashboard studentDashboard;
 
@@ -13,5 +14,7 @@ public class StudentDashboardController extends DashboardController{
         buttonListener();
 
     }
+
+
 }
 

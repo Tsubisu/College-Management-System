@@ -15,7 +15,8 @@ public class AdminDashboardController extends DashboardController{
         this.adminDashboard=adminDashboard;
         dashboard=adminDashboard;
         buttonListener();
+    }
 
-}
+
 }
 

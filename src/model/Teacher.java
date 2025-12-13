@@ -1,2 +1,3 @@
-package model;public class Teacher {
+package model;
+public class Teacher extends User{
 }
