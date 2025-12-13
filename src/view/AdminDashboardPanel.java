@@ -34,6 +34,7 @@ public class AdminDashboardPanel extends DashboardPanel {
         componentList.add(new MenuItems(management));
 
         componentList.add(new MenuItems(logout));
+
         Profile profilePanel = new Profile();
         Enroll enrollPanel = new Enroll();
         contentPanel.add(profilePanel, "Profile");

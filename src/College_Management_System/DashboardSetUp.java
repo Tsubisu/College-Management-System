@@ -10,6 +10,7 @@ public class DashboardSetUp {
 
     public void openDashboard(User user)
     {
+        System.out.print("opened a dashboard");
         String role = user.getRole();
         if(role.equalsIgnoreCase("Student"))
         {
