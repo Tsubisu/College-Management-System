@@ -1,6 +1,6 @@
 package dao;
 import database.MySqlConnection;
-import mode.User;
+import model.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
