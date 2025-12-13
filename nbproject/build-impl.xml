@@ -275,10 +275,10 @@ is divided into following sections:
                 <istrue value="${testng.available}"/>
             </and>
         </condition>
-        <condition else="testng" property="testng.mode" value="mixed">
+        <condition else="testng" property="testng.model" value="mixed">
             <istrue value="${junit+testng.available}"/>
         </condition>
-        <condition else="" property="testng.debug.mode" value="-mixed">
+        <condition else="" property="testng.debug.model" value="-mixed">
             <istrue value="${junit+testng.available}"/>
         </condition>
         <property name="java.failonerror" value="true"/>
@@ -619,7 +619,7 @@ is divided into following sections:
                     </fileset>
                 </union>
                 <taskdef classname="org.testng.TestNGAntTask" classpath="${run.test.classpath}" name="testng"/>
-                <testng classfilesetref="test.set" failureProperty="tests.failed" listeners="org.testng.reporters.VerboseReporter" methods="${testng.methods.arg}" mode="${testng.mode}" outputdir="${build.test.results.dir}" suitename="College_Management_System(CSM)" testname="TestNG tests" workingDir="${work.dir}">
+                <testng classfilesetref="test.set" failureProperty="tests.failed" listeners="org.testng.reporters.VerboseReporter" methods="${testng.methods.arg}" mode="${testng.model}" outputdir="${build.test.results.dir}" suitename="College_Management_System(CSM)" testname="TestNG tests" workingDir="${work.dir}">
                     <xmlfileset dir="${build.test.classes.dir}" includes="@{testincludes}"/>
                     <propertyset>
                         <propertyref prefix="test-sys-prop."/>
@@ -725,7 +725,7 @@ is divided into following sections:
                     <customizeDebuggee>
                         <customize2/>
                         <jvmarg value="-ea"/>
-                        <arg line="${testng.debug.mode}"/>
+                        <arg line="${testng.debug.model}"/>
                         <arg line="-d ${build.test.results.dir}"/>
                         <arg line="-listener org.testng.reporters.VerboseReporter"/>
                         <arg line="${testng.cmd.args}"/>
