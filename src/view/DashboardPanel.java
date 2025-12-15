@@ -3,8 +3,7 @@ package view;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.GroupLayout;
-import javax.swing.ImageIcon;
+import javax.swing.*;
 
 public abstract class DashboardPanel extends javax.swing.JPanel{
     protected javax.swing.JPanel menuPanel;
@@ -137,8 +136,7 @@ public abstract class DashboardPanel extends javax.swing.JPanel{
        button.setPreferredSize(buttonDimension);
        button.setMinimumSize(buttonDimension);
        button.setMaximumSize(buttonDimension);
-       button.setContentAreaFilled(true);
-       button.setBackground(new Color(48,139,222,0));
+       button.setContentAreaFilled(false);
        button.setOpaque(false);
        button.setBorderPainted(false);
        button.setFocusPainted(false);
@@ -148,7 +146,9 @@ public abstract class DashboardPanel extends javax.swing.JPanel{
        button.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
        button.setIconTextGap(25);
        button.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-       button.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);       
+       button.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+       button.setVerticalAlignment((int) CENTER_ALIGNMENT);
+
     }
 }
 

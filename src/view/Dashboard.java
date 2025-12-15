@@ -1,6 +1,7 @@
 package view;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
 public abstract class Dashboard extends javax.swing.JFrame {
@@ -20,11 +21,11 @@ public abstract class Dashboard extends javax.swing.JFrame {
 
     }
 
-    public void addMenuButtonListener(ActionListener actionListener)
+    public void addMenuButtonListener(MouseListener mouseListener)
     {
         for(JButton button : menuButtonList)
         {
-            button.addActionListener(actionListener);
+            button.addMouseListener(mouseListener);
         }
     }
 

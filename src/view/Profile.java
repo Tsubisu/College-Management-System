@@ -243,30 +243,30 @@ public class Profile extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
   public void setFirstName(String firstName)
   {
-      firstNameTextField.setText(firstName);
+      firstNameTextField.setText("  "+firstName);
   }
     public void setLastName(String lastName)
     {
-        firstNameTextField.setText(lastName);
+        lastNameTextField.setText("  "+lastName);
     }
 
   public void setEmail(String email)
   {
-      emailTextField.setText(email);
+      emailTextField.setText("  "+email);
   }
 
   public void setAddress(String address)
   {
-      addressTextField.setText(address);
+      addressTextField.setText("  "+address);
   }
 
   public void setContact(String contact)
   {
-      contactTextField.setText(contact);
+      contactTextField.setText("  "+contact);
   }
 
   public void setGender(String gender)
   {
-      genderTextField.setText(gender);
+      genderTextField.setText("  "+gender);
   }
 }

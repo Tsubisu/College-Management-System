@@ -26,8 +26,7 @@ public class StudentDashboardPanel extends DashboardPanel {
                componentList.add(new MenuItems(notice));
                 componentList.add(new MenuItems(logout));
         super.menuBuilder(componentList);
-        Profile profilePanel = new Profile();
-        contentPanel.add(profilePanel, "Profile");
+
         
         
             javax.swing.GroupLayout layout =(javax.swing.GroupLayout) this.getLayout();
