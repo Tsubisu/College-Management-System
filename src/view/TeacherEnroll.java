@@ -18,12 +18,6 @@ public class TeacherEnroll extends javax.swing.JPanel {
      */
     public TeacherEnroll() {
         initComponents();
-       
-        gender.setBorder(
-    javax.swing.BorderFactory.createLineBorder(
-        new Color(0, 0, 0, 0),0)
-        );
-       
     }
 
 
@@ -50,7 +44,7 @@ public class TeacherEnroll extends javax.swing.JPanel {
         jSeparator4 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
         jSeparator6 = new javax.swing.JSeparator();
-        lasttName = new javax.swing.JTextField();
+        lastName = new javax.swing.JTextField();
         email = new javax.swing.JTextField();
         address = new javax.swing.JTextField();
         contact = new javax.swing.JTextField();
@@ -93,8 +87,8 @@ public class TeacherEnroll extends javax.swing.JPanel {
         contactLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         contactLabel.setText("Contact");
 
-        lasttName.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lasttName.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        lastName.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lastName.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         email.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         email.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -142,7 +136,7 @@ public class TeacherEnroll extends javax.swing.JPanel {
                                 .addGap(68, 68, 68)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
-                                    .addComponent(lasttName)))
+                                    .addComponent(lastName)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,7 +172,7 @@ public class TeacherEnroll extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(firstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lasttName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -246,7 +240,29 @@ public class TeacherEnroll extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JTextField lastName;
     private javax.swing.JLabel lastNameLabel;
-    private javax.swing.JTextField lasttName;
     // End of variables declaration//GEN-END:variables
+    public javax.swing.JTextField getFirstName()
+    {
+        return firstName;
+    }
+    public javax.swing.JTextField getLastName()
+    {
+        return lastName;
+    }
+
+    public javax.swing.JTextField getEmail()
+    {
+        return email;
+    }
+
+    public javax.swing.JTextField getAddress()
+    {
+        return address;
+    }
+    public javax.swing.JTextField getContact()
+    {
+        return contact;
+    }
 }
