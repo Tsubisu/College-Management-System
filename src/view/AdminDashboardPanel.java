@@ -9,10 +9,7 @@ package view;
  * @author NITRO
  */
 public class AdminDashboardPanel extends DashboardPanel {
-
-    /**
-     * Creates new form AdminDashboardPanel
-     */
+    Enroll enrollPanel;
     public AdminDashboardPanel() {
         super();
         initComponents();
@@ -36,8 +33,10 @@ public class AdminDashboardPanel extends DashboardPanel {
         componentList.add(new MenuItems(logout));
 
 
-        Enroll enrollPanel = new Enroll();
+        enrollPanel= new Enroll();
         contentPanel.add(enrollPanel, "Enroll");
+
+
 
 
 
@@ -84,5 +83,9 @@ public class AdminDashboardPanel extends DashboardPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    // End of variables declaration//GEN-END:variables
+
+   public Enroll getEnrollPanel()
+   {
+       return enrollPanel;
+   } // End of variables declaration//GEN-END:variables
 }

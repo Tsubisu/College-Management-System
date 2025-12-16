@@ -4,6 +4,8 @@ import model.User;
 import controller.AdminDashboardController;
 import controller.StudentDashboardController;
 import controller.DashboardController;
+import view.StudentDashboard;
+
 public class DashboardSetUp {
     private  DashboardController dashboardController;
 
@@ -14,12 +16,19 @@ public class DashboardSetUp {
         String role = user.getRole();
         if(role.equalsIgnoreCase("Student"))
         {
-            dashboardController = new StudentDashboardController(new view.StudentDashboard());
+            StudentDashboard studentDashboard = new StudentDashboard();
+            dashboardController = new StudentDashboardController(studentDashboard);
+            dashboardController.profilePageSetter(user);
+            studentDashboard.setVisible(true);
+
 
         }
         else if(role.equalsIgnoreCase("Admin"))
         {
-            dashboardController= new AdminDashboardController(new AdminDashboard());
+            view.AdminDashboard adminDashboard = new AdminDashboard();
+            dashboardController= new AdminDashboardController(adminDashboard);
+            dashboardController.profilePageSetter(user);
+            adminDashboard.setVisible(true);
         }
         else
             {

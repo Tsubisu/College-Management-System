@@ -4,18 +4,12 @@
  */
 package view;
 
-/**
- *
- * @author user
- */
 public class StudentDashboard extends Dashboard {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(StudentDashboard.class.getName());
 
-    /**
-     * Creates new form StudentDashboard
-     */
-    public StudentDashboard() {
+    public StudentDashboard()
+    {
         initComponents();
         dashPanel = studentDashboardPanel1;
         super.menuButtonList();
