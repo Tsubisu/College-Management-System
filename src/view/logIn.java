@@ -239,4 +239,5 @@ public javax.swing.JTextField getEmailField()
     {
         loginButton.addActionListener(actionListener);
     }
+   
 }
