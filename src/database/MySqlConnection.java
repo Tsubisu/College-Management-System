@@ -5,6 +5,17 @@ import java.sql.ResultSet;
 import java.sql.*;
 public class MySqlConnection implements Database{
 
+    private static MySqlConnection mySqlConnection;
+    private MySqlConnection(){}
+
+    public static MySqlConnection getMySqlConnection()
+    {
+        if (mySqlConnection== null){
+            mySqlConnection= new MySqlConnection();
+        }
+        return mySqlConnection;
+    }
+
     @Override
     public Connection openConnection() {
         try{

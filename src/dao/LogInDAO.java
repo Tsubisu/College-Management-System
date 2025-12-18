@@ -9,7 +9,28 @@ import java.sql.SQLException;
 
 
 public class LogInDAO {
-    MySqlConnection mysql = new MySqlConnection();
+    MySqlConnection mysql = MySqlConnection.getMySqlConnection();
+
+
+
+    public boolean userCheck(String email)
+    {
+        Connection conn = mysql.openConnection();
+        String sql = "Select * from users where email = ?";
+        try(PreparedStatement pstm = conn.prepareStatement(sql)) {
+            pstm.setString(1, email);
+            ResultSet result = pstm.executeQuery();
+            return result.next();
+        }
+        catch(SQLException e){
+            System.out.print(e);
+        }
+        finally {
+            mysql.closeConnection(conn);
+        }
+        return false;
+    }
+
 
     public boolean loginCheck(String email, String password) {
         Connection conn = mysql.openConnection();
@@ -28,7 +49,7 @@ public class LogInDAO {
         }
         return false;
     }
-    public void userSetup(User user)
+    public void getUserDetail(User user)
     {
         Connection conn = mysql.openConnection();
         String sql = "Select * from users where email = ? and password = ?";
@@ -39,9 +60,6 @@ public class LogInDAO {
             result.next();
             user.setFirstName(result.getString(2));
             user.setLastName(result.getString(3));
-            user.setAddress(result.getString(6));
-            user.setContact(result.getString(7));
-            user.setGender(result.getString(8));
             user.setRole(result.getString(9));
 
         }

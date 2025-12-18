@@ -239,4 +239,8 @@ public javax.swing.JTextField getEmailField()
     {
         loginButton.addActionListener(actionListener);
     }
+    public void addForgetPasswordButtonListener(ActionListener actionListener)
+    {
+        forgetpasswordButton.addActionListener(actionListener);
+    }
 }

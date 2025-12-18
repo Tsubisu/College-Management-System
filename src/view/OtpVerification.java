@@ -4,6 +4,8 @@
  */
 package view;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author subas
@@ -34,16 +36,15 @@ public class OtpVerification extends javax.swing.JFrame {
         verifyButton = new javax.swing.JButton();
         optText = new javax.swing.JLabel();
         o1 = new javax.swing.JTextField();
-        o2 = new javax.swing.JTextField();
         o3 = new javax.swing.JTextField();
         o4 = new javax.swing.JTextField();
         o5 = new javax.swing.JTextField();
         o6 = new javax.swing.JTextField();
         uthenticatIcon = new javax.swing.JLabel();
+        o2 = new javax.swing.JTextField();
         bgImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1120, 630));
         setMinimumSize(new java.awt.Dimension(1120, 630));
 
         Body.setMinimumSize(new java.awt.Dimension(1120, 630));
@@ -72,10 +73,6 @@ public class OtpVerification extends javax.swing.JFrame {
         o1.setBackground(new java.awt.Color(255, 255, 255));
         o1.setForeground(new java.awt.Color(0, 0, 0));
 
-        o2.setEditable(false);
-        o2.setBackground(new java.awt.Color(255, 255, 255));
-        o2.setForeground(new java.awt.Color(0, 0, 0));
-
         o3.setBackground(new java.awt.Color(255, 255, 255));
         o3.setForeground(new java.awt.Color(0, 0, 0));
 
@@ -91,6 +88,9 @@ public class OtpVerification extends javax.swing.JFrame {
         uthenticatIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/otp.png"))); // NOI18N
         uthenticatIcon.setText("jLabel3");
 
+        o2.setBackground(new java.awt.Color(255, 255, 255));
+        o2.setForeground(new java.awt.Color(0, 0, 0));
+
         javax.swing.GroupLayout otpPanelLayout = new javax.swing.GroupLayout(otpPanel);
         otpPanel.setLayout(otpPanelLayout);
         otpPanelLayout.setHorizontalGroup(
@@ -104,7 +104,7 @@ public class OtpVerification extends javax.swing.JFrame {
                                 .addComponent(o1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(o2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGap(12, 12, 12)
                                 .addComponent(o3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(o4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -136,11 +136,11 @@ public class OtpVerification extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addGroup(otpPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(o1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(o2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(o3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(o4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(o5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(o6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(o6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(o2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
                 .addComponent(verifyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(73, Short.MAX_VALUE))
@@ -208,4 +208,17 @@ public class OtpVerification extends javax.swing.JFrame {
     private javax.swing.JLabel uthenticatIcon;
     private javax.swing.JButton verifyButton;
     // End of variables declaration//GEN-END:variables
+    public int getOtp()
+    {
+        String password = o1.getText()+o1.getText()+o1.getText()+o3.getText()+o4.getText()+o5.getText()+o6.getText();
+        return Integer.parseInt(password);
+    }
+    public void addVerifyButtonActionListener(ActionListener actionListener)
+    {
+        verifyButton.addActionListener(actionListener);
+    }
+
+
+
+
 }

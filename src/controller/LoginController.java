@@ -2,6 +2,7 @@ package controller;
 import College_Management_System.DashboardSetUp;
 import dao.LogInDAO;
 import model.User;
+import view.OtpVerification;
 import view.logIn;
 
 
@@ -22,27 +23,44 @@ public class LoginController {
         this.loginView=login;
         this.loginView.addLoginButtonActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent a) {
                 String email=loginView.getEmailField().getText();
                 String password=loginView.getPasswordField().getText();
-                try {
-                    boolean check = loginDao.loginCheck(email,password);
 
-                    if(check) {
-                        JOptionPane.showMessageDialog(loginView, "Successful");
-                        user.setEmail(email);
-                        user.setPassword(password);
-                        loginDao.userSetup(user);
-                        new DashboardSetUp().openDashboard(user);
-                        closeView();
+                boolean emailFlag = loginDao.userCheck(email);
+                boolean passwordFlag= false;
+                try
+                    {
+                        if(emailFlag)
+                            passwordFlag= loginDao.loginCheck(email,password);
+                        else
+                            JOptionPane.showMessageDialog(loginView,"No user with such E-mail Found");
                     }
-                    else {
-                        JOptionPane.showMessageDialog(loginView, "No such user found");
-                    }
+                catch (Exception e)
+                {
+                    System.out.println(e);
                 }
-                catch(Exception ex) {
-                    System.out.println(ex.getMessage());
+                if (emailFlag && !passwordFlag)
+                {
+                    JOptionPane.showMessageDialog(loginView,"Incorrect Password");
                 }
+                if(emailFlag && passwordFlag)
+                {
+                    JOptionPane.showMessageDialog(loginView,"LogIn Successful");
+                    loginView.dispose();
+                }
+
+
+            }
+        });
+
+        this.loginView.addForgetPasswordButtonListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                loginView.setVisible(false);
+                OtpVerification otpView = new OtpVerification();
+                OtpController otpController = new OtpController(otpView);
+                otpView.setVisible(true);
             }
         });
     }
