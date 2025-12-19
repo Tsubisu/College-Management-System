@@ -1,8 +1,9 @@
 package controller;
-import College_Management_System.DashboardSetUp;
 import dao.LogInDAO;
 import model.User;
+import view.EmailVerify;
 import view.OtpVerification;
+import view.ResetPassword;
 import view.logIn;
 
 
@@ -58,9 +59,12 @@ public class LoginController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 loginView.setVisible(false);
+                EmailVerify emailVerify = new EmailVerify();
                 OtpVerification otpView = new OtpVerification();
-                OtpController otpController = new OtpController(otpView);
-                otpView.setVisible(true);
+                ResetPassword resetPassword= new ResetPassword();
+
+                PasswordReset passwordReset = new PasswordReset(loginView,emailVerify,otpView,resetPassword);
+                emailVerify.setVisible(true);
             }
         });
     }

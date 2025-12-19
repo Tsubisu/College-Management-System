@@ -210,7 +210,7 @@ public class OtpVerification extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     public int getOtp()
     {
-        String password = o1.getText()+o1.getText()+o1.getText()+o3.getText()+o4.getText()+o5.getText()+o6.getText();
+        String password = o1.getText()+o2.getText()+o3.getText()+o4.getText()+o5.getText()+o6.getText();
         return Integer.parseInt(password);
     }
     public void addVerifyButtonActionListener(ActionListener actionListener)

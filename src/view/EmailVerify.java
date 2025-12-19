@@ -36,6 +36,7 @@ public class EmailVerify extends javax.swing.JFrame {
         emailText = new javax.swing.JLabel();
         email = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        returnButton = new javax.swing.JButton();
         bgImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -64,28 +65,35 @@ public class EmailVerify extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("E_mail Address");
 
+        returnButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        returnButton.setText("Return");
+        returnButton.addActionListener(this::returnButtonActionPerformed);
+
         javax.swing.GroupLayout otpPanelLayout = new javax.swing.GroupLayout(otpPanel);
         otpPanel.setLayout(otpPanelLayout);
         otpPanelLayout.setHorizontalGroup(
             otpPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, otpPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(submit, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(103, 103, 103))
             .addGroup(otpPanelLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addGroup(otpPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(otpPanelLayout.createSequentialGroup()
                         .addGroup(otpPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(returnButton)
                             .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(emailText))
                         .addGap(0, 19, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, otpPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(submit, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(103, 103, 103))
         );
         otpPanelLayout.setVerticalGroup(
             otpPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(otpPanelLayout.createSequentialGroup()
-                .addGap(43, 43, 43)
+                .addGap(25, 25, 25)
+                .addComponent(returnButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(emailText, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -93,7 +101,7 @@ public class EmailVerify extends javax.swing.JFrame {
                 .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(submit, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(132, Short.MAX_VALUE))
+                .addContainerGap(112, Short.MAX_VALUE))
         );
 
         Body.add(otpPanel);
@@ -121,6 +129,10 @@ public class EmailVerify extends javax.swing.JFrame {
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_submitActionPerformed
+
+    private void returnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_returnButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -154,17 +166,25 @@ public class EmailVerify extends javax.swing.JFrame {
     private javax.swing.JLabel emailText;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel otpPanel;
+    private javax.swing.JButton returnButton;
     private javax.swing.JButton submit;
     // End of variables declaration//GEN-END:variables
   
 
+    public void addSubmitButtonListener(ActionListener listener)
+    {
+        submit.addActionListener(listener);
+    }
+    
+    public void addReturnButtonListener(ActionListener listener)
+    {
+        returnButton.addActionListener(listener);
+    }
+    
+    public javax.swing.JTextField getEmail()
+    {
+    return email;
+    }
 
-public javax.swing.JTextField getEmail()
-{
-return email;
-}
 
-public void addSubnitButtonListener(ActionListener actionListener){
-    submit.addActionListener(actionListener);
-}
 }
