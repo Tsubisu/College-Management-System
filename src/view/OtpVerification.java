@@ -217,8 +217,4 @@ public class OtpVerification extends javax.swing.JFrame {
     {
         verifyButton.addActionListener(actionListener);
     }
-
-
-
-
 }

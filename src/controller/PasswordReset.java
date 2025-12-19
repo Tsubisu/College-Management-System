@@ -2,7 +2,6 @@ package controller;
 
 import College_Management_System.EmailService;
 import dao.LogInDAO;
-import jakarta.mail.MessagingException;
 import view.EmailVerify;
 import view.OtpVerification;
 import view.ResetPassword;
@@ -11,6 +10,7 @@ import java.security.SecureRandom;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 public class PasswordReset {
     private final OtpVerification otpView;
@@ -38,8 +38,17 @@ public class PasswordReset {
                 }
                 else
                 {
-
+                  JOptionPane.showMessageDialog(emailVerify,"No user with such E-mail found");
                 }
+            }
+        });
+        emailVerify.addReturnButtonListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                emailVerify.dispose();
+                otpView.dispose();;
+                resetPassword.dispose();
+                loginView.setVisible(true);
             }
         });
     }
