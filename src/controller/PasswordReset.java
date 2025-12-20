@@ -2,28 +2,33 @@ package controller;
 
 import College_Management_System.EmailService;
 import dao.LogInDAO;
+import dao.PasswordUpdate;
+import jakarta.mail.MessagingException;
 import view.EmailVerify;
 import view.OtpVerification;
 import view.ResetPassword;
 import view.logIn;
+
+import javax.swing.*;
 import java.security.SecureRandom;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JOptionPane;
 
 public class PasswordReset {
     private final OtpVerification otpView;
-    private final EmailVerify emailVerify;
     private final ResetPassword resetPassword;
     private final int otp=generateOtp();
     LogInDAO logInDao = new LogInDAO();
+    private String currentPassword;
+    private String userEmail;
 
     public PasswordReset(logIn loginView,EmailVerify emailVerify,OtpVerification otpView, ResetPassword resetPassword)
     {
-        this.emailVerify=emailVerify;
         this.otpView= otpView;
         this.resetPassword=resetPassword;
+
+
 
         emailVerify.addSubmitButtonListener(new ActionListener() {
             @Override
@@ -32,16 +37,19 @@ public class PasswordReset {
                 boolean check= logInDao.userCheck(email);
                 if(check)
                 {
+                    userEmail=email;
+                    currentPassword=logInDao.getCurrentPassword(email);
                     emailVerify.setVisible(false);
                     EmailService.sendEmail(email,"Email Verification","Your Verification Code is \n"+ "  "+otp);
                     otpVerifyController(email);
                 }
                 else
                 {
-                  JOptionPane.showMessageDialog(emailVerify,"No user with such E-mail found");
+                    JOptionPane.showMessageDialog(emailVerify,"No user with such E-mail found ");
                 }
             }
         });
+
         emailVerify.addReturnButtonListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -73,16 +81,47 @@ public class PasswordReset {
                 {
                     System.out.println("Entered otp is correct");
 
+                    PasswordResetController();
+                    otpView.setVisible(false);
+
+
                 }
                 else
                 {
-                    System.out.println("Entered otp is not correct");
+                    JOptionPane.showMessageDialog(otpView,"You have entered incorrect OTP");
                 }
 
             }
 
         });
         otpView.setVisible(true);
+    }
+    private void PasswordResetController()
+    {
+        resetPassword.setVisible(true);
+        resetPassword.addConfirmButtonActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String password = resetPassword.getNewPassword().getText();
+                String rePassword= resetPassword.getReNewPassword().getText();
+                if(password.equals(rePassword) && !password.equals(currentPassword))
+                {
+                    System.out.println("Reset Password successful");
+                    PasswordUpdate passwordUpdate = new PasswordUpdate();
+                    passwordUpdate.updatePassword(userEmail,password);
+
+                } else if (!password.equals(rePassword)) {
+                    System.out.println("Entered password do not match");
+                    
+                }
+                else
+                {
+                    System.out.println("Entered password can not be same as current password");
+                }
+
+
+            }
+        });
     }
 
 }

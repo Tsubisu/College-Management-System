@@ -49,6 +49,26 @@ public class LogInDAO {
         }
         return false;
     }
+    public String getCurrentPassword(String email)
+    {
+
+        Connection conn = mysql.openConnection();
+        String sql = "Select userPassword from users where email = ?";
+        String currentPassword="";
+        try(PreparedStatement pstm = conn.prepareStatement(sql)) {
+            pstm.setString(1, email);
+            ResultSet result = mysql.runQuery(conn,pstm);
+            result.next();
+            currentPassword=result.getString(1);
+        }
+        catch(SQLException e){
+            System.out.print(e);
+        }
+        finally {
+            mysql.closeConnection(conn);
+        }
+        return currentPassword;
+    }
     public void getUserDetail(User user)
     {
         Connection conn = mysql.openConnection();
