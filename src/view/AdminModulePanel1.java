@@ -33,6 +33,9 @@ public class AdminModulePanel1 extends javax.swing.JPanel {
         moduleScrollPane = new javax.swing.JScrollPane();
         moduleContainer = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        ADDbtn = new javax.swing.JButton();
+        Deletebtn = new javax.swing.JButton();
+        Department = new javax.swing.JComboBox<>();
 
         setMaximumSize(new java.awt.Dimension(910, 630));
         setMinimumSize(new java.awt.Dimension(910, 630));
@@ -73,7 +76,16 @@ public class AdminModulePanel1 extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(196, 0, 98));
-        jLabel1.setText("My Modules");
+        jLabel1.setText(" Modules");
+
+        ADDbtn.setText("ADD");
+        ADDbtn.addActionListener(this::ADDbtnActionPerformed);
+
+        Deletebtn.setText("Delete");
+        Deletebtn.addActionListener(this::DeletebtnActionPerformed);
+
+        Department.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Department.addActionListener(this::DepartmentActionPerformed);
 
         javax.swing.GroupLayout moduleHomePageLayout = new javax.swing.GroupLayout(moduleHomePage);
         moduleHomePage.setLayout(moduleHomePageLayout);
@@ -81,25 +93,40 @@ public class AdminModulePanel1 extends javax.swing.JPanel {
             moduleHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(moduleHomePageLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(moduleHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(moduleHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(moduleScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 875, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(moduleHomePageLayout.createSequentialGroup()
-                            .addComponent(moduleName, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(0, 0, 0)
-                            .addComponent(moduleYear, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(0, 0, Short.MAX_VALUE)
-                            .addComponent(action, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(11, 11, 11))))
-                .addGap(15, 15, 15))
+                .addGroup(moduleHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(moduleHomePageLayout.createSequentialGroup()
+                        .addGroup(moduleHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(moduleScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 875, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(moduleHomePageLayout.createSequentialGroup()
+                                .addComponent(moduleName, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, 0)
+                                .addComponent(moduleYear, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(action, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(11, 11, 11)))
+                        .addGap(15, 15, 15))
+                    .addGroup(moduleHomePageLayout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(ADDbtn)
+                        .addGap(18, 18, 18)
+                        .addComponent(Deletebtn)
+                        .addGap(184, 184, 184))))
+            .addGroup(moduleHomePageLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(Department, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         moduleHomePageLayout.setVerticalGroup(
             moduleHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(moduleHomePageLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
+                .addGroup(moduleHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ADDbtn)
+                    .addComponent(Deletebtn))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                .addComponent(Department, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
                 .addGroup(moduleHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(moduleName, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(moduleYear, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -111,8 +138,23 @@ public class AdminModulePanel1 extends javax.swing.JPanel {
         add(moduleHomePage, "card3");
     }// </editor-fold>//GEN-END:initComponents
 
+    private void ADDbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDbtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ADDbtnActionPerformed
+
+    private void DeletebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeletebtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DeletebtnActionPerformed
+
+    private void DepartmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DepartmentActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DepartmentActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ADDbtn;
+    private javax.swing.JButton Deletebtn;
+    private javax.swing.JComboBox<String> Department;
     private javax.swing.JLabel action;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel moduleContainer;
