@@ -19,7 +19,7 @@ public class LogInDAO {
         String sql = "Select * from users where email = ?";
         try(PreparedStatement pstm = conn.prepareStatement(sql)) {
             pstm.setString(1, email);
-            ResultSet result = pstm.executeQuery();
+            ResultSet result = mysql.runQuery(conn, pstm);
             return result.next();
         }
         catch(SQLException e){
@@ -38,7 +38,7 @@ public class LogInDAO {
         try(PreparedStatement pstm = conn.prepareStatement(sql)) {
             pstm.setString(1, email);
             pstm.setString(2, password);
-            ResultSet result = pstm.executeQuery();
+            ResultSet result = mysql.runQuery(conn, pstm);
             return result.next();
         }
         catch(SQLException e){

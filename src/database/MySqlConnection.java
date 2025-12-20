@@ -52,10 +52,9 @@ public class MySqlConnection implements Database{
     }
 
     @Override
-    public ResultSet runQuery(Connection conn, String query) {
+    public ResultSet runQuery(Connection conn, PreparedStatement pstm) {
         try{
-            Statement stmp = conn.createStatement();
-            return stmp.executeQuery(query);
+            return pstm.executeQuery();
         }
         catch(Exception e){
             System.out.println(e);
@@ -64,10 +63,9 @@ public class MySqlConnection implements Database{
     }
 
     @Override
-    public int executeUpdate(Connection conn, String query) {
+    public int executeUpdate(Connection conn, PreparedStatement pstm) {
         try{
-            Statement stmp = conn.createStatement();
-            return stmp.executeUpdate(query);
+           return pstm.executeUpdate();
         }
         catch(Exception e){
             System.out.println(e);
