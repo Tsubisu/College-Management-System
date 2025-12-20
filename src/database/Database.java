@@ -5,7 +5,7 @@ public interface Database {
 
     void closeConnection(Connection conn);
 
-    ResultSet runQuery(Connection conn, String query);
+    ResultSet runQuery(Connection conn, PreparedStatement pstm);
 
-    int executeUpdate(Connection conn, String query);
+    int executeUpdate(Connection conn, PreparedStatement pstm);
 }
