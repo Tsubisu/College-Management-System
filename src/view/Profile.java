@@ -60,7 +60,7 @@ public class Profile extends javax.swing.JPanel {
         lastNameTextField.addActionListener(this::lastNameTextFieldActionPerformed);
 
         firstName.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        firstName.setText("FIrst Name");
+        firstName.setText("First Name");
 
         firstNameTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         firstNameTextField.setText("  Random Name");
@@ -77,7 +77,7 @@ public class Profile extends javax.swing.JPanel {
         emailTextField.setRequestFocusEnabled(false);
         emailTextField.addActionListener(this::emailTextFieldActionPerformed);
 
-        gender.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        gender.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         gender.setText("Gender");
 
         genderTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
