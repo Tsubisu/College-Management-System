@@ -26,72 +26,73 @@ public class moduleContainerPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        name = new javax.swing.JLabel();
-        name1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        moduleName = new javax.swing.JLabel();
+        moduleYear = new javax.swing.JLabel();
+        actionBtn = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(102, 102, 102));
         setMaximumSize(new java.awt.Dimension(890, 65));
         setMinimumSize(new java.awt.Dimension(890, 65));
         setPreferredSize(new java.awt.Dimension(890, 65));
 
-        name.setBackground(new java.awt.Color(255, 255, 255));
-        name.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        name.setForeground(new java.awt.Color(0, 0, 0));
-        name.setText("  'jLabel1");
-        name.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
-        name.setMaximumSize(new java.awt.Dimension(290, 65));
-        name.setMinimumSize(new java.awt.Dimension(290, 65));
-        name.setOpaque(true);
-        name.setPreferredSize(new java.awt.Dimension(295, 65));
+        moduleName.setBackground(new java.awt.Color(255, 255, 255));
+        moduleName.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        moduleName.setText("  'jLabel1");
+        moduleName.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        moduleName.setMaximumSize(new java.awt.Dimension(290, 65));
+        moduleName.setMinimumSize(new java.awt.Dimension(290, 65));
+        moduleName.setOpaque(true);
+        moduleName.setPreferredSize(new java.awt.Dimension(295, 65));
 
-        name1.setBackground(new java.awt.Color(255, 255, 255));
-        name1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        name1.setForeground(new java.awt.Color(0, 0, 0));
-        name1.setText("  'jLabel1");
-        name1.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
-        name1.setMaximumSize(new java.awt.Dimension(290, 65));
-        name1.setMinimumSize(new java.awt.Dimension(290, 65));
-        name1.setOpaque(true);
-        name1.setPreferredSize(new java.awt.Dimension(295, 65));
+        moduleYear.setBackground(new java.awt.Color(255, 255, 255));
+        moduleYear.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        moduleYear.setText("  'jLabel1");
+        moduleYear.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        moduleYear.setMaximumSize(new java.awt.Dimension(290, 65));
+        moduleYear.setMinimumSize(new java.awt.Dimension(290, 65));
+        moduleYear.setOpaque(true);
+        moduleYear.setPreferredSize(new java.awt.Dimension(295, 65));
 
-        jButton1.setBackground(new java.awt.Color(62, 126, 171));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 51, 255));
-        jButton1.setText("Go To  Module");
-        jButton1.setBorder(null);
-        jButton1.setFocusPainted(false);
+        actionBtn.setBackground(new java.awt.Color(62, 126, 171));
+        actionBtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        actionBtn.setForeground(new java.awt.Color(0, 51, 255));
+        actionBtn.setText("Go To  Module");
+        actionBtn.setBorder(null);
+        actionBtn.setFocusPainted(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(moduleName, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1)
-                .addComponent(name1, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(moduleYear, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1)
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 298, Short.MAX_VALUE))
+                .addComponent(actionBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 298, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(name, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
-                    .addComponent(name1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(moduleName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(actionBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+                    .addComponent(moduleYear, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(1, 1, 1))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel name;
-    private javax.swing.JLabel name1;
+    private javax.swing.JButton actionBtn;
+    private javax.swing.JLabel moduleName;
+    private javax.swing.JLabel moduleYear;
     // End of variables declaration//GEN-END:variables
-public void setName(String name)
-{
-    this.name.setText(name);
+
+public javax.swing.JLabel getModuleName(){
+   return moduleName;
+}
+public javax.swing.JLabel getModuleYear(){
+   return moduleYear;
 }
 }
