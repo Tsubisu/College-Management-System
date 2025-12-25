@@ -48,7 +48,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel1" min="-2" pref="231" max="-2" attributes="0"/>
+                      <Component id="myModules" min="-2" pref="231" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="moduleScrollPane" min="-2" pref="875" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
@@ -56,7 +56,7 @@
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                               <Component id="moduleYear" min="-2" pref="290" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="action" min="-2" pref="284" max="-2" attributes="0"/>
+                              <Component id="moduleAction" min="-2" pref="284" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -69,12 +69,12 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" pref="52" max="-2" attributes="0"/>
+                  <Component id="myModules" min="-2" pref="52" max="-2" attributes="0"/>
                   <EmptySpace pref="132" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="moduleName" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                       <Component id="moduleYear" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
-                      <Component id="action" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="moduleAction" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                   <Component id="moduleScrollPane" min="-2" pref="380" max="-2" attributes="0"/>
@@ -126,7 +126,7 @@
             <Property name="opaque" type="boolean" value="true"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="action">
+        <Component class="javax.swing.JLabel" name="moduleAction">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="ff" type="rgb"/>
@@ -169,7 +169,7 @@
             </Container>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="myModules">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="24" style="1"/>

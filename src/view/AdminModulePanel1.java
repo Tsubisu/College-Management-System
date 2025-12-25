@@ -29,12 +29,12 @@ public class AdminModulePanel1 extends javax.swing.JPanel {
         moduleHomePage = new javax.swing.JPanel();
         moduleName = new javax.swing.JLabel();
         moduleYear = new javax.swing.JLabel();
-        action = new javax.swing.JLabel();
+        moduleAction = new javax.swing.JLabel();
         moduleScrollPane = new javax.swing.JScrollPane();
         moduleContainer = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        ADDbtn = new javax.swing.JButton();
-        Deletebtn = new javax.swing.JButton();
+        Modules = new javax.swing.JLabel();
+        addBtn = new javax.swing.JButton();
+        deleteBtn = new javax.swing.JButton();
         Department = new javax.swing.JComboBox<>();
 
         setMaximumSize(new java.awt.Dimension(910, 630));
@@ -60,11 +60,11 @@ public class AdminModulePanel1 extends javax.swing.JPanel {
         moduleYear.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         moduleYear.setOpaque(true);
 
-        action.setBackground(new java.awt.Color(255, 51, 51));
-        action.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        action.setText("Action");
-        action.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        action.setOpaque(true);
+        moduleAction.setBackground(new java.awt.Color(255, 51, 51));
+        moduleAction.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        moduleAction.setText("Action");
+        moduleAction.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        moduleAction.setOpaque(true);
 
         moduleScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         moduleScrollPane.setPreferredSize(new java.awt.Dimension(890, 450));
@@ -74,15 +74,15 @@ public class AdminModulePanel1 extends javax.swing.JPanel {
         moduleContainer.setLayout(new javax.swing.BoxLayout(moduleContainer, javax.swing.BoxLayout.Y_AXIS));
         moduleScrollPane.setViewportView(moduleContainer);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(196, 0, 98));
-        jLabel1.setText(" Modules");
+        Modules.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        Modules.setForeground(new java.awt.Color(196, 0, 98));
+        Modules.setText(" Modules");
 
-        ADDbtn.setText("ADD");
-        ADDbtn.addActionListener(this::ADDbtnActionPerformed);
+        addBtn.setText("ADD");
+        addBtn.addActionListener(this::addBtnActionPerformed);
 
-        Deletebtn.setText("Delete");
-        Deletebtn.addActionListener(this::DeletebtnActionPerformed);
+        deleteBtn.setText("Delete");
+        deleteBtn.addActionListener(this::deleteBtnActionPerformed);
 
         Department.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         Department.addActionListener(this::DepartmentActionPerformed);
@@ -102,15 +102,15 @@ public class AdminModulePanel1 extends javax.swing.JPanel {
                                 .addGap(0, 0, 0)
                                 .addComponent(moduleYear, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(action, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(moduleAction, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(11, 11, 11)))
                         .addGap(15, 15, 15))
                     .addGroup(moduleHomePageLayout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Modules, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(ADDbtn)
+                        .addComponent(addBtn)
                         .addGap(18, 18, 18)
-                        .addComponent(Deletebtn)
+                        .addComponent(deleteBtn)
                         .addGap(184, 184, 184))))
             .addGroup(moduleHomePageLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
@@ -121,16 +121,16 @@ public class AdminModulePanel1 extends javax.swing.JPanel {
             .addGroup(moduleHomePageLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addGroup(moduleHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ADDbtn)
-                    .addComponent(Deletebtn))
+                    .addComponent(Modules, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addBtn)
+                    .addComponent(deleteBtn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addComponent(Department, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
                 .addGroup(moduleHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(moduleName, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(moduleYear, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(action, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(moduleAction, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, 0)
                 .addComponent(moduleScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -138,13 +138,13 @@ public class AdminModulePanel1 extends javax.swing.JPanel {
         add(moduleHomePage, "card3");
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ADDbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDbtnActionPerformed
+    private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ADDbtnActionPerformed
+    }//GEN-LAST:event_addBtnActionPerformed
 
-    private void DeletebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeletebtnActionPerformed
+    private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_DeletebtnActionPerformed
+    }//GEN-LAST:event_deleteBtnActionPerformed
 
     private void DepartmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DepartmentActionPerformed
         // TODO add your handling code here:
@@ -152,11 +152,11 @@ public class AdminModulePanel1 extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ADDbtn;
-    private javax.swing.JButton Deletebtn;
     private javax.swing.JComboBox<String> Department;
-    private javax.swing.JLabel action;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel Modules;
+    private javax.swing.JButton addBtn;
+    private javax.swing.JButton deleteBtn;
+    private javax.swing.JLabel moduleAction;
     private javax.swing.JPanel moduleContainer;
     private javax.swing.JPanel moduleHomePage;
     private javax.swing.JLabel moduleName;
