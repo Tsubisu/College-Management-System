@@ -109,32 +109,35 @@ public class Management extends javax.swing.JPanel {
         jSeparator22 = new javax.swing.JSeparator();
         jSeparator23 = new javax.swing.JSeparator();
         Course = new javax.swing.JPanel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        courseSelect = new javax.swing.JComboBox<>();
         courseContentPanel = new javax.swing.JPanel();
         updateCoursePanel = new javax.swing.JPanel();
-        adminFirstNameLabel2 = new javax.swing.JLabel();
-        adminFirstNameText2 = new javax.swing.JTextField();
+        updateCourseDurationLabel = new javax.swing.JLabel();
+        updateCourseDurationTextField = new javax.swing.JTextField();
         jSeparator25 = new javax.swing.JSeparator();
-        courseSelectLabel = new javax.swing.JLabel();
-        adminIdTextField1 = new javax.swing.JTextField();
-        loadAdminDataBtn1 = new javax.swing.JButton();
-        adminFirstNameLabel1 = new javax.swing.JLabel();
-        adminFirstNameText1 = new javax.swing.JTextField();
+        updateCourseIdLabel = new javax.swing.JLabel();
+        updateCourseNameTextField = new javax.swing.JTextField();
+        courseUpdateBtn = new javax.swing.JButton();
+        updateCourseNameLabel = new javax.swing.JLabel();
+        updateCourseIdTextField = new javax.swing.JTextField();
         jSeparator24 = new javax.swing.JSeparator();
-        loadAdminDataBtn2 = new javax.swing.JButton();
-        loadAdminDataBtn3 = new javax.swing.JButton();
+        courseDeleteBtn = new javax.swing.JButton();
+        updateCourseLoadDataBtn = new javax.swing.JButton();
         addCoursePanel = new javax.swing.JPanel();
-        courseSelectLabel1 = new javax.swing.JLabel();
-        adminFirstNameText3 = new javax.swing.JTextField();
-        adminFirstNameLabel3 = new javax.swing.JLabel();
-        adminFirstNameText4 = new javax.swing.JTextField();
-        adminFirstNameLabel4 = new javax.swing.JLabel();
-        adminFirstNameText5 = new javax.swing.JTextField();
-        adminFirstNameLabel5 = new javax.swing.JLabel();
-        adminFirstNameText6 = new javax.swing.JTextField();
+        addCourseIdLabel = new javax.swing.JLabel();
+        addCourseIdTextField = new javax.swing.JTextField();
+        addCourseNameLabel = new javax.swing.JLabel();
+        addCourseDurationTextField = new javax.swing.JTextField();
+        addCourseDurationLabel = new javax.swing.JLabel();
+        addCourseNameTextField = new javax.swing.JTextField();
+        addDepartmentIdLabel = new javax.swing.JLabel();
+        addDepartmentIdTextField = new javax.swing.JTextField();
         jSeparator26 = new javax.swing.JSeparator();
         jSeparator27 = new javax.swing.JSeparator();
-        loadAdminDataBtn4 = new javax.swing.JButton();
+        courseAddBtn = new javax.swing.JButton();
+        Batch = new javax.swing.JPanel();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        batchContentPanel = new javax.swing.JPanel();
 
         setMaximumSize(new java.awt.Dimension(910, 630));
         setMinimumSize(new java.awt.Dimension(910, 630));
@@ -747,49 +750,49 @@ StudentLayout.setHorizontalGroup(
     Course.setMinimumSize(new java.awt.Dimension(910, 608));
     Course.setPreferredSize(new java.awt.Dimension(910, 608));
 
-    jComboBox1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Add A New Course", "Update Course" }));
+    courseSelect.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    courseSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Add A New Course", "Update Course" }));
 
     courseContentPanel.setLayout(new java.awt.CardLayout());
 
     updateCoursePanel.setMaximumSize(new java.awt.Dimension(859, 450));
     updateCoursePanel.setMinimumSize(new java.awt.Dimension(859, 450));
 
-    adminFirstNameLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    adminFirstNameLabel2.setText("Course Duration");
+    updateCourseDurationLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    updateCourseDurationLabel.setText("Course Duration");
 
-    adminFirstNameText2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    adminFirstNameText2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+    updateCourseDurationTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    updateCourseDurationTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
-    courseSelectLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    courseSelectLabel.setText("Enter Course Id:");
+    updateCourseIdLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    updateCourseIdLabel.setText("Enter Course Id:");
 
-    adminIdTextField1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    updateCourseNameTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-    loadAdminDataBtn1.setBackground(new java.awt.Color(51, 51, 51));
-    loadAdminDataBtn1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    loadAdminDataBtn1.setForeground(new java.awt.Color(255, 255, 255));
-    loadAdminDataBtn1.setText("Update");
-    loadAdminDataBtn1.setFocusPainted(false);
-    loadAdminDataBtn1.addActionListener(this::loadAdminDataBtn1ActionPerformed);
+    courseUpdateBtn.setBackground(new java.awt.Color(51, 51, 51));
+    courseUpdateBtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    courseUpdateBtn.setForeground(new java.awt.Color(255, 255, 255));
+    courseUpdateBtn.setText("Update");
+    courseUpdateBtn.setFocusPainted(false);
+    courseUpdateBtn.addActionListener(this::courseUpdateBtnActionPerformed);
 
-    adminFirstNameLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    adminFirstNameLabel1.setText("Course Name");
+    updateCourseNameLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    updateCourseNameLabel.setText("Course Name");
 
-    adminFirstNameText1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    adminFirstNameText1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+    updateCourseIdTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    updateCourseIdTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
-    loadAdminDataBtn2.setBackground(new java.awt.Color(182, 51, 51));
-    loadAdminDataBtn2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    loadAdminDataBtn2.setForeground(new java.awt.Color(255, 255, 255));
-    loadAdminDataBtn2.setText("Delete");
-    loadAdminDataBtn2.setFocusPainted(false);
+    courseDeleteBtn.setBackground(new java.awt.Color(182, 51, 51));
+    courseDeleteBtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    courseDeleteBtn.setForeground(new java.awt.Color(255, 255, 255));
+    courseDeleteBtn.setText("Delete");
+    courseDeleteBtn.setFocusPainted(false);
 
-    loadAdminDataBtn3.setBackground(new java.awt.Color(51, 51, 51));
-    loadAdminDataBtn3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    loadAdminDataBtn3.setForeground(new java.awt.Color(255, 255, 255));
-    loadAdminDataBtn3.setText("Load Data");
-    loadAdminDataBtn3.setFocusPainted(false);
+    updateCourseLoadDataBtn.setBackground(new java.awt.Color(51, 51, 51));
+    updateCourseLoadDataBtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    updateCourseLoadDataBtn.setForeground(new java.awt.Color(255, 255, 255));
+    updateCourseLoadDataBtn.setText("Load Data");
+    updateCourseLoadDataBtn.setFocusPainted(false);
 
     javax.swing.GroupLayout updateCoursePanelLayout = new javax.swing.GroupLayout(updateCoursePanel);
     updateCoursePanel.setLayout(updateCoursePanelLayout);
@@ -798,27 +801,27 @@ StudentLayout.setHorizontalGroup(
         .addGroup(updateCoursePanelLayout.createSequentialGroup()
             .addGap(21, 21, 21)
             .addGroup(updateCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(adminFirstNameLabel1)
+                .addComponent(updateCourseNameLabel)
                 .addGroup(updateCoursePanelLayout.createSequentialGroup()
-                    .addComponent(courseSelectLabel)
+                    .addComponent(updateCourseIdLabel)
                     .addGap(18, 18, 18)
-                    .addComponent(adminFirstNameText1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updateCourseIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(58, 58, 58)
-                    .addComponent(loadAdminDataBtn3))
-                .addComponent(adminFirstNameLabel2)
+                    .addComponent(updateCourseLoadDataBtn))
+                .addComponent(updateCourseDurationLabel)
                 .addGroup(updateCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jSeparator25, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(adminFirstNameText2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 357, Short.MAX_VALUE)
-                    .addComponent(adminIdTextField1, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addComponent(updateCourseDurationTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 357, Short.MAX_VALUE)
+                    .addComponent(updateCourseNameTextField, javax.swing.GroupLayout.Alignment.LEADING))
                 .addGroup(updateCoursePanelLayout.createSequentialGroup()
                     .addGroup(updateCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(updateCoursePanelLayout.createSequentialGroup()
                             .addComponent(jSeparator24, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(115, 115, 115))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, updateCoursePanelLayout.createSequentialGroup()
-                            .addComponent(loadAdminDataBtn1)
+                            .addComponent(courseUpdateBtn)
                             .addGap(72, 72, 72)))
-                    .addComponent(loadAdminDataBtn2)))
+                    .addComponent(courseDeleteBtn)))
             .addContainerGap(283, Short.MAX_VALUE))
     );
     updateCoursePanelLayout.setVerticalGroup(
@@ -826,26 +829,26 @@ StudentLayout.setHorizontalGroup(
         .addGroup(updateCoursePanelLayout.createSequentialGroup()
             .addGap(36, 36, 36)
             .addGroup(updateCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(courseSelectLabel)
+                .addComponent(updateCourseIdLabel)
                 .addGroup(updateCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(adminFirstNameText1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(loadAdminDataBtn3)))
+                    .addComponent(updateCourseIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updateCourseLoadDataBtn)))
             .addGap(64, 64, 64)
-            .addComponent(adminFirstNameLabel1)
+            .addComponent(updateCourseNameLabel)
             .addGap(4, 4, 4)
-            .addComponent(adminIdTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(updateCourseNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jSeparator25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-            .addComponent(adminFirstNameLabel2)
+            .addComponent(updateCourseDurationLabel)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(adminFirstNameText2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(updateCourseDurationTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jSeparator24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
             .addGroup(updateCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(loadAdminDataBtn1)
-                .addComponent(loadAdminDataBtn2))
+                .addComponent(courseUpdateBtn)
+                .addComponent(courseDeleteBtn))
             .addGap(40, 40, 40))
     );
 
@@ -855,37 +858,37 @@ StudentLayout.setHorizontalGroup(
     addCoursePanel.setMinimumSize(new java.awt.Dimension(859, 450));
     addCoursePanel.setPreferredSize(new java.awt.Dimension(859, 450));
 
-    courseSelectLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    courseSelectLabel1.setText("Enter Course Id:");
+    addCourseIdLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    addCourseIdLabel.setText("Enter Course Id:");
 
-    adminFirstNameText3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    adminFirstNameText3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+    addCourseIdTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    addCourseIdTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
-    adminFirstNameLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    adminFirstNameLabel3.setText("Course Name");
+    addCourseNameLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    addCourseNameLabel.setText("Course Name");
 
-    adminFirstNameText4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    adminFirstNameText4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+    addCourseDurationTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    addCourseDurationTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
-    adminFirstNameLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    adminFirstNameLabel4.setText("Course Duration");
+    addCourseDurationLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    addCourseDurationLabel.setText("Course Duration");
 
-    adminFirstNameText5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    adminFirstNameText5.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+    addCourseNameTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    addCourseNameTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
-    adminFirstNameLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    adminFirstNameLabel5.setText("Enter Departmetn Id:");
+    addDepartmentIdLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    addDepartmentIdLabel.setText("Enter Departmetn Id:");
 
-    adminFirstNameText6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    adminFirstNameText6.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-    adminFirstNameText6.addActionListener(this::adminFirstNameText6ActionPerformed);
+    addDepartmentIdTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    addDepartmentIdTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+    addDepartmentIdTextField.addActionListener(this::addDepartmentIdTextFieldActionPerformed);
 
-    loadAdminDataBtn4.setBackground(new java.awt.Color(51, 178, 66));
-    loadAdminDataBtn4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    loadAdminDataBtn4.setForeground(new java.awt.Color(255, 255, 255));
-    loadAdminDataBtn4.setText("Add");
-    loadAdminDataBtn4.setFocusPainted(false);
-    loadAdminDataBtn4.addActionListener(this::loadAdminDataBtn4ActionPerformed);
+    courseAddBtn.setBackground(new java.awt.Color(51, 178, 66));
+    courseAddBtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    courseAddBtn.setForeground(new java.awt.Color(255, 255, 255));
+    courseAddBtn.setText("Add");
+    courseAddBtn.setFocusPainted(false);
+    courseAddBtn.addActionListener(this::courseAddBtnActionPerformed);
 
     javax.swing.GroupLayout addCoursePanelLayout = new javax.swing.GroupLayout(addCoursePanel);
     addCoursePanel.setLayout(addCoursePanelLayout);
@@ -896,25 +899,25 @@ StudentLayout.setHorizontalGroup(
                 .addGroup(addCoursePanelLayout.createSequentialGroup()
                     .addGap(14, 14, 14)
                     .addGroup(addCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(adminFirstNameLabel4)
-                        .addComponent(adminFirstNameLabel3)
-                        .addComponent(adminFirstNameText4, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE)
-                        .addComponent(adminFirstNameText5)
+                        .addComponent(addCourseDurationLabel)
+                        .addComponent(addCourseNameLabel)
+                        .addComponent(addCourseDurationTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE)
+                        .addComponent(addCourseNameTextField)
                         .addComponent(jSeparator26)
                         .addComponent(jSeparator27)))
                 .addGroup(addCoursePanelLayout.createSequentialGroup()
                     .addContainerGap()
                     .addGroup(addCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(adminFirstNameLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(courseSelectLabel1))
+                        .addComponent(addDepartmentIdLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(addCourseIdLabel))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(addCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(adminFirstNameText3, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
-                        .addComponent(adminFirstNameText6))))
+                        .addComponent(addCourseIdTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
+                        .addComponent(addDepartmentIdTextField))))
             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addCoursePanelLayout.createSequentialGroup()
             .addGap(0, 385, Short.MAX_VALUE)
-            .addComponent(loadAdminDataBtn4, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(courseAddBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(339, 339, 339))
     );
     addCoursePanelLayout.setVerticalGroup(
@@ -922,26 +925,26 @@ StudentLayout.setHorizontalGroup(
         .addGroup(addCoursePanelLayout.createSequentialGroup()
             .addGap(36, 36, 36)
             .addGroup(addCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(courseSelectLabel1)
-                .addComponent(adminFirstNameText3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(addCourseIdLabel)
+                .addComponent(addCourseIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(28, 28, 28)
             .addGroup(addCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(adminFirstNameLabel5)
-                .addComponent(adminFirstNameText6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(addDepartmentIdLabel)
+                .addComponent(addDepartmentIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(56, 56, 56)
-            .addComponent(adminFirstNameLabel3)
+            .addComponent(addCourseNameLabel)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(adminFirstNameText5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(addCourseNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jSeparator26, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(43, 43, 43)
-            .addComponent(adminFirstNameLabel4)
+            .addComponent(addCourseDurationLabel)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(adminFirstNameText4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(addCourseDurationTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jSeparator27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-            .addComponent(loadAdminDataBtn4)
+            .addComponent(courseAddBtn)
             .addGap(32, 32, 32))
     );
 
@@ -955,19 +958,54 @@ StudentLayout.setHorizontalGroup(
             .addGap(25, 25, 25)
             .addGroup(CourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(courseContentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(courseSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(25, 25, 25))
     );
     CourseLayout.setVerticalGroup(
         CourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(CourseLayout.createSequentialGroup()
             .addGap(49, 49, 49)
-            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(courseSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
             .addComponent(courseContentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
     );
 
     tabbedPane.addTab("tab4", Course);
+
+    Batch.setMaximumSize(new java.awt.Dimension(910, 608));
+    Batch.setMinimumSize(new java.awt.Dimension(910, 608));
+    Batch.setPreferredSize(new java.awt.Dimension(910, 608));
+
+    jComboBox2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Add A New Batch", "Update Batch" }));
+
+    batchContentPanel.setMaximumSize(new java.awt.Dimension(859, 450));
+    batchContentPanel.setMinimumSize(new java.awt.Dimension(859, 450));
+    batchContentPanel.setOpaque(false);
+    batchContentPanel.setPreferredSize(new java.awt.Dimension(859, 450));
+    batchContentPanel.setLayout(new java.awt.CardLayout());
+
+    javax.swing.GroupLayout BatchLayout = new javax.swing.GroupLayout(Batch);
+    Batch.setLayout(BatchLayout);
+    BatchLayout.setHorizontalGroup(
+        BatchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(BatchLayout.createSequentialGroup()
+            .addGap(25, 25, 25)
+            .addGroup(BatchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(batchContentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addContainerGap(26, Short.MAX_VALUE))
+    );
+    BatchLayout.setVerticalGroup(
+        BatchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(BatchLayout.createSequentialGroup()
+            .addGap(45, 45, 45)
+            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+            .addComponent(batchContentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE))
+    );
+
+    tabbedPane.addTab("tab5", Batch);
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
     this.setLayout(layout);
@@ -1041,25 +1079,34 @@ StudentLayout.setHorizontalGroup(
         // TODO add your handling code here:
     }//GEN-LAST:event_adminContactTextActionPerformed
 
-    private void loadAdminDataBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadAdminDataBtn1ActionPerformed
+    private void courseUpdateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseUpdateBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_loadAdminDataBtn1ActionPerformed
+    }//GEN-LAST:event_courseUpdateBtnActionPerformed
 
-    private void adminFirstNameText6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminFirstNameText6ActionPerformed
+    private void addDepartmentIdTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addDepartmentIdTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_adminFirstNameText6ActionPerformed
+    }//GEN-LAST:event_addDepartmentIdTextFieldActionPerformed
 
-    private void loadAdminDataBtn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadAdminDataBtn4ActionPerformed
+    private void courseAddBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseAddBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_loadAdminDataBtn4ActionPerformed
+    }//GEN-LAST:event_courseAddBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Admin;
+    private javax.swing.JPanel Batch;
     private javax.swing.JPanel Course;
     private javax.swing.JPanel Student;
     private javax.swing.JPanel Teacher;
+    private javax.swing.JLabel addCourseDurationLabel;
+    private javax.swing.JTextField addCourseDurationTextField;
+    private javax.swing.JLabel addCourseIdLabel;
+    private javax.swing.JTextField addCourseIdTextField;
+    private javax.swing.JLabel addCourseNameLabel;
+    private javax.swing.JTextField addCourseNameTextField;
     private javax.swing.JPanel addCoursePanel;
+    private javax.swing.JLabel addDepartmentIdLabel;
+    private javax.swing.JTextField addDepartmentIdTextField;
     private javax.swing.JLabel adminAddressLabel;
     private javax.swing.JTextField adminAddressText;
     private javax.swing.JLabel adminContactLabel;
@@ -1069,29 +1116,20 @@ StudentLayout.setHorizontalGroup(
     private javax.swing.JLabel adminEmailLabel;
     private javax.swing.JTextField adminEmailText;
     private javax.swing.JLabel adminFirstNameLabel;
-    private javax.swing.JLabel adminFirstNameLabel1;
-    private javax.swing.JLabel adminFirstNameLabel2;
-    private javax.swing.JLabel adminFirstNameLabel3;
-    private javax.swing.JLabel adminFirstNameLabel4;
-    private javax.swing.JLabel adminFirstNameLabel5;
     private javax.swing.JTextField adminFirstNameText;
-    private javax.swing.JTextField adminFirstNameText1;
-    private javax.swing.JTextField adminFirstNameText2;
-    private javax.swing.JTextField adminFirstNameText3;
-    private javax.swing.JTextField adminFirstNameText4;
-    private javax.swing.JTextField adminFirstNameText5;
-    private javax.swing.JTextField adminFirstNameText6;
     private javax.swing.JLabel adminGenderLabel;
     private javax.swing.JComboBox<String> adminGenderSelect;
     private javax.swing.JTextField adminIdTextField;
-    private javax.swing.JTextField adminIdTextField1;
     private javax.swing.JLabel adminLastNameLabel;
     private javax.swing.JLabel adminSelectLabel;
     private javax.swing.JButton adminUpdateBtn;
+    private javax.swing.JPanel batchContentPanel;
+    private javax.swing.JButton courseAddBtn;
     private javax.swing.JPanel courseContentPanel;
-    private javax.swing.JLabel courseSelectLabel;
-    private javax.swing.JLabel courseSelectLabel1;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton courseDeleteBtn;
+    private javax.swing.JComboBox<String> courseSelect;
+    private javax.swing.JButton courseUpdateBtn;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
@@ -1119,10 +1157,6 @@ StudentLayout.setHorizontalGroup(
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JButton loadAdminDataBtn;
-    private javax.swing.JButton loadAdminDataBtn1;
-    private javax.swing.JButton loadAdminDataBtn2;
-    private javax.swing.JButton loadAdminDataBtn3;
-    private javax.swing.JButton loadAdminDataBtn4;
     private javax.swing.JButton loadStudentDataBtn;
     private javax.swing.JButton loadTeacherDataBtn;
     private javax.swing.JLabel studentAddressLabel;
@@ -1163,6 +1197,13 @@ StudentLayout.setHorizontalGroup(
     private javax.swing.JTextField teacherLastNameText;
     private javax.swing.JLabel teacherSelectLabel;
     private javax.swing.JButton teacherUpdateBtn;
+    private javax.swing.JLabel updateCourseDurationLabel;
+    private javax.swing.JTextField updateCourseDurationTextField;
+    private javax.swing.JLabel updateCourseIdLabel;
+    private javax.swing.JTextField updateCourseIdTextField;
+    private javax.swing.JButton updateCourseLoadDataBtn;
+    private javax.swing.JLabel updateCourseNameLabel;
+    private javax.swing.JTextField updateCourseNameTextField;
     private javax.swing.JPanel updateCoursePanel;
     // End of variables declaration//GEN-END:variables
 }
