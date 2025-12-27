@@ -9,29 +9,110 @@ import java.sql.SQLException;
 
 
 public class LogInDAO {
-    MySqlConnection mysql = new MySqlConnection();
+    MySqlConnection mySql = MySqlConnection.getMySqlConnection();
 
-    public boolean loginCheck(String email, String password) {
-        Connection conn = mysql.openConnection();
-        String sql = "Select * from users where email = ? and password = ?";
+
+
+    public boolean userCheck(String email)
+    {
+        Connection conn = mySql.openConnection();
+        String sql = "Select * from users where email = ?";
         try(PreparedStatement pstm = conn.prepareStatement(sql)) {
             pstm.setString(1, email);
-            pstm.setString(2, password);
-            ResultSet result = pstm.executeQuery();
+            ResultSet result = mySql.runQuery(conn,pstm);
             return result.next();
         }
         catch(SQLException e){
             System.out.print(e);
         }
         finally {
-            mysql.closeConnection(conn);
+            mySql.closeConnection(conn);
         }
         return false;
     }
-    public void userSetup(User user)
+
+
+    public boolean loginCheck(String email, String password) {
+        Connection conn = mySql.openConnection();
+        String sql = "Select * from users where email = ? and userPassword = ?";
+        try(PreparedStatement pstm = conn.prepareStatement(sql)) {
+            pstm.setString(1, email);
+            pstm.setString(2, password);
+            ResultSet result = mySql.runQuery(conn,pstm);
+            return result.next();
+        }
+        catch(SQLException e){
+            System.out.print(e);
+        }
+        finally {
+            mySql.closeConnection(conn);
+        }
+        return false;
+    }
+
+    public int getUserid(String email)
     {
-        Connection conn = mysql.openConnection();
-        String sql = "Select * from users where email = ? and password = ?";
+        Connection conn = mySql.openConnection();
+        String sql = "Select userId from users where email = ?";
+        try(PreparedStatement pstm = conn.prepareStatement(sql)) {
+            pstm.setString(1, email);
+            ResultSet result = mySql.runQuery(conn,pstm);
+            result.next();
+            return result.getInt(1);
+        }
+        catch(SQLException e){
+            System.out.print(e);
+        }
+        finally {
+            mySql.closeConnection(conn);
+        }
+        return 0;
+    }
+
+
+    public String getUserRole(String email)
+    {
+        Connection conn = mySql.openConnection();
+        String sql = "Select userRole from users where email = ?";
+        try(PreparedStatement pstm = conn.prepareStatement(sql)) {
+            pstm.setString(1, email);
+            ResultSet result = mySql.runQuery(conn,pstm);
+            result.next();
+            return result.getString(1);
+        }
+        catch(SQLException e){
+            System.out.print(e);
+        }
+        finally {
+            mySql.closeConnection(conn);
+        }
+        return "";
+    }
+
+    public String getCurrentPassword(String email)
+    {
+
+        Connection conn = mySql.openConnection();
+        String sql = "Select userPassword from users where email = ?";
+        String currentPassword="";
+        try(PreparedStatement pstm = conn.prepareStatement(sql)) {
+            pstm.setString(1, email);
+            ResultSet result = mySql.runQuery(conn,pstm);
+            result.next();
+            currentPassword=result.getString(1);
+        }
+        catch(SQLException e){
+            System.out.print(e);
+        }
+        finally {
+            mySql.closeConnection(conn);
+        }
+        return currentPassword;
+    }
+    public void getUserDetail(User user)
+    {
+        Connection conn = mySql.openConnection();
+        String sql = "Select * from users where email = ? and userPassword = ?";
         try(PreparedStatement pstm = conn.prepareStatement(sql)) {
             pstm.setString(1, user.getEmail());
             pstm.setString(2, user.getPassword());
@@ -39,9 +120,6 @@ public class LogInDAO {
             result.next();
             user.setFirstName(result.getString(2));
             user.setLastName(result.getString(3));
-            user.setAddress(result.getString(6));
-            user.setContact(result.getString(7));
-            user.setGender(result.getString(8));
             user.setRole(result.getString(9));
 
         }
@@ -49,7 +127,7 @@ public class LogInDAO {
             System.out.print(e);
         }
         finally {
-            mysql.closeConnection(conn);
+            mySql.closeConnection(conn);
         }
     }
 }

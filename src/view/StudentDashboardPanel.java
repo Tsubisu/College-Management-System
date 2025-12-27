@@ -9,6 +9,13 @@ package view;
  * @author user
  */
 public class StudentDashboardPanel extends DashboardPanel {
+    public STModulePanel getModulePanel() {
+        return modulePanel;
+    }
+
+    private final STModulePanel modulePanel;
+    private final StudentProfile studentProfile;
+    private final ModuleDisplay moduleDisplay;
 
     /**
      * Creates new form StudentDashboardPanel
@@ -26,6 +33,17 @@ public class StudentDashboardPanel extends DashboardPanel {
                componentList.add(new MenuItems(notice));
                 componentList.add(new MenuItems(logout));
         super.menuBuilder(componentList);
+
+        studentProfile = new StudentProfile();
+        modulePanel = new STModulePanel();
+        moduleDisplay = new ModuleDisplay();
+        contentPanel.add(studentProfile,"Profile");
+        contentPanel.add(modulePanel,"Module");
+        contentPanel.add(moduleDisplay,"ModuleDisplay");
+
+
+
+
 
         
         
@@ -67,4 +85,11 @@ public class StudentDashboardPanel extends DashboardPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
+    public javax.swing.JPanel getProfilePanel()
+    {
+        return studentProfile;
+    }
+    public ModuleDisplay getModuleDisplay() {
+        return moduleDisplay;
+    }
 }

@@ -4,6 +4,8 @@
  */
 package view;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author subas
@@ -190,4 +192,18 @@ public class ResetPassword extends javax.swing.JFrame {
     private javax.swing.JPasswordField rePassword;
     private javax.swing.JLabel resetPassword;
     // End of variables declaration//GEN-END:variables
+
+    public javax.swing.JTextField getNewPassword()
+    {
+        return newPassword;
+    }
+    public javax.swing.JTextField getReNewPassword()
+    {
+        return rePassword;
+    }
+
+    public void addConfirmButtonActionListener(ActionListener listener)
+    {
+        confirmButton.addActionListener(listener);
+    }
 }

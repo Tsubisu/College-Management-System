@@ -5,6 +5,17 @@ import java.sql.ResultSet;
 import java.sql.*;
 public class MySqlConnection implements Database{
 
+    private static MySqlConnection mySqlConnection;
+    private MySqlConnection(){}
+
+    public static MySqlConnection getMySqlConnection()
+    {
+        if (mySqlConnection== null){
+            mySqlConnection= new MySqlConnection();
+        }
+        return mySqlConnection;
+    }
+
     @Override
     public Connection openConnection() {
         try{
@@ -41,10 +52,9 @@ public class MySqlConnection implements Database{
     }
 
     @Override
-    public ResultSet runQuery(Connection conn, String query) {
+    public ResultSet runQuery(Connection conn, PreparedStatement pstm) {
         try{
-            Statement stmp = conn.createStatement();
-            return stmp.executeQuery(query);
+            return pstm.executeQuery();
         }
         catch(Exception e){
             System.out.println(e);
@@ -53,10 +63,10 @@ public class MySqlConnection implements Database{
     }
 
     @Override
-    public int executeUpdate(Connection conn, String query) {
+    public int executeUpdate(Connection conn, PreparedStatement pstm) {
         try{
-            Statement stmp = conn.createStatement();
-            return stmp.executeUpdate(query);
+
+            return pstm.executeUpdate();
         }
         catch(Exception e){
             System.out.println(e);
