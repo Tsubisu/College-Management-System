@@ -136,19 +136,29 @@ public class Management extends javax.swing.JPanel {
         jSeparator27 = new javax.swing.JSeparator();
         courseAddBtn = new javax.swing.JButton();
         Batch = new javax.swing.JPanel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        batchSelect = new javax.swing.JComboBox<>();
         batchContentPanel = new javax.swing.JPanel();
-        updateBatchPanel = new javax.swing.JPanel();
         addBatchPanel = new javax.swing.JPanel();
-        addCourseIdLabel1 = new javax.swing.JLabel();
-        addCourseIdTextField1 = new javax.swing.JTextField();
-        addCourseIdLabel2 = new javax.swing.JLabel();
-        addCourseIdLabel3 = new javax.swing.JLabel();
-        addCourseIdTextField2 = new javax.swing.JTextField();
-        addCourseIdTextField3 = new javax.swing.JTextField();
+        batchCourseIdLabel = new javax.swing.JLabel();
+        batchCourseIdTextField = new javax.swing.JTextField();
+        addBatchSectionLabel = new javax.swing.JLabel();
+        addBatchNameLabel = new javax.swing.JLabel();
+        addBatchSectionTextField = new javax.swing.JTextField();
+        addBatchNameTextField = new javax.swing.JTextField();
         jSeparator16 = new javax.swing.JSeparator();
         jSeparator28 = new javax.swing.JSeparator();
-        courseUpdateBtn1 = new javax.swing.JButton();
+        batchAddBtn = new javax.swing.JButton();
+        updateBatchPanel = new javax.swing.JPanel();
+        batchCourseYearLabel = new javax.swing.JLabel();
+        addCourseIdTextField4 = new javax.swing.JTextField();
+        updateBatchNameLabel = new javax.swing.JLabel();
+        updateBatchNameTextField = new javax.swing.JTextField();
+        batchSemesterLabel = new javax.swing.JLabel();
+        batchSemesterTextField = new javax.swing.JTextField();
+        batchLoadDataBtn = new javax.swing.JButton();
+        batchUpdateBtn = new javax.swing.JButton();
+        jSeparator29 = new javax.swing.JSeparator();
+        jSeparator30 = new javax.swing.JSeparator();
 
         setMaximumSize(new java.awt.Dimension(910, 630));
         setMinimumSize(new java.awt.Dimension(910, 630));
@@ -994,8 +1004,8 @@ StudentLayout.setHorizontalGroup(
     Batch.setMinimumSize(new java.awt.Dimension(910, 608));
     Batch.setPreferredSize(new java.awt.Dimension(910, 608));
 
-    jComboBox2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Add A New Batch", "Update Batch" }));
+    batchSelect.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    batchSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Add A New Batch", "Update Batch" }));
 
     batchContentPanel.setMaximumSize(new java.awt.Dimension(859, 450));
     batchContentPanel.setMinimumSize(new java.awt.Dimension(859, 450));
@@ -1003,43 +1013,30 @@ StudentLayout.setHorizontalGroup(
     batchContentPanel.setPreferredSize(new java.awt.Dimension(859, 450));
     batchContentPanel.setLayout(new java.awt.CardLayout());
 
-    javax.swing.GroupLayout updateBatchPanelLayout = new javax.swing.GroupLayout(updateBatchPanel);
-    updateBatchPanel.setLayout(updateBatchPanelLayout);
-    updateBatchPanelLayout.setHorizontalGroup(
-        updateBatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGap(0, 859, Short.MAX_VALUE)
-    );
-    updateBatchPanelLayout.setVerticalGroup(
-        updateBatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGap(0, 450, Short.MAX_VALUE)
-    );
+    batchCourseIdLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    batchCourseIdLabel.setText("Enter Course Id:");
 
-    batchContentPanel.add(updateBatchPanel, "card3");
+    batchCourseIdTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    batchCourseIdTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
-    addCourseIdLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    addCourseIdLabel1.setText("Enter Course Id:");
+    addBatchSectionLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    addBatchSectionLabel.setText("Enter Batch Section:");
 
-    addCourseIdTextField1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    addCourseIdTextField1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+    addBatchNameLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    addBatchNameLabel.setText("Enter Batch Name:");
 
-    addCourseIdLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    addCourseIdLabel2.setText("Enter Batch Section:");
+    addBatchSectionTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    addBatchSectionTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
-    addCourseIdLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    addCourseIdLabel3.setText("Enter Batch Name:");
+    addBatchNameTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    addBatchNameTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
-    addCourseIdTextField2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    addCourseIdTextField2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-    addCourseIdTextField3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    addCourseIdTextField3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-    courseUpdateBtn1.setBackground(new java.awt.Color(51, 196, 94));
-    courseUpdateBtn1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    courseUpdateBtn1.setForeground(new java.awt.Color(255, 255, 255));
-    courseUpdateBtn1.setText("Add");
-    courseUpdateBtn1.setFocusPainted(false);
-    courseUpdateBtn1.addActionListener(this::courseUpdateBtn1ActionPerformed);
+    batchAddBtn.setBackground(new java.awt.Color(51, 196, 94));
+    batchAddBtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    batchAddBtn.setForeground(new java.awt.Color(255, 255, 255));
+    batchAddBtn.setText("Add");
+    batchAddBtn.setFocusPainted(false);
+    batchAddBtn.addActionListener(this::batchAddBtnActionPerformed);
 
     javax.swing.GroupLayout addBatchPanelLayout = new javax.swing.GroupLayout(addBatchPanel);
     addBatchPanel.setLayout(addBatchPanelLayout);
@@ -1049,24 +1046,24 @@ StudentLayout.setHorizontalGroup(
             .addGap(15, 15, 15)
             .addGroup(addBatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(addBatchPanelLayout.createSequentialGroup()
-                    .addComponent(addCourseIdLabel1)
+                    .addComponent(batchCourseIdLabel)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(addCourseIdTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
+                    .addComponent(batchCourseIdTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
                     .addGap(474, 474, 474))
                 .addGroup(addBatchPanelLayout.createSequentialGroup()
-                    .addComponent(addCourseIdLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addBatchNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(addBatchPanelLayout.createSequentialGroup()
                     .addGroup(addBatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(addCourseIdLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(addCourseIdTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
-                        .addComponent(addCourseIdTextField3)
+                        .addComponent(addBatchSectionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(addBatchSectionTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
+                        .addComponent(addBatchNameTextField)
                         .addComponent(jSeparator16)
                         .addComponent(jSeparator28))
                     .addGap(0, 0, Short.MAX_VALUE))))
         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addBatchPanelLayout.createSequentialGroup()
             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(courseUpdateBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(batchAddBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(357, 357, 357))
     );
     addBatchPanelLayout.setVerticalGroup(
@@ -1074,26 +1071,109 @@ StudentLayout.setHorizontalGroup(
         .addGroup(addBatchPanelLayout.createSequentialGroup()
             .addGap(58, 58, 58)
             .addGroup(addBatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(addCourseIdLabel1)
-                .addComponent(addCourseIdTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(batchCourseIdLabel)
+                .addComponent(batchCourseIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(60, 60, 60)
-            .addComponent(addCourseIdLabel3)
+            .addComponent(addBatchNameLabel)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(addCourseIdTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(addBatchNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jSeparator16, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(41, 41, 41)
-            .addComponent(addCourseIdLabel2)
+            .addComponent(addBatchSectionLabel)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(addCourseIdTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(addBatchSectionTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jSeparator28, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(36, 36, 36)
-            .addComponent(courseUpdateBtn1)
+            .addComponent(batchAddBtn)
             .addContainerGap(48, Short.MAX_VALUE))
     );
 
     batchContentPanel.add(addBatchPanel, "card2");
+
+    batchCourseYearLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    batchCourseYearLabel.setText("Enter Course Year:");
+
+    addCourseIdTextField4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    addCourseIdTextField4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+    updateBatchNameLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    updateBatchNameLabel.setText("Enter Batch Name:");
+
+    updateBatchNameTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    updateBatchNameTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+    batchSemesterLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    batchSemesterLabel.setText("Enter Semester:");
+
+    batchSemesterTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    batchSemesterTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+    batchLoadDataBtn.setBackground(new java.awt.Color(51, 51, 51));
+    batchLoadDataBtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    batchLoadDataBtn.setForeground(new java.awt.Color(255, 255, 255));
+    batchLoadDataBtn.setText("Load Data");
+    batchLoadDataBtn.setFocusPainted(false);
+
+    batchUpdateBtn.setBackground(new java.awt.Color(51, 51, 51));
+    batchUpdateBtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    batchUpdateBtn.setForeground(new java.awt.Color(255, 255, 255));
+    batchUpdateBtn.setText("Update");
+    batchUpdateBtn.setFocusPainted(false);
+    batchUpdateBtn.addActionListener(this::batchUpdateBtnActionPerformed);
+
+    javax.swing.GroupLayout updateBatchPanelLayout = new javax.swing.GroupLayout(updateBatchPanel);
+    updateBatchPanel.setLayout(updateBatchPanelLayout);
+    updateBatchPanelLayout.setHorizontalGroup(
+        updateBatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(updateBatchPanelLayout.createSequentialGroup()
+            .addGap(30, 30, 30)
+            .addGroup(updateBatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addComponent(jSeparator30)
+                .addComponent(jSeparator29)
+                .addComponent(updateBatchNameTextField)
+                .addGroup(updateBatchPanelLayout.createSequentialGroup()
+                    .addComponent(batchCourseYearLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(18, 18, 18)
+                    .addComponent(addCourseIdTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(updateBatchNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(batchSemesterLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(batchSemesterTextField))
+            .addGap(38, 38, 38)
+            .addComponent(batchLoadDataBtn)
+            .addContainerGap(225, Short.MAX_VALUE))
+        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, updateBatchPanelLayout.createSequentialGroup()
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(batchUpdateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(332, 332, 332))
+    );
+    updateBatchPanelLayout.setVerticalGroup(
+        updateBatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(updateBatchPanelLayout.createSequentialGroup()
+            .addGap(54, 54, 54)
+            .addGroup(updateBatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(batchCourseYearLabel)
+                .addComponent(addCourseIdTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(batchLoadDataBtn))
+            .addGap(56, 56, 56)
+            .addComponent(updateBatchNameLabel)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(updateBatchNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jSeparator29, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(30, 30, 30)
+            .addComponent(batchSemesterLabel)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(batchSemesterTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jSeparator30, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(45, 45, 45)
+            .addComponent(batchUpdateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addContainerGap(44, Short.MAX_VALUE))
+    );
+
+    batchContentPanel.add(updateBatchPanel, "card3");
 
     javax.swing.GroupLayout BatchLayout = new javax.swing.GroupLayout(Batch);
     Batch.setLayout(BatchLayout);
@@ -1102,7 +1182,7 @@ StudentLayout.setHorizontalGroup(
         .addGroup(BatchLayout.createSequentialGroup()
             .addGap(25, 25, 25)
             .addGroup(BatchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(batchSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(batchContentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addContainerGap(26, Short.MAX_VALUE))
     );
@@ -1110,7 +1190,7 @@ StudentLayout.setHorizontalGroup(
         BatchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(BatchLayout.createSequentialGroup()
             .addGap(56, 56, 56)
-            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(batchSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
             .addComponent(batchContentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE))
     );
@@ -1201,9 +1281,13 @@ StudentLayout.setHorizontalGroup(
         // TODO add your handling code here:
     }//GEN-LAST:event_courseAddBtnActionPerformed
 
-    private void courseUpdateBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseUpdateBtn1ActionPerformed
+    private void batchAddBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_batchAddBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_courseUpdateBtn1ActionPerformed
+    }//GEN-LAST:event_batchAddBtnActionPerformed
+
+    private void batchUpdateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_batchUpdateBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_batchUpdateBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1212,17 +1296,16 @@ StudentLayout.setHorizontalGroup(
     private javax.swing.JPanel Course;
     private javax.swing.JPanel Student;
     private javax.swing.JPanel Teacher;
+    private javax.swing.JLabel addBatchNameLabel;
+    private javax.swing.JTextField addBatchNameTextField;
     private javax.swing.JPanel addBatchPanel;
+    private javax.swing.JLabel addBatchSectionLabel;
+    private javax.swing.JTextField addBatchSectionTextField;
     private javax.swing.JLabel addCourseDurationLabel;
     private javax.swing.JTextField addCourseDurationTextField;
     private javax.swing.JLabel addCourseIdLabel;
-    private javax.swing.JLabel addCourseIdLabel1;
-    private javax.swing.JLabel addCourseIdLabel2;
-    private javax.swing.JLabel addCourseIdLabel3;
     private javax.swing.JTextField addCourseIdTextField;
-    private javax.swing.JTextField addCourseIdTextField1;
-    private javax.swing.JTextField addCourseIdTextField2;
-    private javax.swing.JTextField addCourseIdTextField3;
+    private javax.swing.JTextField addCourseIdTextField4;
     private javax.swing.JLabel addCourseNameLabel;
     private javax.swing.JTextField addCourseNameTextField;
     private javax.swing.JPanel addCoursePanel;
@@ -1244,14 +1327,21 @@ StudentLayout.setHorizontalGroup(
     private javax.swing.JLabel adminLastNameLabel;
     private javax.swing.JLabel adminSelectLabel;
     private javax.swing.JButton adminUpdateBtn;
+    private javax.swing.JButton batchAddBtn;
     private javax.swing.JPanel batchContentPanel;
+    private javax.swing.JLabel batchCourseIdLabel;
+    private javax.swing.JTextField batchCourseIdTextField;
+    private javax.swing.JLabel batchCourseYearLabel;
+    private javax.swing.JButton batchLoadDataBtn;
+    private javax.swing.JComboBox<String> batchSelect;
+    private javax.swing.JLabel batchSemesterLabel;
+    private javax.swing.JTextField batchSemesterTextField;
+    private javax.swing.JButton batchUpdateBtn;
     private javax.swing.JButton courseAddBtn;
     private javax.swing.JPanel courseContentPanel;
     private javax.swing.JButton courseDeleteBtn;
     private javax.swing.JComboBox<String> courseSelect;
     private javax.swing.JButton courseUpdateBtn;
-    private javax.swing.JButton courseUpdateBtn1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
@@ -1273,7 +1363,9 @@ StudentLayout.setHorizontalGroup(
     private javax.swing.JSeparator jSeparator26;
     private javax.swing.JSeparator jSeparator27;
     private javax.swing.JSeparator jSeparator28;
+    private javax.swing.JSeparator jSeparator29;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator30;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
@@ -1321,6 +1413,8 @@ StudentLayout.setHorizontalGroup(
     private javax.swing.JTextField teacherLastNameText;
     private javax.swing.JLabel teacherSelectLabel;
     private javax.swing.JButton teacherUpdateBtn;
+    private javax.swing.JLabel updateBatchNameLabel;
+    private javax.swing.JTextField updateBatchNameTextField;
     private javax.swing.JPanel updateBatchPanel;
     private javax.swing.JLabel updateCourseDurationLabel;
     private javax.swing.JTextField updateCourseDurationTextField;
