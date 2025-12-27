@@ -72,9 +72,7 @@ public class TeacherEnroll extends javax.swing.JPanel {
         firstName.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         firstName.addActionListener(this::firstNameActionPerformed);
 
-        gender.setBackground(new java.awt.Color(255, 255, 255));
         gender.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        gender.setForeground(new java.awt.Color(0, 0, 0));
         gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male","Female","Other" }));
         gender.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         gender.setFocusable(false);
@@ -112,9 +110,7 @@ public class TeacherEnroll extends javax.swing.JPanel {
         genderLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         genderLabel1.setText("Department");
 
-        department.setBackground(new java.awt.Color(255, 255, 255));
         department.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        department.setForeground(new java.awt.Color(0, 0, 0));
         department.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male","Female","Other" }));
         department.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         department.setFocusable(false);
