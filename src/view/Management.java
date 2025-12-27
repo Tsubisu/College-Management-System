@@ -171,7 +171,7 @@ public class Management extends javax.swing.JPanel {
         batchSelect1 = new javax.swing.JComboBox<>();
         moduleChaptersContentPanel = new javax.swing.JPanel();
         addModuleChapters = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        updateModuleChapters = new javax.swing.JPanel();
 
         setMaximumSize(new java.awt.Dimension(910, 630));
         setMinimumSize(new java.awt.Dimension(910, 630));
@@ -1282,18 +1282,18 @@ StudentLayout.setHorizontalGroup(
 
     moduleChaptersContentPanel.add(addModuleChapters, "card2");
 
-    javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-    jPanel1.setLayout(jPanel1Layout);
-    jPanel1Layout.setHorizontalGroup(
-        jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+    javax.swing.GroupLayout updateModuleChaptersLayout = new javax.swing.GroupLayout(updateModuleChapters);
+    updateModuleChapters.setLayout(updateModuleChaptersLayout);
+    updateModuleChaptersLayout.setHorizontalGroup(
+        updateModuleChaptersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGap(0, 859, Short.MAX_VALUE)
     );
-    jPanel1Layout.setVerticalGroup(
-        jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+    updateModuleChaptersLayout.setVerticalGroup(
+        updateModuleChaptersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGap(0, 455, Short.MAX_VALUE)
     );
 
-    moduleChaptersContentPanel.add(jPanel1, "card3");
+    moduleChaptersContentPanel.add(updateModuleChapters, "card3");
 
     javax.swing.GroupLayout Module_ChaptersLayout = new javax.swing.GroupLayout(Module_Chapters);
     Module_Chapters.setLayout(Module_ChaptersLayout);
@@ -1499,7 +1499,6 @@ StudentLayout.setHorizontalGroup(
     private javax.swing.JComboBox<String> courseSelect;
     private javax.swing.JButton courseUpdateBtn;
     private javax.swing.JFileChooser fileChooser;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
@@ -1585,5 +1584,6 @@ StudentLayout.setHorizontalGroup(
     private javax.swing.JLabel updateCourseNameLabel;
     private javax.swing.JTextField updateCourseNameTextField;
     private javax.swing.JPanel updateCoursePanel;
+    private javax.swing.JPanel updateModuleChapters;
     // End of variables declaration//GEN-END:variables
 }
