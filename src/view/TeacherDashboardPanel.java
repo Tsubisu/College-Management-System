@@ -21,6 +21,11 @@ public class TeacherDashboardPanel extends DashboardPanel {
     private final STModulePanel modulePanel;
     private final TeacherProfile profilePanel;
 
+    public NoticePanel getNoticePanel() {
+        return noticePanel;
+    }
+
+    private final NoticePanel noticePanel;
     public ModuleDisplay getModuleDisplay() {
         return moduleDisplay;
     }
@@ -51,11 +56,13 @@ public class TeacherDashboardPanel extends DashboardPanel {
         profilePanel = new TeacherProfile();
         moduleDisplay= new ModuleDisplay();
         modulePanel=new STModulePanel();
+        noticePanel= new NoticePanel();
         contentPanel.add(profilePanel, "Profile");
 
         contentPanel.add(modulePanel, "Module");
 
         contentPanel.add(moduleDisplay, "ModuleDisplay");
+        contentPanel.add(noticePanel,"Notice");
 
 
 

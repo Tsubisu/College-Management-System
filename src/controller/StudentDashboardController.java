@@ -2,6 +2,7 @@ package controller;
 
 
 import dao.Module;
+import dao.Notice;
 import view.*;
 
 import java.awt.event.ActionEvent;
@@ -9,18 +10,46 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import model.Student;
 
+import javax.swing.*;
 
-public class StudentDashboardController extends DashboardController{
+
+public class StudentDashboardController extends DashboardController {
     StudentDashboard studentDashboard;
     Student student;
 
     public StudentDashboardController(StudentDashboard studentDashboard, Student student) {
-        this.studentDashboard=studentDashboard;
-        this.student=student;
-        dashboard=studentDashboard;
+        this.studentDashboard = studentDashboard;
+        this.student = student;
+        dashboard = studentDashboard;
         buttonListener();
         modulePageSetter();
         profilePageSetter();
+        noticePageSetter();
+    }
+
+
+    private void noticePageSetter() {
+        dao.Notice noticeDao= new Notice();
+        ArrayList<model.Notice> notices= noticeDao.getNotices("Student");
+        NoticePanel noticePanel= ((StudentDashboardPanel)studentDashboard.getDashPanel()).getNoticePanel();
+        for(model.Notice notice: notices)
+        {
+            NoticeContainer noticeContainer= new NoticeContainer();
+            noticeContainer.setTitle(notice.getTitle());
+            noticeContainer.setDate(notice.getPostedAt().toString());
+            noticeContainer.setNoticeContent(notice.getMessage());
+            noticeContainer.addReadMoreActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    javax.swing.JOptionPane.showMessageDialog(studentDashboard,notice.getMessage(),notice.getTitle().toString(),JOptionPane.INFORMATION_MESSAGE);
+                }
+            });
+
+            noticePanel.getNoticeContentPanel().add(noticeContainer);
+
+
+        }
+
     }
 
 

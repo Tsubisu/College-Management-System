@@ -17,6 +17,12 @@ public class StudentDashboardPanel extends DashboardPanel {
     private final StudentProfile studentProfile;
     private final ModuleDisplay moduleDisplay;
 
+    public NoticePanel getNoticePanel() {
+        return noticePanel;
+    }
+
+    private final NoticePanel noticePanel;
+
     /**
      * Creates new form StudentDashboardPanel
      */
@@ -37,9 +43,12 @@ public class StudentDashboardPanel extends DashboardPanel {
         studentProfile = new StudentProfile();
         modulePanel = new STModulePanel();
         moduleDisplay = new ModuleDisplay();
+        noticePanel= new NoticePanel();
+
         contentPanel.add(studentProfile,"Profile");
         contentPanel.add(modulePanel,"Module");
         contentPanel.add(moduleDisplay,"ModuleDisplay");
+        contentPanel.add(noticePanel,"Notice");
 
 
 

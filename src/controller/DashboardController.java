@@ -1,13 +1,13 @@
 package controller;
 
+import dao.Notice;
 import model.Module;
 import model.User;
 
 import org.icepdf.ri.common.ComponentKeyBinding;
 import org.icepdf.ri.common.SwingController;
 import org.icepdf.ri.common.SwingViewBuilder;
-import view.Dashboard;
-import view.ModuleDisplay;
+import view.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -173,4 +173,9 @@ public abstract class DashboardController {
             JOptionPane.showMessageDialog(moduleDisplay,"Cannot Load Pdf");
         }
     }
+
+
+
+
+
 }
