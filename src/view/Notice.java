@@ -26,19 +26,54 @@ public class Notice extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        noticeLabel = new javax.swing.JLabel();
+        noticeScrollPane = new javax.swing.JScrollPane();
+        noticeContentPanel = new javax.swing.JPanel();
+
+        setMaximumSize(new java.awt.Dimension(910, 630));
+        setMinimumSize(new java.awt.Dimension(910, 630));
+
+        noticeLabel.setBackground(new java.awt.Color(255, 255, 255));
+        noticeLabel.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        noticeLabel.setForeground(new java.awt.Color(196, 0, 98));
+        noticeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        noticeLabel.setText("Notices");
+
+        noticeScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        noticeContentPanel.setBackground(new java.awt.Color(255, 255, 255));
+        noticeContentPanel.setMaximumSize(new java.awt.Dimension(910, 960));
+        noticeContentPanel.setMinimumSize(new java.awt.Dimension(910, 480));
+        noticeContentPanel.setPreferredSize(new java.awt.Dimension(910, 480));
+        noticeContentPanel.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEADING, 17, 10));
+        noticeScrollPane.setViewportView(noticeContentPanel);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(noticeScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(333, 333, 333)
+                .addComponent(noticeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(noticeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addComponent(noticeScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel noticeContentPanel;
+    private javax.swing.JLabel noticeLabel;
+    private javax.swing.JScrollPane noticeScrollPane;
     // End of variables declaration//GEN-END:variables
 }
