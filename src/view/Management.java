@@ -83,24 +83,24 @@ public class Management extends javax.swing.JPanel {
         loadStudentDataBtn = new javax.swing.JButton();
         studentUpdateBtn = new javax.swing.JButton();
         Admin = new javax.swing.JPanel();
-        firstNameLabel = new javax.swing.JLabel();
-        lastNameLabel = new javax.swing.JLabel();
-        studentFirstNameText1 = new javax.swing.JTextField();
+        adminFirstNameLabel = new javax.swing.JLabel();
+        adminLastNameLabel = new javax.swing.JLabel();
+        adminFirstNameText = new javax.swing.JTextField();
         studentFirstNameText2 = new javax.swing.JTextField();
-        studentGenderLabel1 = new javax.swing.JLabel();
-        studentGenderSelect1 = new javax.swing.JComboBox<>();
-        studentEmailLabel1 = new javax.swing.JLabel();
-        studentEmailText1 = new javax.swing.JTextField();
-        studentAddressLabel1 = new javax.swing.JLabel();
-        studentEmailText2 = new javax.swing.JTextField();
-        studentContactLabel1 = new javax.swing.JLabel();
-        studentEmailText3 = new javax.swing.JTextField();
-        genderLabel1 = new javax.swing.JLabel();
-        department = new javax.swing.JComboBox<>();
-        update = new javax.swing.JButton();
-        studentSelectLabel1 = new javax.swing.JLabel();
-        studentIdTextField1 = new javax.swing.JTextField();
-        loadStudentDataBtn1 = new javax.swing.JButton();
+        adminGenderLabel = new javax.swing.JLabel();
+        adminGenderSelect = new javax.swing.JComboBox<>();
+        adminEmailLabel = new javax.swing.JLabel();
+        adminEmailText = new javax.swing.JTextField();
+        adminAddressLabel = new javax.swing.JLabel();
+        adminAddressText = new javax.swing.JTextField();
+        adminContactLabel = new javax.swing.JLabel();
+        adminContactText = new javax.swing.JTextField();
+        adminDepartmentLabel = new javax.swing.JLabel();
+        adminDepartmentSelect = new javax.swing.JComboBox<>();
+        adminUpdateBtn = new javax.swing.JButton();
+        adminSelectLabel = new javax.swing.JLabel();
+        adminIdTextField = new javax.swing.JTextField();
+        loadAdminDataBtn = new javax.swing.JButton();
         jSeparator17 = new javax.swing.JSeparator();
         jSeparator18 = new javax.swing.JSeparator();
         jSeparator19 = new javax.swing.JSeparator();
@@ -530,77 +530,77 @@ StudentLayout.setHorizontalGroup(
 
     tabbedPane.addTab("tab1", Student);
 
-    firstNameLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    firstNameLabel.setText("FIrst Name");
+    adminFirstNameLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    adminFirstNameLabel.setText("FIrst Name");
 
-    lastNameLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    lastNameLabel.setText("Last Name");
+    adminLastNameLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    adminLastNameLabel.setText("Last Name");
 
-    studentFirstNameText1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    studentFirstNameText1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-    studentFirstNameText1.addActionListener(this::studentFirstNameText1ActionPerformed);
+    adminFirstNameText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    adminFirstNameText.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+    adminFirstNameText.addActionListener(this::adminFirstNameTextActionPerformed);
 
     studentFirstNameText2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
     studentFirstNameText2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
     studentFirstNameText2.addActionListener(this::studentFirstNameText2ActionPerformed);
 
-    studentGenderLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    studentGenderLabel1.setText("Gender");
+    adminGenderLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    adminGenderLabel.setText("Gender");
 
-    studentGenderSelect1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    studentGenderSelect1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male","Female","Other" }));
-    studentGenderSelect1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-    studentGenderSelect1.setFocusable(false);
-    studentGenderSelect1.setOpaque(true);
-    studentGenderSelect1.setRequestFocusEnabled(false);
-    studentGenderSelect1.addActionListener(this::studentGenderSelect1ActionPerformed);
+    adminGenderSelect.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    adminGenderSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male","Female","Other" }));
+    adminGenderSelect.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+    adminGenderSelect.setFocusable(false);
+    adminGenderSelect.setOpaque(true);
+    adminGenderSelect.setRequestFocusEnabled(false);
+    adminGenderSelect.addActionListener(this::adminGenderSelectActionPerformed);
 
-    studentEmailLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    studentEmailLabel1.setText("Email");
+    adminEmailLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    adminEmailLabel.setText("Email");
 
-    studentEmailText1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    studentEmailText1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+    adminEmailText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    adminEmailText.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
-    studentAddressLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    studentAddressLabel1.setText("Address");
+    adminAddressLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    adminAddressLabel.setText("Address");
 
-    studentEmailText2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    studentEmailText2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+    adminAddressText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    adminAddressText.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
-    studentContactLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    studentContactLabel1.setText("Contact");
+    adminContactLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    adminContactLabel.setText("Contact");
 
-    studentEmailText3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    studentEmailText3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-    studentEmailText3.addActionListener(this::studentEmailText3ActionPerformed);
+    adminContactText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    adminContactText.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+    adminContactText.addActionListener(this::adminContactTextActionPerformed);
 
-    genderLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    genderLabel1.setText("Department");
+    adminDepartmentLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    adminDepartmentLabel.setText("Department");
 
-    department.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    department.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male","Female","Other" }));
-    department.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-    department.setFocusable(false);
-    department.setOpaque(true);
-    department.setRequestFocusEnabled(false);
-    department.addActionListener(this::departmentActionPerformed);
+    adminDepartmentSelect.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    adminDepartmentSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male","Female","Other" }));
+    adminDepartmentSelect.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+    adminDepartmentSelect.setFocusable(false);
+    adminDepartmentSelect.setOpaque(true);
+    adminDepartmentSelect.setRequestFocusEnabled(false);
+    adminDepartmentSelect.addActionListener(this::adminDepartmentSelectActionPerformed);
 
-    update.setBackground(new java.awt.Color(0, 0, 0));
-    update.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    update.setForeground(new java.awt.Color(255, 255, 255));
-    update.setText("Update");
-    update.addActionListener(this::updateActionPerformed);
+    adminUpdateBtn.setBackground(new java.awt.Color(0, 0, 0));
+    adminUpdateBtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    adminUpdateBtn.setForeground(new java.awt.Color(255, 255, 255));
+    adminUpdateBtn.setText("Update");
+    adminUpdateBtn.addActionListener(this::adminUpdateBtnActionPerformed);
 
-    studentSelectLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    studentSelectLabel1.setText("Enter Admin Id:");
+    adminSelectLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    adminSelectLabel.setText("Enter Admin Id:");
 
-    studentIdTextField1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    adminIdTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-    loadStudentDataBtn1.setBackground(new java.awt.Color(51, 51, 51));
-    loadStudentDataBtn1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    loadStudentDataBtn1.setForeground(new java.awt.Color(255, 255, 255));
-    loadStudentDataBtn1.setText("Load Data");
-    loadStudentDataBtn1.setFocusPainted(false);
+    loadAdminDataBtn.setBackground(new java.awt.Color(51, 51, 51));
+    loadAdminDataBtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    loadAdminDataBtn.setForeground(new java.awt.Color(255, 255, 255));
+    loadAdminDataBtn.setText("Load Data");
+    loadAdminDataBtn.setFocusPainted(false);
 
     javax.swing.GroupLayout AdminLayout = new javax.swing.GroupLayout(Admin);
     Admin.setLayout(AdminLayout);
@@ -611,39 +611,39 @@ StudentLayout.setHorizontalGroup(
             .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(AdminLayout.createSequentialGroup()
                     .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(firstNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(studentFirstNameText1, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(studentGenderLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(studentGenderSelect1, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(studentAddressLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(studentEmailText2, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(adminFirstNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(adminFirstNameText, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(adminGenderLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(adminGenderSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(adminAddressLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(adminAddressText, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jSeparator17, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(genderLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(department, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(adminDepartmentLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(adminDepartmentSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jSeparator19, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jSeparator21, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jSeparator23, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGap(109, 109, 109)
                     .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(studentEmailText3, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(studentContactLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(studentEmailText1, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(studentEmailLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(adminContactText, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(adminContactLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(adminEmailText, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(adminEmailLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(studentFirstNameText2, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lastNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(adminLastNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jSeparator18, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jSeparator20, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jSeparator22, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(AdminLayout.createSequentialGroup()
-                    .addComponent(studentSelectLabel1)
+                    .addComponent(adminSelectLabel)
                     .addGap(18, 18, 18)
-                    .addComponent(studentIdTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(adminIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(26, 26, 26)
-                    .addComponent(loadStudentDataBtn1)))
+                    .addComponent(loadAdminDataBtn)))
             .addContainerGap(26, Short.MAX_VALUE))
         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AdminLayout.createSequentialGroup()
             .addGap(0, 0, Short.MAX_VALUE)
-            .addComponent(update, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(adminUpdateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(366, 366, 366))
     );
     AdminLayout.setVerticalGroup(
@@ -651,16 +651,16 @@ StudentLayout.setHorizontalGroup(
         .addGroup(AdminLayout.createSequentialGroup()
             .addGap(15, 15, 15)
             .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(studentSelectLabel1)
-                .addComponent(studentIdTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(loadStudentDataBtn1))
+                .addComponent(adminSelectLabel)
+                .addComponent(adminIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(loadAdminDataBtn))
             .addGap(34, 34, 34)
             .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(firstNameLabel)
-                .addComponent(lastNameLabel))
+                .addComponent(adminFirstNameLabel)
+                .addComponent(adminLastNameLabel))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(studentFirstNameText1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(adminFirstNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(studentFirstNameText2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -668,12 +668,12 @@ StudentLayout.setHorizontalGroup(
                     .addComponent(jSeparator17, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(26, 26, 26)
                     .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(studentGenderLabel1)
-                        .addComponent(studentEmailLabel1))
+                        .addComponent(adminGenderLabel)
+                        .addComponent(adminEmailLabel))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(studentGenderSelect1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(studentEmailText1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(adminGenderSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(adminEmailText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addComponent(jSeparator18, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -681,25 +681,25 @@ StudentLayout.setHorizontalGroup(
                     .addComponent(jSeparator19, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(15, 15, 15)
                     .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(studentAddressLabel1)
-                        .addComponent(studentContactLabel1))
+                        .addComponent(adminAddressLabel)
+                        .addComponent(adminContactLabel))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(studentEmailText2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(studentEmailText3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(adminAddressText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(adminContactText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addComponent(jSeparator20, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jSeparator21, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(jSeparator22, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(24, 24, 24)
-            .addComponent(genderLabel1)
+            .addComponent(adminDepartmentLabel)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(department, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(adminDepartmentSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jSeparator23, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-            .addComponent(update, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(adminUpdateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(87, 87, 87))
     );
 
@@ -757,34 +757,47 @@ StudentLayout.setHorizontalGroup(
         // TODO add your handling code here:
     }//GEN-LAST:event_studentFirstNameText2ActionPerformed
 
-    private void studentFirstNameText1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentFirstNameText1ActionPerformed
+    private void adminFirstNameTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminFirstNameTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_studentFirstNameText1ActionPerformed
+    }//GEN-LAST:event_adminFirstNameTextActionPerformed
 
-    private void studentGenderSelect1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentGenderSelect1ActionPerformed
+    private void adminGenderSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminGenderSelectActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_studentGenderSelect1ActionPerformed
+    }//GEN-LAST:event_adminGenderSelectActionPerformed
 
-    private void departmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_departmentActionPerformed
+    private void adminDepartmentSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminDepartmentSelectActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_departmentActionPerformed
+    }//GEN-LAST:event_adminDepartmentSelectActionPerformed
 
-    private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
+    private void adminUpdateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminUpdateBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_updateActionPerformed
+    }//GEN-LAST:event_adminUpdateBtnActionPerformed
 
-    private void studentEmailText3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentEmailText3ActionPerformed
+    private void adminContactTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminContactTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_studentEmailText3ActionPerformed
+    }//GEN-LAST:event_adminContactTextActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Admin;
     private javax.swing.JPanel Student;
     private javax.swing.JPanel Teacher;
-    private javax.swing.JComboBox<String> department;
-    private javax.swing.JLabel firstNameLabel;
-    private javax.swing.JLabel genderLabel1;
+    private javax.swing.JLabel adminAddressLabel;
+    private javax.swing.JTextField adminAddressText;
+    private javax.swing.JLabel adminContactLabel;
+    private javax.swing.JTextField adminContactText;
+    private javax.swing.JLabel adminDepartmentLabel;
+    private javax.swing.JComboBox<String> adminDepartmentSelect;
+    private javax.swing.JLabel adminEmailLabel;
+    private javax.swing.JTextField adminEmailText;
+    private javax.swing.JLabel adminFirstNameLabel;
+    private javax.swing.JTextField adminFirstNameText;
+    private javax.swing.JLabel adminGenderLabel;
+    private javax.swing.JComboBox<String> adminGenderSelect;
+    private javax.swing.JTextField adminIdTextField;
+    private javax.swing.JLabel adminLastNameLabel;
+    private javax.swing.JLabel adminSelectLabel;
+    private javax.swing.JButton adminUpdateBtn;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
@@ -807,40 +820,28 @@ StudentLayout.setHorizontalGroup(
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
-    private javax.swing.JLabel lastNameLabel;
+    private javax.swing.JButton loadAdminDataBtn;
     private javax.swing.JButton loadStudentDataBtn;
-    private javax.swing.JButton loadStudentDataBtn1;
     private javax.swing.JButton loadTeacherDataBtn;
     private javax.swing.JLabel studentAddressLabel;
-    private javax.swing.JLabel studentAddressLabel1;
     private javax.swing.JTextField studentAddressText;
     private javax.swing.JLabel studentBatchLabel;
     private javax.swing.JComboBox<String> studentBatchSelect;
     private javax.swing.JLabel studentContactLabel;
-    private javax.swing.JLabel studentContactLabel1;
     private javax.swing.JTextField studentContactText;
     private javax.swing.JLabel studentCourseLabel;
     private javax.swing.JComboBox<String> studentCourseSelect;
     private javax.swing.JLabel studentEmailLabel;
-    private javax.swing.JLabel studentEmailLabel1;
     private javax.swing.JTextField studentEmailText;
-    private javax.swing.JTextField studentEmailText1;
-    private javax.swing.JTextField studentEmailText2;
-    private javax.swing.JTextField studentEmailText3;
     private javax.swing.JLabel studentFirstNameLabel;
     private javax.swing.JTextField studentFirstNameText;
-    private javax.swing.JTextField studentFirstNameText1;
     private javax.swing.JTextField studentFirstNameText2;
     private javax.swing.JLabel studentGenderLabel;
-    private javax.swing.JLabel studentGenderLabel1;
     private javax.swing.JComboBox<String> studentGenderSelect;
-    private javax.swing.JComboBox<String> studentGenderSelect1;
     private javax.swing.JTextField studentIdTextField;
-    private javax.swing.JTextField studentIdTextField1;
     private javax.swing.JLabel studentLastNameLabel;
     private javax.swing.JTextField studentLastNameText;
     private javax.swing.JLabel studentSelectLabel;
-    private javax.swing.JLabel studentSelectLabel1;
     private javax.swing.JButton studentUpdateBtn;
     private javax.swing.JTabbedPane tabbedPane;
     private javax.swing.JLabel teacherAddressLabel;
@@ -860,6 +861,5 @@ StudentLayout.setHorizontalGroup(
     private javax.swing.JTextField teacherLastNameText;
     private javax.swing.JLabel teacherSelectLabel;
     private javax.swing.JButton teacherUpdateBtn;
-    private javax.swing.JButton update;
     // End of variables declaration//GEN-END:variables
 }
