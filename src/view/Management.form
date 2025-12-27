@@ -62,45 +62,45 @@
                                           <Component id="jSeparator12" min="-2" pref="380" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="firstNameLabel1" min="-2" pref="134" max="-2" attributes="0"/>
+                                          <Component id="teacherFirstNameLabel" min="-2" pref="134" max="-2" attributes="0"/>
                                           <EmptySpace min="314" pref="314" max="-2" attributes="0"/>
-                                          <Component id="lastNameLabel1" min="-2" pref="134" max="-2" attributes="0"/>
+                                          <Component id="teacherLastNameLabel" min="-2" pref="134" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                                          <Component id="addressLabel1" min="-2" pref="134" max="-2" attributes="0"/>
+                                          <Component id="teacherAddressLabel" min="-2" pref="134" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="310" max="-2" attributes="0"/>
-                                          <Component id="contactLabel1" min="-2" pref="134" max="-2" attributes="0"/>
+                                          <Component id="teacherContactLabel" min="-2" pref="134" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jSeparator9" alignment="0" min="-2" pref="380" max="-2" attributes="0"/>
-                                              <Component id="firstName1" alignment="0" min="-2" pref="380" max="-2" attributes="0"/>
+                                              <Component id="teacherFirstNameText" alignment="0" min="-2" pref="380" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Component id="jSeparator10" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="lastName1" alignment="0" min="-2" pref="380" max="-2" attributes="0"/>
+                                              <Component id="teacherLastNameText" alignment="0" min="-2" pref="380" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="genderLabel1" alignment="0" min="-2" pref="134" max="-2" attributes="0"/>
-                                              <Component id="gender1" alignment="0" min="-2" pref="380" max="-2" attributes="0"/>
+                                              <Component id="teacherGenderLabel" alignment="0" min="-2" pref="134" max="-2" attributes="0"/>
+                                              <Component id="teacherGender" alignment="0" min="-2" pref="380" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="emailLabel1" alignment="0" min="-2" pref="134" max="-2" attributes="0"/>
-                                              <Component id="email1" alignment="0" min="-2" pref="380" max="-2" attributes="0"/>
+                                              <Component id="teacherEmailLabel" alignment="0" min="-2" pref="134" max="-2" attributes="0"/>
+                                              <Component id="teacherEmailText" alignment="0" min="-2" pref="380" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="course1" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="address1" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="teacherDepartment" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="teacherAddressText" alignment="1" max="32767" attributes="0"/>
                                           <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                              <Component id="courseLabel1" alignment="0" min="-2" pref="134" max="-2" attributes="0"/>
+                                              <Component id="teacherDepartmentLabel" alignment="0" min="-2" pref="134" max="-2" attributes="0"/>
                                               <Component id="jSeparator13" alignment="0" min="-2" pref="380" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
@@ -110,10 +110,8 @@
                                       </Group>
                                       <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="batch1" alignment="0" pref="384" max="32767" attributes="0"/>
                                           <Component id="jSeparator14" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="batchLabel1" alignment="0" min="-2" pref="134" max="-2" attributes="0"/>
-                                          <Component id="contact1" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="teacherContactText" alignment="0" pref="384" max="32767" attributes="0"/>
                                           <Component id="jSeparator16" alignment="1" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -121,7 +119,7 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                              <Component id="teacherSelectLabel1" min="-2" max="-2" attributes="0"/>
+                              <Component id="teacherSelectLabel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="teacherIdTextField" min="-2" pref="143" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -129,7 +127,7 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="410" max="-2" attributes="0"/>
-                              <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                              <Component id="teacherUpdateBtn" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace pref="54" max="32767" attributes="0"/>
@@ -141,19 +139,19 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="teacherSelectLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="teacherSelectLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="teacherIdTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="loadTeacherDataBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="firstNameLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lastNameLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="teacherFirstNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="teacherLastNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="firstName1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lastName1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="teacherFirstNameText" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="teacherLastNameText" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -162,13 +160,13 @@
                       </Group>
                       <EmptySpace min="33" pref="33" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="genderLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="emailLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="teacherGenderLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="teacherEmailLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="gender1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="email1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="teacherGender" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="teacherEmailText" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -177,51 +175,40 @@
                       </Group>
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="addressLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="teacherAddressLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
-                              <Component id="contactLabel1" min="-2" max="-2" attributes="0"/>
+                              <Component id="teacherContactLabel" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="address1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="contact1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="teacherAddressText" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="teacherContactText" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jSeparator13" alignment="0" min="-2" pref="10" max="-2" attributes="0"/>
                           <Component id="jSeparator14" alignment="0" min="-2" pref="10" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="courseLabel1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="course1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="batch1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="batchLabel1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                      <Component id="teacherDepartmentLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                      <Component id="teacherDepartment" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jSeparator15" alignment="0" min="-2" pref="10" max="-2" attributes="0"/>
                           <Component id="jSeparator16" alignment="0" min="-2" pref="19" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                      <Component id="teacherUpdateBtn" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="37" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JTextField" name="firstName1">
+            <Component class="javax.swing.JTextField" name="teacherFirstNameText">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
@@ -233,19 +220,13 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="firstName1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="teacherFirstNameTextActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JComboBox" name="gender1">
+            <Component class="javax.swing.JComboBox" name="teacherGender">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Male&quot;,&quot;Female&quot;,&quot;Other&quot; })" type="code"/>
@@ -260,13 +241,13 @@
                 <Property name="requestFocusEnabled" type="boolean" value="false"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="gender1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="teacherGenderActionPerformed"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="contactLabel1">
+            <Component class="javax.swing.JLabel" name="teacherContactLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
@@ -274,7 +255,7 @@
                 <Property name="text" type="java.lang.String" value="Contact"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="teacherSelectLabel1">
+            <Component class="javax.swing.JLabel" name="teacherSelectLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
@@ -306,7 +287,7 @@
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator12">
             </Component>
-            <Component class="javax.swing.JButton" name="jButton3">
+            <Component class="javax.swing.JButton" name="teacherUpdateBtn">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
@@ -319,7 +300,7 @@
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator14">
             </Component>
-            <Component class="javax.swing.JTextField" name="lastName1">
+            <Component class="javax.swing.JTextField" name="teacherLastNameText">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
@@ -331,7 +312,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="email1">
+            <Component class="javax.swing.JTextField" name="teacherEmailText">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
@@ -343,7 +324,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="address1">
+            <Component class="javax.swing.JTextField" name="teacherAddressText">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
@@ -355,7 +336,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="contact1">
+            <Component class="javax.swing.JTextField" name="teacherContactText">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
@@ -367,42 +348,28 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="contact1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="teacherContactTextActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="courseLabel1">
+            <Component class="javax.swing.JLabel" name="teacherDepartmentLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Course"/>
+                <Property name="text" type="java.lang.String" value="Department"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator15">
             </Component>
-            <Component class="javax.swing.JLabel" name="batchLabel1">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="18" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Batch"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator16">
             </Component>
-            <Component class="javax.swing.JComboBox" name="course1">
+            <Component class="javax.swing.JComboBox" name="teacherDepartment">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Select a course&quot;&#xa;+ &quot;&quot; })" type="code"/>
+                  <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Select a studentCourseSelect&quot;&#xa;+ &quot;&quot; })" type="code"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
@@ -414,43 +381,13 @@
                 <Property name="requestFocusEnabled" type="boolean" value="false"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="course1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="teacherDepartmentActionPerformed"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JComboBox" name="batch1">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="18" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Select a batch&quot;&#xa;+ &quot;&quot; })" type="code"/>
-                </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
-                    <EmptyBorder/>
-                  </Border>
-                </Property>
-                <Property name="focusable" type="boolean" value="false"/>
-                <Property name="opaque" type="boolean" value="true"/>
-                <Property name="requestFocusEnabled" type="boolean" value="false"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="batch1ActionPerformed"/>
-              </Events>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JLabel" name="firstNameLabel1">
+            <Component class="javax.swing.JLabel" name="teacherFirstNameLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
@@ -458,7 +395,7 @@
                 <Property name="text" type="java.lang.String" value="FIrst Name"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="lastNameLabel1">
+            <Component class="javax.swing.JLabel" name="teacherLastNameLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
@@ -466,7 +403,7 @@
                 <Property name="text" type="java.lang.String" value="Last Name"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="genderLabel1">
+            <Component class="javax.swing.JLabel" name="teacherGenderLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
@@ -474,7 +411,7 @@
                 <Property name="text" type="java.lang.String" value="Gender"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="emailLabel1">
+            <Component class="javax.swing.JLabel" name="teacherEmailLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
@@ -482,7 +419,7 @@
                 <Property name="text" type="java.lang.String" value="Email"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="addressLabel1">
+            <Component class="javax.swing.JLabel" name="teacherAddressLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
@@ -521,45 +458,45 @@
                                           <Component id="jSeparator4" min="-2" pref="380" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="firstNameLabel" min="-2" pref="134" max="-2" attributes="0"/>
+                                          <Component id="studentFirstNameLabel" min="-2" pref="134" max="-2" attributes="0"/>
                                           <EmptySpace min="314" pref="314" max="-2" attributes="0"/>
-                                          <Component id="lastNameLabel" min="-2" pref="134" max="-2" attributes="0"/>
+                                          <Component id="studentLastNameLabel" min="-2" pref="134" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                                          <Component id="addressLabel" min="-2" pref="134" max="-2" attributes="0"/>
+                                          <Component id="studentAddressLabel" min="-2" pref="134" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="310" max="-2" attributes="0"/>
-                                          <Component id="contactLabel" min="-2" pref="134" max="-2" attributes="0"/>
+                                          <Component id="studentContactLabel" min="-2" pref="134" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jSeparator1" alignment="0" min="-2" pref="380" max="-2" attributes="0"/>
-                                              <Component id="firstName" alignment="0" min="-2" pref="380" max="-2" attributes="0"/>
+                                              <Component id="studentFirstNameText" alignment="0" min="-2" pref="380" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Component id="jSeparator2" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="lastName" alignment="0" min="-2" pref="380" max="-2" attributes="0"/>
+                                              <Component id="studentLastNameText" alignment="0" min="-2" pref="380" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="genderLabel" alignment="0" min="-2" pref="134" max="-2" attributes="0"/>
-                                              <Component id="gender" alignment="0" min="-2" pref="380" max="-2" attributes="0"/>
+                                              <Component id="studentGenderLabel" alignment="0" min="-2" pref="134" max="-2" attributes="0"/>
+                                              <Component id="studentGenderSelect" alignment="0" min="-2" pref="380" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="emailLabel" alignment="0" min="-2" pref="134" max="-2" attributes="0"/>
-                                              <Component id="email" alignment="0" min="-2" pref="380" max="-2" attributes="0"/>
+                                              <Component id="studentEmailLabel" alignment="0" min="-2" pref="134" max="-2" attributes="0"/>
+                                              <Component id="studentEmailText" alignment="0" min="-2" pref="380" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="course" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="address" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="studentCourseSelect" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="studentAddressText" alignment="1" max="32767" attributes="0"/>
                                           <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                              <Component id="courseLabel" alignment="0" min="-2" pref="134" max="-2" attributes="0"/>
+                                              <Component id="studentCourseLabel" alignment="0" min="-2" pref="134" max="-2" attributes="0"/>
                                               <Component id="jSeparator5" alignment="0" min="-2" pref="380" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
@@ -569,10 +506,10 @@
                                       </Group>
                                       <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="batch" alignment="0" pref="384" max="32767" attributes="0"/>
+                                          <Component id="studentBatchSelect" alignment="0" pref="384" max="32767" attributes="0"/>
                                           <Component id="jSeparator6" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="batchLabel" alignment="0" min="-2" pref="134" max="-2" attributes="0"/>
-                                          <Component id="contact" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="studentBatchLabel" alignment="0" min="-2" pref="134" max="-2" attributes="0"/>
+                                          <Component id="studentContactText" alignment="0" max="32767" attributes="0"/>
                                           <Component id="jSeparator8" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -588,7 +525,7 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="410" max="-2" attributes="0"/>
-                              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                              <Component id="studentUpdateBtn" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace pref="54" max="32767" attributes="0"/>
@@ -606,13 +543,13 @@
                       </Group>
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="firstNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lastNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="studentFirstNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="studentLastNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="firstName" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lastName" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="studentFirstNameText" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="studentLastNameText" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -621,13 +558,13 @@
                       </Group>
                       <EmptySpace min="33" pref="33" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="genderLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="emailLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="studentGenderLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="studentEmailLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="gender" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="email" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="studentGenderSelect" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="studentEmailText" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -636,16 +573,16 @@
                       </Group>
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="addressLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="studentAddressLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
-                              <Component id="contactLabel" min="-2" max="-2" attributes="0"/>
+                              <Component id="studentContactLabel" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="address" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="contact" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="studentAddressText" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="studentContactText" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -655,16 +592,16 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="courseLabel" min="-2" max="-2" attributes="0"/>
+                              <Component id="studentCourseLabel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="course" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="batch" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="studentCourseSelect" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="studentBatchSelect" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="batchLabel" min="-2" max="-2" attributes="0"/>
+                              <Component id="studentBatchLabel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -673,14 +610,14 @@
                           <Component id="jSeparator8" alignment="0" min="-2" pref="19" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                      <Component id="studentUpdateBtn" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="37" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="emailLabel">
+            <Component class="javax.swing.JLabel" name="studentEmailLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
@@ -688,7 +625,7 @@
                 <Property name="text" type="java.lang.String" value="Email"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="addressLabel">
+            <Component class="javax.swing.JLabel" name="studentAddressLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
@@ -696,7 +633,7 @@
                 <Property name="text" type="java.lang.String" value="Address"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="contactLabel">
+            <Component class="javax.swing.JLabel" name="studentContactLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
@@ -716,7 +653,7 @@
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator6">
             </Component>
-            <Component class="javax.swing.JTextField" name="lastName">
+            <Component class="javax.swing.JTextField" name="studentLastNameText">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
@@ -728,7 +665,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="email">
+            <Component class="javax.swing.JTextField" name="studentEmailText">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
@@ -740,7 +677,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="address">
+            <Component class="javax.swing.JTextField" name="studentAddressText">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
@@ -752,7 +689,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="contact">
+            <Component class="javax.swing.JTextField" name="studentContactText">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
@@ -764,10 +701,10 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="contactActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="studentContactTextActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="courseLabel">
+            <Component class="javax.swing.JLabel" name="studentCourseLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
@@ -777,7 +714,7 @@
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator7">
             </Component>
-            <Component class="javax.swing.JLabel" name="batchLabel">
+            <Component class="javax.swing.JLabel" name="studentBatchLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
@@ -787,19 +724,13 @@
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator8">
             </Component>
-            <Component class="javax.swing.JComboBox" name="course">
+            <Component class="javax.swing.JComboBox" name="studentCourseSelect">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Select a course&quot;&#xa;+ &quot;&quot; })" type="code"/>
+                  <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Select a studentCourseSelect&quot;&#xa;+ &quot;&quot; })" type="code"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
@@ -811,25 +742,19 @@
                 <Property name="requestFocusEnabled" type="boolean" value="false"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="courseActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="studentCourseSelectActionPerformed"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JComboBox" name="batch">
+            <Component class="javax.swing.JComboBox" name="studentBatchSelect">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Select a batch&quot;&#xa;+ &quot;&quot; })" type="code"/>
+                  <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Select a studentBatchSelect&quot;&#xa;+ &quot;&quot; })" type="code"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
@@ -841,13 +766,13 @@
                 <Property name="requestFocusEnabled" type="boolean" value="false"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="batchActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="studentBatchSelectActionPerformed"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="firstNameLabel">
+            <Component class="javax.swing.JLabel" name="studentFirstNameLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
@@ -855,7 +780,7 @@
                 <Property name="text" type="java.lang.String" value="FIrst Name"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="lastNameLabel">
+            <Component class="javax.swing.JLabel" name="studentLastNameLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
@@ -863,7 +788,7 @@
                 <Property name="text" type="java.lang.String" value="Last Name"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="genderLabel">
+            <Component class="javax.swing.JLabel" name="studentGenderLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
@@ -871,7 +796,7 @@
                 <Property name="text" type="java.lang.String" value="Gender"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstName">
+            <Component class="javax.swing.JTextField" name="studentFirstNameText">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
@@ -883,19 +808,13 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="firstNameActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="studentFirstNameTextActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JComboBox" name="gender">
+            <Component class="javax.swing.JComboBox" name="studentGenderSelect">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Male&quot;,&quot;Female&quot;,&quot;Other&quot; })" type="code"/>
@@ -910,7 +829,7 @@
                 <Property name="requestFocusEnabled" type="boolean" value="false"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="genderActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="studentGenderSelectActionPerformed"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -940,7 +859,7 @@
                 <Property name="focusPainted" type="boolean" value="false"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton2">
+            <Component class="javax.swing.JButton" name="studentUpdateBtn">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
@@ -950,6 +869,28 @@
               </Properties>
             </Component>
           </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="Admin">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="tab3">
+                <Property name="tabTitle" type="java.lang.String" value="tab3"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="922" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="595" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+          </Layout>
         </Container>
       </SubComponents>
     </Container>
