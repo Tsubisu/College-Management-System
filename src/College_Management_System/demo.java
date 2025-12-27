@@ -2,6 +2,8 @@ package College_Management_System;
 import view.*;
 import controller.*;
 
+import java.util.ArrayList;
+
 public class demo
 {
     public static void main(String[] args)

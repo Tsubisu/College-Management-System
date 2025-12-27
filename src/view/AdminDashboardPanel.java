@@ -13,6 +13,7 @@ import javax.swing.*;
 public class AdminDashboardPanel extends DashboardPanel {
     private final Enroll enrollPanel;
     private final AdminProfile adminProfile;
+    private final Management managementView;
 
     public AdminModulePanel getModulePanel() {
         return adminModulePanel;
@@ -58,10 +59,12 @@ public class AdminDashboardPanel extends DashboardPanel {
         adminProfile = new AdminProfile();
         adminModulePanel= new AdminModulePanel();
         moduleDisplay= new ModuleDisplay();
+        managementView= new Management();
         contentPanel.add(adminProfile,"Profile");
         contentPanel.add(enrollPanel, "Enroll");
         contentPanel.add(adminModulePanel,"Module");
         contentPanel.add(moduleDisplay,"ModuleDisplay");
+        contentPanel.add(managementView,"Management");
 
 
 
