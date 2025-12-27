@@ -138,6 +138,8 @@ public class Management extends javax.swing.JPanel {
         Batch = new javax.swing.JPanel();
         jComboBox2 = new javax.swing.JComboBox<>();
         batchContentPanel = new javax.swing.JPanel();
+        addBatchPanel = new javax.swing.JPanel();
+        updateBatchPanel = new javax.swing.JPanel();
 
         setMaximumSize(new java.awt.Dimension(910, 630));
         setMinimumSize(new java.awt.Dimension(910, 630));
@@ -985,6 +987,32 @@ StudentLayout.setHorizontalGroup(
     batchContentPanel.setPreferredSize(new java.awt.Dimension(859, 450));
     batchContentPanel.setLayout(new java.awt.CardLayout());
 
+    javax.swing.GroupLayout addBatchPanelLayout = new javax.swing.GroupLayout(addBatchPanel);
+    addBatchPanel.setLayout(addBatchPanelLayout);
+    addBatchPanelLayout.setHorizontalGroup(
+        addBatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 859, Short.MAX_VALUE)
+    );
+    addBatchPanelLayout.setVerticalGroup(
+        addBatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 450, Short.MAX_VALUE)
+    );
+
+    batchContentPanel.add(addBatchPanel, "card2");
+
+    javax.swing.GroupLayout updateBatchPanelLayout = new javax.swing.GroupLayout(updateBatchPanel);
+    updateBatchPanel.setLayout(updateBatchPanelLayout);
+    updateBatchPanelLayout.setHorizontalGroup(
+        updateBatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 859, Short.MAX_VALUE)
+    );
+    updateBatchPanelLayout.setVerticalGroup(
+        updateBatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 450, Short.MAX_VALUE)
+    );
+
+    batchContentPanel.add(updateBatchPanel, "card3");
+
     javax.swing.GroupLayout BatchLayout = new javax.swing.GroupLayout(Batch);
     Batch.setLayout(BatchLayout);
     BatchLayout.setHorizontalGroup(
@@ -1098,6 +1126,7 @@ StudentLayout.setHorizontalGroup(
     private javax.swing.JPanel Course;
     private javax.swing.JPanel Student;
     private javax.swing.JPanel Teacher;
+    private javax.swing.JPanel addBatchPanel;
     private javax.swing.JLabel addCourseDurationLabel;
     private javax.swing.JTextField addCourseDurationTextField;
     private javax.swing.JLabel addCourseIdLabel;
@@ -1197,6 +1226,7 @@ StudentLayout.setHorizontalGroup(
     private javax.swing.JTextField teacherLastNameText;
     private javax.swing.JLabel teacherSelectLabel;
     private javax.swing.JButton teacherUpdateBtn;
+    private javax.swing.JPanel updateBatchPanel;
     private javax.swing.JLabel updateCourseDurationLabel;
     private javax.swing.JTextField updateCourseDurationTextField;
     private javax.swing.JLabel updateCourseIdLabel;
