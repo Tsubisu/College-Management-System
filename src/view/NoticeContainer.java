@@ -26,17 +26,49 @@ public class NoticeContainer extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        title = new javax.swing.JLabel();
-        noticeContent = new javax.swing.JLabel();
         readMore = new javax.swing.JButton();
+        title = new javax.swing.JTextArea();
+        date = new javax.swing.JLabel();
+        message = new javax.swing.JTextArea();
 
-        title.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        title.setText("Title");
+        setBackground(new java.awt.Color(210, 158, 231));
+        setMaximumSize(new java.awt.Dimension(273, 235));
+        setMinimumSize(new java.awt.Dimension(273, 235));
+        setPreferredSize(new java.awt.Dimension(273, 235));
 
-        noticeContent.setText("jLabel1");
-
+        readMore.setBackground(new java.awt.Color(0, 0, 0));
+        readMore.setForeground(new java.awt.Color(255, 255, 255));
         readMore.setText("Read More");
+        readMore.setFocusPainted(false);
         readMore.addActionListener(this::readMoreActionPerformed);
+
+        title.setBackground(new java.awt.Color(210, 158, 231));
+        title.setColumns(20);
+        title.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        title.setLineWrap(true);
+        title.setRows(5);
+        title.setWrapStyleWord(true);
+        title.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(210, 158, 231), 0));
+        title.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        title.setMaximumSize(new java.awt.Dimension(260, 70));
+        title.setMinimumSize(new java.awt.Dimension(260, 70));
+        title.setRequestFocusEnabled(false);
+
+        date.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        date.setForeground(new java.awt.Color(0, 0, 0));
+        date.setText("jLabel1");
+
+        message.setBackground(new java.awt.Color(210, 158, 231));
+        message.setColumns(20);
+        message.setFont(new java.awt.Font("Segoe UI", 0, 17)); // NOI18N
+        message.setLineWrap(true);
+        message.setRows(5);
+        message.setWrapStyleWord(true);
+        message.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(210, 158, 231), 0));
+        message.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        message.setMaximumSize(new java.awt.Dimension(260, 70));
+        message.setMinimumSize(new java.awt.Dimension(260, 70));
+        message.setRequestFocusEnabled(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -45,24 +77,37 @@ public class NoticeContainer extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(title, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(noticeContent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(203, Short.MAX_VALUE)
-                .addComponent(readMore)
-                .addGap(24, 24, 24))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(readMore)
+                        .addGap(16, 16, 16))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(80, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addContainerGap())))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(message, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(title)
+                .addGap(12, 12, 12)
+                .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(noticeContent, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(readMore)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addComponent(readMore, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(9, 9, 9))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(121, Short.MAX_VALUE)
+                    .addComponent(message, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(41, 41, 41)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -72,8 +117,30 @@ public class NoticeContainer extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel noticeContent;
+    private javax.swing.JLabel date;
+    private javax.swing.JTextArea message;
     private javax.swing.JButton readMore;
-    private javax.swing.JLabel title;
+    private javax.swing.JTextArea title;
     // End of variables declaration//GEN-END:variables
+
+
+    public void setTitle(String text)
+    {
+      title.setText(text);
+    }
+   
+    public void setDate(String dateString)
+    {
+        date.setText(dateString);
+    }
+
+
+    public void setNoticeContent(String text) {
+            message.setText(text);
+    }
+
+    public void addReadMoreActionListener(java.awt.event.ActionListener listener) {
+            readMore.addActionListener(listener);
+    }
+
 }
