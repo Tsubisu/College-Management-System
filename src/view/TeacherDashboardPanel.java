@@ -4,11 +4,33 @@
  */
 package view;
 
+import model.Teacher;
+
+import javax.swing.*;
+
 /**
  *
  * @author user
  */
 public class TeacherDashboardPanel extends DashboardPanel {
+
+    public STModulePanel getModulePanel() {
+        return modulePanel;
+    }
+
+    private final STModulePanel modulePanel;
+    private final TeacherProfile profilePanel;
+
+    public ModuleDisplay getModuleDisplay() {
+        return moduleDisplay;
+    }
+
+    private final ModuleDisplay moduleDisplay;
+
+    @Override
+    public JPanel getProfilePanel() {
+        return profilePanel;
+    }
 
     /**
      * Creates new form StudentDashboardPanel
@@ -26,11 +48,19 @@ public class TeacherDashboardPanel extends DashboardPanel {
                componentList.add(new MenuItems(notice));
                 componentList.add(new MenuItems(logout));
         super.menuBuilder(componentList);
-        Profile profilePanel = new Profile();
+        profilePanel = new TeacherProfile();
+        moduleDisplay= new ModuleDisplay();
+        modulePanel=new STModulePanel();
         contentPanel.add(profilePanel, "Profile");
-        
-        
-            javax.swing.GroupLayout layout =(javax.swing.GroupLayout) this.getLayout();
+
+        contentPanel.add(modulePanel, "Module");
+
+        contentPanel.add(moduleDisplay, "ModuleDisplay");
+
+
+
+
+        javax.swing.GroupLayout layout =(javax.swing.GroupLayout) this.getLayout();
         layout.setHorizontalGroup(
             layout.createSequentialGroup()
             .addComponent(menuPanel)

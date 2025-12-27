@@ -3,7 +3,6 @@ package controller;
 import College_Management_System.EmailService;
 import dao.LogInDAO;
 import dao.PasswordUpdate;
-import jakarta.mail.MessagingException;
 import view.EmailVerify;
 import view.OtpVerification;
 import view.ResetPassword;
@@ -22,11 +21,16 @@ public class PasswordReset {
     LogInDAO logInDao = new LogInDAO();
     private String currentPassword;
     private String userEmail;
+    private final EmailVerify emailVerify;
+    private final logIn loginView;
 
     public PasswordReset(logIn loginView,EmailVerify emailVerify,OtpVerification otpView, ResetPassword resetPassword)
     {
         this.otpView= otpView;
         this.resetPassword=resetPassword;
+        this.emailVerify= emailVerify;
+        this.loginView= loginView;
+
 
 
 
@@ -53,9 +57,7 @@ public class PasswordReset {
         emailVerify.addReturnButtonListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                emailVerify.dispose();
-                otpView.dispose();;
-                resetPassword.dispose();
+                close();
                 loginView.setVisible(true);
             }
         });
@@ -106,9 +108,11 @@ public class PasswordReset {
                 String rePassword= resetPassword.getReNewPassword().getText();
                 if(password.equals(rePassword) && !password.equals(currentPassword))
                 {
-                    System.out.println("Reset Password successful");
                     PasswordUpdate passwordUpdate = new PasswordUpdate();
                     passwordUpdate.updatePassword(userEmail,password);
+                    System.out.println("Reset Password successful");
+                    close();
+                    loginView.setVisible(true);
 
                 } else if (!password.equals(rePassword)) {
                     System.out.println("Entered password do not match");
@@ -122,6 +126,13 @@ public class PasswordReset {
 
             }
         });
+    }
+
+    private void close()
+    {
+        emailVerify.dispose();
+        otpView.dispose();
+        resetPassword.dispose();
     }
 
 }

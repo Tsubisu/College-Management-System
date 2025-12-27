@@ -1,5 +1,7 @@
 package controller;
+import College_Management_System.DashboardSetUp;
 import dao.LogInDAO;
+import dao.UserData;
 import model.User;
 import view.EmailVerify;
 import view.OtpVerification;
@@ -14,7 +16,7 @@ import java.awt.event.ActionListener;
 public class LoginController {
     private final LogInDAO loginDao = new LogInDAO();
     private final logIn loginView;
-    private final User user = new User();
+    private User user;
 
 
 
@@ -48,6 +50,10 @@ public class LoginController {
                 if(emailFlag && passwordFlag)
                 {
                     JOptionPane.showMessageDialog(loginView,"LogIn Successful");
+                    user=new User(loginDao.getUserid(email),email,password, loginDao.getUserRole(email));
+
+                    DashboardSetUp dashboardSetUp = new DashboardSetUp();
+                    dashboardSetUp.openDashboard(user);
                     loginView.dispose();
                 }
 
@@ -69,17 +75,7 @@ public class LoginController {
         });
     }
 
-    public void openView()
-    {
+    public void openView() {
         this.loginView.setVisible(true);
     }
-
-    public void closeView()
-    {
-        loginView.dispose();
-    }
-
-
-
-
 }

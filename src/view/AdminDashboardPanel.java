@@ -4,12 +4,33 @@
  */
 package view;
 
+import javax.swing.*;
+
 /**
  *
  * @author NITRO
  */
 public class AdminDashboardPanel extends DashboardPanel {
-    Enroll enrollPanel;
+    private final Enroll enrollPanel;
+    private final AdminProfile adminProfile;
+
+    public AdminModulePanel getModulePanel() {
+        return adminModulePanel;
+    }
+
+    private final AdminModulePanel adminModulePanel;
+
+    public ModuleDisplay getModuleDisplay() {
+        return moduleDisplay;
+    }
+
+    private final ModuleDisplay moduleDisplay;
+
+    @Override
+    public JPanel getProfilePanel() {
+        return adminProfile;
+    }
+
     public AdminDashboardPanel() {
         super();
         initComponents();
@@ -34,7 +55,13 @@ public class AdminDashboardPanel extends DashboardPanel {
 
 
         enrollPanel= new Enroll();
+        adminProfile = new AdminProfile();
+        adminModulePanel= new AdminModulePanel();
+        moduleDisplay= new ModuleDisplay();
+        contentPanel.add(adminProfile,"Profile");
         contentPanel.add(enrollPanel, "Enroll");
+        contentPanel.add(adminModulePanel,"Module");
+        contentPanel.add(moduleDisplay,"ModuleDisplay");
 
 
 

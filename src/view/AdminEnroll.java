@@ -5,6 +5,7 @@
 package view;
 
 import java.awt.Color;
+import java.awt.event.ActionListener;
 import javax.swing.UIManager;
 
 public class AdminEnroll extends javax.swing.JPanel {
@@ -35,7 +36,7 @@ public class AdminEnroll extends javax.swing.JPanel {
         email = new javax.swing.JTextField();
         address = new javax.swing.JTextField();
         contact = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        add = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(840, 510));
@@ -87,11 +88,11 @@ public class AdminEnroll extends javax.swing.JPanel {
         contact.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         contact.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 0));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Add");
-        jButton1.addActionListener(this::jButton1ActionPerformed);
+        add.setBackground(new java.awt.Color(0, 0, 0));
+        add.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        add.setForeground(new java.awt.Color(255, 255, 255));
+        add.setText("Add");
+        add.addActionListener(this::addActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -147,7 +148,7 @@ public class AdminEnroll extends javax.swing.JPanel {
                 .addGap(6, 6, 6))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(add, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(328, 328, 328))
         );
         layout.setVerticalGroup(
@@ -192,7 +193,7 @@ public class AdminEnroll extends javax.swing.JPanel {
                     .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(add, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -205,9 +206,9 @@ public class AdminEnroll extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_genderActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_addActionPerformed
 
     private void lastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastNameActionPerformed
         // TODO add your handling code here:
@@ -215,6 +216,7 @@ public class AdminEnroll extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton add;
     private javax.swing.JTextField address;
     private javax.swing.JLabel addressLabel;
     private javax.swing.JTextField contact;
@@ -225,7 +227,6 @@ public class AdminEnroll extends javax.swing.JPanel {
     private javax.swing.JLabel firstNameLabel;
     private javax.swing.JComboBox<String> gender;
     private javax.swing.JLabel genderLabel;
-    private javax.swing.JButton jButton1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
@@ -257,5 +258,11 @@ public class AdminEnroll extends javax.swing.JPanel {
     public javax.swing.JTextField getContact()
     {
         return contact;
+    }
+
+    public javax.swing.JComboBox<String> getGender(){return gender;}
+    public void addAddButtonActionListener(ActionListener actionListener)
+    {
+        add.addActionListener(actionListener);
     }
 }

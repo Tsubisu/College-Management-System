@@ -27,12 +27,8 @@ public abstract class DashboardPanel extends javax.swing.JPanel{
     private GroupLayout menuLayout;
     private CardLayout contentLayout;
 
-    public Profile getProfilePanel() {
-        return profilePanel;
-    }
 
-    protected Profile profilePanel;
-    
+    public abstract javax.swing.JPanel getProfilePanel();
     
 
     
@@ -87,9 +83,6 @@ public abstract class DashboardPanel extends javax.swing.JPanel{
         notice = new javax.swing.JButton();
         logout = new javax.swing.JButton();
 
-        profilePanel = new Profile();
-        contentPanel.add(profilePanel, "Profile");
-
       
         buttonDecorator(profile, "Profile");
         buttonDecorator(module, "Module");
@@ -99,6 +92,7 @@ public abstract class DashboardPanel extends javax.swing.JPanel{
         buttonDecorator(logout, "Logout");
     }
     public CardLayout getContentLayout()
+
     {
         return contentLayout;
     }

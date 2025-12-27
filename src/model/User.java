@@ -1,13 +1,38 @@
 package model;
 public class User {
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String password;
-    private String address;
-    private String gender;
-    private String contact;
-    private String role;
+    protected String firstName;
+    protected String lastName;
+    protected String email;
+    protected String password;
+    protected String address;
+    protected String gender;
+    protected String contact;
+    protected String role;
+    protected int userId;
+
+
+    public User(int userId, String email,String password,String role)
+    {
+        this.userId=userId;
+        this.email=email;
+        this.password=password;
+        this.role=role;
+    }
+
+    public User(int userId, String firstName,String lastName, String email, String password, String address, String contact, String gender, String role)
+    {
+     this.userId=userId;
+     this.firstName= firstName;
+     this.lastName= lastName;
+     this.email= email;
+     this.password=password;
+     this.address=address;
+     this.contact=contact;
+     this.gender=gender;
+     this.role=role;
+
+    }
+
 
     public String getFirstName() {
         return firstName;
@@ -76,4 +101,11 @@ public class User {
         return role;
     }
 
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
 }

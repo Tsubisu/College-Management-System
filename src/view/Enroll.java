@@ -12,9 +12,9 @@ import java.awt.event.ActionListener;
  * @author subas
  */
 public class Enroll extends javax.swing.JPanel {
-    private StudentEnroll studentEnroll;
-    private TeacherEnroll teacherEnroll;
-    private AdminEnroll adminEnroll;
+    private final StudentEnroll studentEnroll;
+    private final TeacherEnroll teacherEnroll;
+    private final AdminEnroll adminEnroll;
 
     public Enroll() {
         initComponents();
@@ -91,5 +91,19 @@ public class Enroll extends javax.swing.JPanel {
     {
         userType.addActionListener(actionListener);
     }
+
+    public StudentEnroll getStudentEnroll() {
+        return studentEnroll;
+    }
+
+    public AdminEnroll getAdminEnroll() {
+        return adminEnroll;
+    }
+
+    public TeacherEnroll getTeacherEnroll() {
+        return teacherEnroll;
+    }
+
+
 
 }

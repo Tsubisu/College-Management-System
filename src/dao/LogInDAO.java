@@ -50,6 +50,45 @@ public class LogInDAO {
         return false;
     }
 
+    public int getUserid(String email)
+    {
+        Connection conn = mySql.openConnection();
+        String sql = "Select userId from users where email = ?";
+        try(PreparedStatement pstm = conn.prepareStatement(sql)) {
+            pstm.setString(1, email);
+            ResultSet result = mySql.runQuery(conn,pstm);
+            result.next();
+            return result.getInt(1);
+        }
+        catch(SQLException e){
+            System.out.print(e);
+        }
+        finally {
+            mySql.closeConnection(conn);
+        }
+        return 0;
+    }
+
+
+    public String getUserRole(String email)
+    {
+        Connection conn = mySql.openConnection();
+        String sql = "Select userRole from users where email = ?";
+        try(PreparedStatement pstm = conn.prepareStatement(sql)) {
+            pstm.setString(1, email);
+            ResultSet result = mySql.runQuery(conn,pstm);
+            result.next();
+            return result.getString(1);
+        }
+        catch(SQLException e){
+            System.out.print(e);
+        }
+        finally {
+            mySql.closeConnection(conn);
+        }
+        return "";
+    }
+
     public String getCurrentPassword(String email)
     {
 

@@ -1,7 +1,8 @@
 package view;
-public class Profile extends javax.swing.JPanel {
-    public Profile() {
+public class StudentProfile extends javax.swing.JPanel {
+    public StudentProfile() {
         initComponents();
+        emailTextField.setEditable(false);
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -22,6 +23,10 @@ public class Profile extends javax.swing.JPanel {
         addressTextField = new javax.swing.JTextField();
         course = new javax.swing.JLabel();
         courseTextField = new javax.swing.JTextField();
+        course1 = new javax.swing.JLabel();
+        batchTextField = new javax.swing.JTextField();
+        course2 = new javax.swing.JLabel();
+        yearTextField = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(910, 630));
@@ -52,10 +57,13 @@ public class Profile extends javax.swing.JPanel {
         email.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         email.setText("Email");
 
+        emailTextField.setBackground(new java.awt.Color(255, 255, 255));
         emailTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        emailTextField.setForeground(new java.awt.Color(0, 0, 0));
         emailTextField.setText("  Random Name");
         emailTextField.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        emailTextField.setRequestFocusEnabled(false);
+        emailTextField.setCaretColor(new java.awt.Color(255, 255, 255));
+        emailTextField.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         emailTextField.addActionListener(this::emailTextFieldActionPerformed);
 
         gender.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -94,14 +102,48 @@ public class Profile extends javax.swing.JPanel {
         courseTextField.setRequestFocusEnabled(false);
         courseTextField.addActionListener(this::courseTextFieldActionPerformed);
 
+        course1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        course1.setText("Batch");
+
+        batchTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        batchTextField.setText("  Random Name");
+        batchTextField.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+        batchTextField.setRequestFocusEnabled(false);
+        batchTextField.addActionListener(this::batchTextFieldActionPerformed);
+
+        course2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        course2.setText("Year");
+
+        yearTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        yearTextField.setText("  Random Name");
+        yearTextField.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+        yearTextField.setRequestFocusEnabled(false);
+        yearTextField.addActionListener(this::yearTextFieldActionPerformed);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(350, 350, 350)
+                .addComponent(photo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
                 .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(course1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(302, 302, 302))
+                            .addComponent(batchTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(course2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(302, 302, 302))
+                            .addComponent(yearTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(firstName, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(firstNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -109,7 +151,7 @@ public class Profile extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lastName, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lastNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(genderTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(gender, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -121,7 +163,7 @@ public class Profile extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(contactTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(contact, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(address, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(addressTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -132,10 +174,6 @@ public class Profile extends javax.swing.JPanel {
                                 .addGap(302, 302, 302))
                             .addComponent(courseTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(50, 50, 50))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(350, 350, 350)
-                .addComponent(photo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -172,7 +210,17 @@ public class Profile extends javax.swing.JPanel {
                         .addComponent(address, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(addressTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(140, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(course1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(batchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(course2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(yearTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -204,13 +252,24 @@ public class Profile extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_courseTextFieldActionPerformed
 
+    private void batchTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_batchTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_batchTextFieldActionPerformed
+
+    private void yearTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yearTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_yearTextFieldActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel address;
     private javax.swing.JTextField addressTextField;
+    private javax.swing.JTextField batchTextField;
     private javax.swing.JLabel contact;
     private javax.swing.JTextField contactTextField;
     private javax.swing.JLabel course;
+    private javax.swing.JLabel course1;
+    private javax.swing.JLabel course2;
     private javax.swing.JTextField courseTextField;
     private javax.swing.JLabel email;
     private javax.swing.JTextField emailTextField;
@@ -221,6 +280,7 @@ public class Profile extends javax.swing.JPanel {
     private javax.swing.JLabel lastName;
     private javax.swing.JTextField lastNameTextField;
     private javax.swing.JLabel photo;
+    private javax.swing.JTextField yearTextField;
     // End of variables declaration//GEN-END:variables
   public void setFirstName(String firstName)
   {
@@ -249,5 +309,20 @@ public class Profile extends javax.swing.JPanel {
   public void setGender(String gender)
   {
       genderTextField.setText("  "+gender);
+  }
+
+  public void setCourse(String course)
+  {
+      courseTextField.setText("  "+course);
+  }
+
+   public void setBatch(String batch)
+  {
+      batchTextField.setText("  "+batch);
+  }
+   
+    public void setYear(String year)
+  {
+      yearTextField.setText("  "+year);
   }
 }
