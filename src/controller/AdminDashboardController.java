@@ -5,8 +5,7 @@
 package controller;
 
 
-import dao.Department;
-import dao.LogInDAO;
+import dao.*;
 import dao.Enroll;
 import dao.Module;
 import model.Course;
@@ -41,6 +40,7 @@ public class AdminDashboardController extends DashboardController {
         profilePageSetter();
         enrollController();
         modulePageSetter();
+        noticePageSetter();
         buttonListener();
 
 
@@ -56,6 +56,92 @@ public class AdminDashboardController extends DashboardController {
         profile.setEmail(admin.getEmail());
     }
 
+
+    private void noticePageSetter() {
+        dao.Notice noticeDao= new Notice();
+        ArrayList<model.Notice> notices= noticeDao.getNotices("Admin");
+        AdminNoticePanel noticePanel= ((AdminDashboardPanel)adminDashboard.getDashPanel()).getNoticePanel();
+
+        noticePanel.getNoticeContentPanel().removeAll();
+        noticePanel.getNoticeContentPanel().revalidate();
+        noticePanel.getNoticeContentPanel().repaint();
+
+        for(model.Notice notice: notices)
+        {
+            NoticeContainer noticeContainer= new NoticeContainer();
+            noticeContainer.setTitle(notice.getTitle());
+            noticeContainer.setDate(notice.getPostedAt().toString());
+            noticeContainer.setNoticeContent(notice.getMessage());
+            noticeContainer.addReadMoreActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    javax.swing.JOptionPane.showMessageDialog(adminDashboard,notice.getMessage(),notice.getTitle().toString(),JOptionPane.INFORMATION_MESSAGE);
+                }
+            });
+
+            noticePanel.getNoticeContentPanel().add(noticeContainer);
+        }
+        noticePanel.addAddActionButtonListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                noticePopUp();
+            }
+        });
+
+    }
+
+    private void noticePopUp()
+    {
+        Notice noticeDao = new Notice();
+        NoticePopUp noticePopUp = new NoticePopUp();
+        javax.swing.JDialog dialog= new JDialog(adminDashboard,"New Notice",true);
+        dialog.setContentPane(noticePopUp);
+        dialog.pack();
+        dialog.setLocationRelativeTo(adminDashboard);
+        noticePopUp.addAddActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                model.Notice notice= validateNoticeFields(noticePopUp);
+                if(notice!=null)
+                {
+                    if(noticeDao.addNotice(notice))
+                    {
+                        javax.swing.JOptionPane.showMessageDialog(adminDashboard,"New Notice has been published");
+                        noticePageSetter();
+                    }
+                    else
+                        javax.swing.JOptionPane.showMessageDialog(adminDashboard,"Notice publishing failed");
+                }
+            }
+        });
+        dialog.setVisible(true);
+    }
+
+    private model.Notice validateNoticeFields(NoticePopUp noticePopUp)
+    {
+        String title= noticePopUp.getTitle().getText().trim();
+        String role= (String)noticePopUp.getRole().getSelectedItem();
+        String message= noticePopUp.getMessage().getText().trim();
+        if (title.isEmpty()) {
+            JOptionPane.showMessageDialog(noticePopUp, "Title cannot be empty.");
+            return null;
+        }
+
+        if (message.isEmpty()) {
+            JOptionPane.showMessageDialog(noticePopUp, "Message cannot be empty.");
+            return null;
+        }
+
+        if (role==null) {
+            JOptionPane.showMessageDialog(noticePopUp, "Role cannot be null");
+            return null;
+        }
+
+
+
+        return new model.Notice(title,message,role);
+
+    }
 
 
     private void modulePageSetter(){
@@ -190,7 +276,10 @@ public class AdminDashboardController extends DashboardController {
         dialog.setVisible(true);
     }
 
-    public model.Module getModuleFromFields(NewModule newModule) {
+
+
+
+    private model.Module getModuleFromFields(NewModule newModule) {
         String name =newModule.getModuleName().getText().trim();
         String durationText = newModule.getModuleDuration().getText().trim();
         String yearText = newModule.getModuleCourseYear().getText().trim();
@@ -423,10 +512,6 @@ public class AdminDashboardController extends DashboardController {
     private boolean isValidEmail(String email) {
         return email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$");
     }
-
-
-
-
 
 }
 

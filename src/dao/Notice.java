@@ -46,4 +46,27 @@ public class Notice {
 
         return notices;
     }
+
+    public boolean addNotice(model.Notice notice) {
+        Connection conn=mySql.openConnection();
+
+        String sql = "INSERT INTO Notification (title, message, targetRole) VALUES (?, ?, ?)";
+
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setString(1, notice.getTitle());
+            ps.setString(2, notice.getMessage());
+            ps.setString(3, notice.getTargetRole()); // Student / Teacher / Admin / All
+
+            ps.executeUpdate();
+            return true;
+
+        }catch(SQLException e){
+            System.out.print(e);
+        }
+        finally {
+            mySql.closeConnection(conn);
+        }
+    return false;
+    }
 }

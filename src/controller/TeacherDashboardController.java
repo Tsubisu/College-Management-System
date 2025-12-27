@@ -4,9 +4,11 @@
  */
 package controller;
 import dao.Module;
+import dao.Notice;
 import view.*;
 import model.Teacher;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -24,6 +26,7 @@ public class TeacherDashboardController extends DashboardController{
         buttonListener();
         profilePageSetter();
         modulePageSetter();
+        noticePageSetter();
     }
 
     private void profilePageSetter()
@@ -55,6 +58,33 @@ public class TeacherDashboardController extends DashboardController{
                 }
             });
             stModulePanel.getModuleContainer().add(moduleContainer);
+
+
+        }
+
+    }
+
+
+    private void noticePageSetter() {
+        dao.Notice noticeDao= new Notice();
+        ArrayList<model.Notice> notices= noticeDao.getNotices("Teacher");
+        NoticePanel noticePanel= ((TeacherDashboardPanel)teacherDashboard.getDashPanel()).getNoticePanel();
+        for(model.Notice notice: notices)
+        {
+            NoticeContainer noticeContainer= new NoticeContainer();
+            noticeContainer.setTitle(notice.getTitle());
+            noticeContainer.setDate(notice.getPostedAt().toString());
+            noticeContainer.setNoticeContent(notice.getMessage());
+            noticeContainer.addReadMoreActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    javax.swing.JOptionPane.showMessageDialog(teacherDashboard,notice.getMessage(),notice.getTitle().toString(), JOptionPane.INFORMATION_MESSAGE);
+                }
+            });
+
+            noticePanel.getNoticeContentPanel().add(noticeContainer);
+
+
         }
 
     }

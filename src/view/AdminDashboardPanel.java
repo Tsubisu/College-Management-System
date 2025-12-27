@@ -26,6 +26,12 @@ public class AdminDashboardPanel extends DashboardPanel {
 
     private final ModuleDisplay moduleDisplay;
 
+    public AdminNoticePanel getNoticePanel() {
+        return adminNoticePanel;
+    }
+
+    private final AdminNoticePanel adminNoticePanel;
+
     @Override
     public JPanel getProfilePanel() {
         return adminProfile;
@@ -58,11 +64,12 @@ public class AdminDashboardPanel extends DashboardPanel {
         adminProfile = new AdminProfile();
         adminModulePanel= new AdminModulePanel();
         moduleDisplay= new ModuleDisplay();
+        adminNoticePanel= new AdminNoticePanel();
         contentPanel.add(adminProfile,"Profile");
         contentPanel.add(enrollPanel, "Enroll");
         contentPanel.add(adminModulePanel,"Module");
         contentPanel.add(moduleDisplay,"ModuleDisplay");
-
+        contentPanel.add(adminNoticePanel,"Notice");
 
 
 
