@@ -48,6 +48,7 @@ public class Enroll {
 
     public void addStudent(String firstName, String lastName,String gender, String address, String contact, String email, int batchId)
     {
+        System.out.println("Batch id"+batchId);
 
         Connection conn =mySql.openConnection();
         String sql="CALL AddStudent(?,?,?,?,?,?,?,?)";

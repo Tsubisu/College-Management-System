@@ -10,6 +10,19 @@ public class Batch {
     private String courseName;
 
 
+
+    public String toString()
+    {
+        return (batchName+"  "+section);
+    }
+    public Batch(int id, String batchName,char section)
+    {
+        this.batchId=id;
+        this.batchName=batchName;
+        this.section=section;
+    }
+
+
     public Batch(int batchId, String batchName,char section, int courseYear, int semester)
     {
         this.batchId=batchId;

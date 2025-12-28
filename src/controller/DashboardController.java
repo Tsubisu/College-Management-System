@@ -86,6 +86,8 @@ public abstract class DashboardController {
             }
         });
     }
+
+
     protected void moduleActionListener(ModuleDisplay moduleDisplay,model.Module module)
     {
         dashboard.getDashPanel().getContentLayout().show(dashboard.getDashPanel().getContentPanel(),"ModuleDisplay");

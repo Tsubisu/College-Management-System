@@ -18,10 +18,6 @@ public class UserData {
     public User fetchUserData(User user)
     {
         Connection conn = mySql.openConnection();
-        System.out.print("userid "+user.getUserId());
-        System.out.print("email "+user.getEmail());
-        System.out.print("Role "+user.getRole());
-
         String sql = "CALL GetUserDetails(?)";
         try(CallableStatement cs = conn.prepareCall(sql)) {
             cs.setInt(1,user.getUserId());
@@ -96,4 +92,59 @@ public class UserData {
     }
 
 
+    public Integer getUserId(String procedureName, int id) {
+        Connection conn= mySql.openConnection();
+        String sql = "{ CALL " + procedureName + "(?) }";
+
+        try (CallableStatement cs = conn.prepareCall(sql))
+        {
+            cs.setInt(1, id);
+            ResultSet rs = mySql.runQuery(conn,cs);
+            if (rs.next()) {
+                return rs.getInt("userId");
+            }
+        }
+        catch (SQLException e)
+        {
+            System.out.print(e);
+        }
+        finally {
+            mySql.closeConnection(conn);
+        }
+        return null;
+    }
+
+
+    public boolean updateStudent(Student student)
+    { Connection conn= mySql.openConnection();
+        String sql = "{CALL UpdateStudent(?,?,?,?,?,?,?,?)}";
+
+        try (CallableStatement cs = conn.prepareCall(sql)){
+
+            cs.setInt(1, student.getStudentId());
+            cs.setString(2, student.getEmail());
+            cs.setString(3, student.getGender());
+            cs.setString(4, student.getFirstName());
+            cs.setString(5, student.getLastName());
+            cs.setString(6, student.getAddress());
+            cs.setString(7, student.getContact());
+            cs.setInt(8, student.getBatchId());
+
+            mySql.executeUpdate(conn,cs);
+            return true;
+
+        } catch (SQLException e)
+        {
+            e.printStackTrace();
+            javax.swing.JOptionPane.showMessageDialog(
+                    null,
+                    "Failed to update student:\n" + e.getMessage()
+            );
+            return false;
+
+        } finally {
+            mySql.closeConnection(conn);
+        }
+
+    }
 }

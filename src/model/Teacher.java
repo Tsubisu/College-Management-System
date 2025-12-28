@@ -11,6 +11,8 @@ public class Teacher extends User{
         this.departmentName=departmentName;
     }
 
+    public Teacher(){}
+
     public void setDepartment(String departmentName)
     {
         this.departmentName= departmentName;

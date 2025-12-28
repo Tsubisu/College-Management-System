@@ -28,7 +28,7 @@ public class MySqlConnection implements Database{
                 System.out.println("Database connection fail");
             }
             else{
-                System.out.println("Database connection success");
+               // System.out.println("Database connection success");
             }
             return connection;
         }
@@ -43,7 +43,7 @@ public class MySqlConnection implements Database{
         try{
             if(conn != null && !conn.isClosed()){
                 conn.close();
-                System.out.println("Connection close");
+               // System.out.println("Connection close");
             }
         }
         catch(Exception e){

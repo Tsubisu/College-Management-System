@@ -1,8 +1,16 @@
 package view;
+
+
+import com.formdev.flatlaf.FlatLightLaf;
+
+import javax.swing.*;
+
 public class AdminProfile extends javax.swing.JPanel {
     public AdminProfile() {
+
+
         initComponents();
-    }
+      }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

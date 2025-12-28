@@ -14,6 +14,12 @@ public class AdminDashboardPanel extends DashboardPanel {
     private final Enroll enrollPanel;
     private final AdminProfile adminProfile;
 
+    public Management getManagement() {
+        return managementView;
+    }
+
+    private final Management managementView;
+
     public AdminModulePanel getModulePanel() {
         return adminModulePanel;
     }
@@ -65,11 +71,13 @@ public class AdminDashboardPanel extends DashboardPanel {
         adminModulePanel= new AdminModulePanel();
         moduleDisplay= new ModuleDisplay();
         adminNoticePanel= new AdminNoticePanel();
+        managementView = new Management();
         contentPanel.add(adminProfile,"Profile");
         contentPanel.add(enrollPanel, "Enroll");
         contentPanel.add(adminModulePanel,"Module");
         contentPanel.add(moduleDisplay,"ModuleDisplay");
         contentPanel.add(adminNoticePanel,"Notice");
+        contentPanel.add(managementView,"Management");
 
 
 
