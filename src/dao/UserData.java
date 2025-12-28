@@ -147,4 +147,37 @@ public class UserData {
         }
 
     }
+
+    public boolean updateTeacher(Teacher teacher)
+    { Connection conn= mySql.openConnection();
+        String sql = "{CALL UpdateTeacher(?,?,?,?,?,?,?,?)}";
+
+        try (CallableStatement cs = conn.prepareCall(sql)){
+
+                cs.setInt(1, teacher.getTeacherId());
+                cs.setString(2, teacher.getFirstName());
+                cs.setString(3, teacher.getLastName());
+                cs.setString(4, teacher.getEmail());
+                cs.setString(5, teacher.getAddress());
+                cs.setString(6, teacher.getContact());
+                cs.setString(7, teacher.getGender());
+                cs.setInt(8, teacher.getDepartmentId());
+
+            mySql.executeUpdate(conn,cs);
+            return true;
+
+        } catch (SQLException e)
+        {
+            e.printStackTrace();
+            javax.swing.JOptionPane.showMessageDialog(
+                    null,
+                    "Failed to update teacher:\n" + e.getMessage()
+            );
+            return false;
+
+        } finally {
+            mySql.closeConnection(conn);
+        }
+
+    }
 }

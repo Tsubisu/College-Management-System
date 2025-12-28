@@ -1690,6 +1690,11 @@ TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
     public void addTeacherUpdateListener(ActionListener l) {
         teacherUpdateBtn.addActionListener(l);
     }
+    
+    public JButton getTeacherUpdateBtn()
+    {
+    return teacherUpdateBtn;
+    }
 
 
 

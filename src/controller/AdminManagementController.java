@@ -1,5 +1,6 @@
 package controller;
 
+import dao.Department;
 import dao.Enroll;
 import dao.UserData;
 import model.Course;
@@ -19,6 +20,7 @@ public class AdminManagementController {
     private final dao.UserData userDao= new UserData();
     private final dao.Course course = new dao.Course();
     private final dao.Enroll enroll= new Enroll();
+    private final dao.Department department= new Department();
 
 
     public AdminManagementController(AdminDashboard adminDashboard) {
@@ -377,7 +379,7 @@ public class AdminManagementController {
         }
         else
         {
-            JOptionPane.showMessageDialog(adminDashboard,"No Student with such student id found");
+            JOptionPane.showMessageDialog(adminDashboard,"No Teacher with such id found");
             return null;
         }
 
@@ -391,6 +393,207 @@ public class AdminManagementController {
         JTextField emailField     = management.getTeacherEmailText();
         JTextField addressField   = management.getTeacherAddressText();
         JTextField contactField   = management.getTeacherContactText();
+        JComboBox<String> gender=management.getTeacherGender();
+        gender.setModel(new DefaultComboBoxModel<>(new String[]{"Enter TeacherId to select gender"}));
+        JComboBox<String> departmentComboBox= management.getTeacherDepartment();
+        JButton updateBtn=management.getTeacherUpdateBtn();
+
+
+        for (ActionListener al : updateBtn.getActionListeners()) {
+            updateBtn.removeActionListener(al);
+        }
+
+        ArrayList<Integer> departmentId= new ArrayList<>();
+
+        if(teacher!=null)
+        {
+            firstNameField.setText(teacher.getFirstName());
+            lastNameField.setText(teacher.getLastName());
+            emailField.setText(teacher.getEmail());
+            addressField.setText(teacher.getAddress());
+            contactField.setText(teacher.getContact());
+            gender.setModel(new DefaultComboBoxModel<>(new String[]{"Male","Female","Other"}));
+            gender.setSelectedItem(teacher.getGender());
+
+            ArrayList<model.Department> departments =department.getDepartment();
+            String[] departmentNames=new String[departments.size()+1];
+
+            departmentNames[0]="Select a department";
+            departmentId.add(-1);
+
+            for(int i=0;i<departments.size();i++)
+            {
+                departmentNames[i+1]=departments.get(i).getDepartmentName();
+                departmentId.add(departments.get(i).getDepartmentId());
+            }
+            departmentComboBox.setModel(new DefaultComboBoxModel<>(departmentNames));
+
+            departmentComboBox.setSelectedIndex(0);
+            if(!departmentId.isEmpty())
+                for(int i=1;i<departmentId.size();i++)
+                     if(departmentId.get(i)==teacher.getDepartmentId())
+                    {
+                        departmentComboBox.setSelectedIndex(i);
+                        break;
+                    }
+        }
+        else
+        {
+            firstNameField.setText("");
+            lastNameField.setText("");
+            emailField.setText("");
+            addressField.setText("");
+            contactField.setText("");
+            gender.setModel(new DefaultComboBoxModel<>(new String[]{"Enter TeacherId to select Gender"}));
+            departmentComboBox.setModel(new DefaultComboBoxModel<>(new String[]{"Enter TeacherId to select Departments"}));
+
+        }
+        management.addTeacherUpdateListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                model.Teacher updatedTeacher = updateTeacher(teacher,departmentId);
+                if(updatedTeacher!=null)
+                    if(userDao.updateTeacher(updatedTeacher))
+                    {
+                        javax.swing.JOptionPane.showMessageDialog(adminDashboard,"Teacher Data Updated Successfully");
+                        loadTeacherData(updatedTeacher);
+                    }
+
+            }
+        });
+
+    }
+
+    public model.Teacher updateTeacher(model.Teacher teacher,ArrayList<Integer> departmentList)
+    {
+        if (teacher == null || departmentList.isEmpty()) {
+            return null;
+        }
+
+        model.Teacher updatedTeacher = new model.Teacher();
+        updatedTeacher.setTeacherId(teacher.getTeacherId());
+        updatedTeacher.setEmail(teacher.getEmail());
+        updatedTeacher.setGender(teacher.getGender());
+        updatedTeacher.setFirstName(teacher.getFirstName());
+        updatedTeacher.setLastName(teacher.getLastName());
+        updatedTeacher.setAddress(teacher.getAddress());
+        updatedTeacher.setContact(teacher.getContact());
+        updatedTeacher.setDepartmentId(teacher.getDepartmentId());
+
+        String newFirstName = management.getTeacherFirstNameText().getText().trim();
+        String newLastName  = management.getTeacherLastNameText().getText().trim();
+        String newEmail     = management.getTeacherEmailText().getText().trim();
+        String newAddress   = management.getTeacherAddressText().getText().trim();
+        String newContact   = management.getTeacherContactText().getText().trim();
+        String newGender    = (String) management.getTeacherGender().getSelectedItem();
+        int selectedDepartmentId = departmentList.get(management.getTeacherDepartment().getSelectedIndex());
+
+        boolean hasAnyChange = false;
+        boolean hasError = false;
+
+// First Name
+        if (!newFirstName.isEmpty()) {
+            if (!newFirstName.matches("^[^0-9]+$")) {
+                JOptionPane.showMessageDialog(adminDashboard,
+                        "First name cannot contain numbers");
+                hasError = true;
+            } else if (!newFirstName.equals(teacher.getFirstName())) {
+                updatedTeacher.setFirstName(newFirstName);
+                hasAnyChange = true;
+                System.out.println("First Name Changed");
+            }
+        }
+
+// Last Name
+        if (!newLastName.isEmpty()) {
+            if (!newLastName.matches("^[^0-9]+$")) {
+                JOptionPane.showMessageDialog(adminDashboard,
+                        "Last name cannot contain numbers");
+                hasError = true;
+            } else if (!newLastName.equals(teacher.getLastName())) {
+                updatedTeacher.setLastName(newLastName);
+                hasAnyChange = true;
+                System.out.println("Last Name Changed");
+            }
+        }
+
+// Email
+        if (!newEmail.isEmpty()) {
+            if (!newEmail.matches("^[\\w.-]+@[\\w.-]+\\.\\w+$")) {
+                JOptionPane.showMessageDialog(adminDashboard,
+                        "Invalid email format");
+                hasError = true;
+            } else if (!newEmail.equals(teacher.getEmail())) {
+                updatedTeacher.setEmail(newEmail);
+                hasAnyChange = true;
+                System.out.println("Email Changed");
+            }
+        }
+
+// Address
+        if (!newAddress.isEmpty()) {
+            if (!newAddress.equals(teacher.getAddress())) {
+                updatedTeacher.setAddress(newAddress);
+                hasAnyChange = true;
+                System.out.println("Address Changed");
+            }
+        }
+
+// Gender
+        if (newGender != null) {
+            if (!newGender.equals(teacher.getGender())) {
+                updatedTeacher.setGender(newGender);
+                hasAnyChange = true;
+                System.out.println("Gender Changed to: " + newGender);
+            }
+        }
+
+// Contact
+        if (!newContact.isEmpty()) {
+            if (!newContact.matches("^\\d{7,15}$")) {
+                JOptionPane.showMessageDialog(adminDashboard,
+                        "Contact must be numeric (7–15 digits)");
+                hasError = true;
+            } else if (!newContact.equals(teacher.getContact())) {
+                updatedTeacher.setContact(newContact);
+                hasAnyChange = true;
+                System.out.println("Contact Changed");
+            }
+        }
+
+// Department
+        if (selectedDepartmentId != -1) {
+            if (selectedDepartmentId != teacher.getDepartmentId()) {
+                int result = JOptionPane.showConfirmDialog(
+                        adminDashboard,
+                        "Are you sure you want to change the department?",
+                        "Confirm Department Change",
+                        JOptionPane.YES_NO_OPTION,
+                        JOptionPane.QUESTION_MESSAGE
+                );
+                if (result == JOptionPane.YES_OPTION) {
+                    updatedTeacher.setDepartmentId(selectedDepartmentId);
+                    hasAnyChange = true;
+                } else {
+                    hasError = true;
+                    management.getTeacherDepartment().setSelectedIndex(0);
+                }
+            }
+        }
+
+        if (hasError) {
+            return null;
+        }
+
+        if (!hasAnyChange) {
+            JOptionPane.showMessageDialog(adminDashboard,
+                    "No changes detected to update");
+            return null;
+        }
+
+        return updatedTeacher;
+
     }
 
 
