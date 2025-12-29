@@ -5,6 +5,7 @@
 package view;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionListener;
 
 
@@ -20,11 +21,11 @@ public class Management extends javax.swing.JPanel {
     public Management() {
         initComponents();
         tabbedPane.setTitleAt(tabbedPane.indexOfComponent(Teacher), "Teacher");
-        tabbedPane.setTitleAt(tabbedPane.indexOfComponent(Module_Chapters), "Module_Chapters");
+
         tabbedPane.setTitleAt(tabbedPane.indexOfComponent(Admin), "Admin");
         tabbedPane.setTitleAt(tabbedPane.indexOfComponent(Student), "Student");
         tabbedPane.setTitleAt(tabbedPane.indexOfComponent(Course), "Course");
-        tabbedPane.setTitleAt(tabbedPane.indexOfComponent(Batch), "Bateh");
+        tabbedPane.setTitleAt(tabbedPane.indexOfComponent(Batch), "Batch");
         
 
     }
@@ -96,35 +97,47 @@ public class Management extends javax.swing.JPanel {
         teacherGenderLabel = new javax.swing.JLabel();
         teacherEmailLabel = new javax.swing.JLabel();
         teacherAddressLabel = new javax.swing.JLabel();
+        teacherModules = new view.ComboBoxMultiSelection();
+        teacherDepartmentLabel1 = new javax.swing.JLabel();
+        jSeparator17 = new javax.swing.JSeparator();
         Admin = new javax.swing.JPanel();
+        jSeparator31 = new javax.swing.JSeparator();
+        jSeparator32 = new javax.swing.JSeparator();
+        adminLastNameText = new javax.swing.JTextField();
+        adminEmailText = new javax.swing.JTextField();
+        adminAddressText = new javax.swing.JTextField();
+        adminContactText = new javax.swing.JTextField();
         adminFirstNameLabel = new javax.swing.JLabel();
         adminLastNameLabel = new javax.swing.JLabel();
         adminFirstNameText = new javax.swing.JTextField();
-        adminLastNameText = new javax.swing.JTextField();
         adminGenderLabel = new javax.swing.JLabel();
         adminGenderSelect = new javax.swing.JComboBox<>();
         adminEmailLabel = new javax.swing.JLabel();
-        adminEmailText = new javax.swing.JTextField();
-        adminAddressLabel = new javax.swing.JLabel();
-        adminAddressText = new javax.swing.JTextField();
         adminContactLabel = new javax.swing.JLabel();
-        adminContactText = new javax.swing.JTextField();
-        adminDepartmentLabel = new javax.swing.JLabel();
-        adminDepartmentSelect = new javax.swing.JComboBox<>();
-        adminUpdateBtn = new javax.swing.JButton();
-        adminSelectLabel = new javax.swing.JLabel();
+        adminAddressLabel = new javax.swing.JLabel();
+        teacherSelectLabel1 = new javax.swing.JLabel();
+        jSeparator34 = new javax.swing.JSeparator();
         adminIdTextField = new javax.swing.JTextField();
+        jSeparator35 = new javax.swing.JSeparator();
         loadAdminDataBtn = new javax.swing.JButton();
-        jSeparator17 = new javax.swing.JSeparator();
-        jSeparator18 = new javax.swing.JSeparator();
-        jSeparator19 = new javax.swing.JSeparator();
-        jSeparator20 = new javax.swing.JSeparator();
-        jSeparator21 = new javax.swing.JSeparator();
-        jSeparator22 = new javax.swing.JSeparator();
-        jSeparator23 = new javax.swing.JSeparator();
+        jSeparator36 = new javax.swing.JSeparator();
+        jSeparator37 = new javax.swing.JSeparator();
+        adminUpdateBtn = new javax.swing.JButton();
         Course = new javax.swing.JPanel();
         courseSelect = new javax.swing.JComboBox<>();
         courseContentPanel = new javax.swing.JPanel();
+        addCoursePanel = new javax.swing.JPanel();
+        addCourseNameLabel = new javax.swing.JLabel();
+        CourseDurationTextField = new javax.swing.JTextField();
+        CourseNameTextField = new javax.swing.JTextField();
+        addDepartmentIdLabel = new javax.swing.JLabel();
+        DepartmentIdTextField = new javax.swing.JTextField();
+        jSeparator26 = new javax.swing.JSeparator();
+        jSeparator27 = new javax.swing.JSeparator();
+        courseAddBtn = new javax.swing.JButton();
+        addCourseNameLabel1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jSeparator33 = new javax.swing.JSeparator();
         updateCoursePanel = new javax.swing.JPanel();
         updateCourseDurationLabel = new javax.swing.JLabel();
         updateCourseDurationTextField = new javax.swing.JTextField();
@@ -133,22 +146,11 @@ public class Management extends javax.swing.JPanel {
         updateCourseNameTextField = new javax.swing.JTextField();
         courseUpdateBtn = new javax.swing.JButton();
         updateCourseNameLabel = new javax.swing.JLabel();
-        updateCourseIdTextField = new javax.swing.JTextField();
+        CourseIdTextField = new javax.swing.JTextField();
         jSeparator24 = new javax.swing.JSeparator();
         courseDeleteBtn = new javax.swing.JButton();
-        updateCourseLoadDataBtn = new javax.swing.JButton();
-        addCoursePanel = new javax.swing.JPanel();
-        addCourseIdLabel = new javax.swing.JLabel();
-        addCourseIdTextField = new javax.swing.JTextField();
-        addCourseNameLabel = new javax.swing.JLabel();
-        addCourseDurationTextField = new javax.swing.JTextField();
-        addCourseDurationLabel = new javax.swing.JLabel();
-        addCourseNameTextField = new javax.swing.JTextField();
-        addDepartmentIdLabel = new javax.swing.JLabel();
-        addDepartmentIdTextField = new javax.swing.JTextField();
-        jSeparator26 = new javax.swing.JSeparator();
-        jSeparator27 = new javax.swing.JSeparator();
-        courseAddBtn = new javax.swing.JButton();
+        CourseLoadBtn = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         Batch = new javax.swing.JPanel();
         batchSelect = new javax.swing.JComboBox<>();
         batchContentPanel = new javax.swing.JPanel();
@@ -162,8 +164,8 @@ public class Management extends javax.swing.JPanel {
         jSeparator16 = new javax.swing.JSeparator();
         jSeparator28 = new javax.swing.JSeparator();
         batchAddBtn = new javax.swing.JButton();
-        addBatchRoutineLabel = new javax.swing.JLabel();
-        addBatchFileChooserBtn1 = new javax.swing.JButton();
+        jSeparator18 = new javax.swing.JSeparator();
+        addBatchTItle = new javax.swing.JLabel();
         updateBatchPanel = new javax.swing.JPanel();
         batchCourseYearLabel = new javax.swing.JLabel();
         addCourseIdTextField4 = new javax.swing.JTextField();
@@ -175,13 +177,7 @@ public class Management extends javax.swing.JPanel {
         batchUpdateBtn = new javax.swing.JButton();
         jSeparator29 = new javax.swing.JSeparator();
         jSeparator30 = new javax.swing.JSeparator();
-        updateBatchRoutineLabel = new javax.swing.JLabel();
-        updateBatchFileChooserBtn = new javax.swing.JButton();
-        Module_Chapters = new javax.swing.JPanel();
-        batchSelect1 = new javax.swing.JComboBox<>();
-        moduleChaptersContentPanel = new javax.swing.JPanel();
-        addModuleChapters = new javax.swing.JPanel();
-        updateModuleChapters = new javax.swing.JPanel();
+        Title = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(910, 630));
         setMinimumSize(new java.awt.Dimension(910, 630));
@@ -281,79 +277,77 @@ studentBatchSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] 
     StudentLayout.setHorizontalGroup(
         StudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(StudentLayout.createSequentialGroup()
+            .addGap(32, 32, 32)
             .addGroup(StudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(StudentLayout.createSequentialGroup()
-                    .addGap(32, 32, 32)
-                    .addGroup(StudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(StudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(StudentLayout.createSequentialGroup()
-                                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(StudentLayout.createSequentialGroup()
-                                .addComponent(studentFirstNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(314, 314, 314)
-                                .addComponent(studentLastNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(StudentLayout.createSequentialGroup()
-                                .addGap(4, 4, 4)
-                                .addComponent(studentAddressLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(310, 310, 310)
-                                .addComponent(studentContactLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(StudentLayout.createSequentialGroup()
-                                .addGroup(StudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(studentFirstNameText, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(68, 68, 68)
-                                .addGroup(StudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jSeparator2)
-                                    .addComponent(studentLastNameText, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(StudentLayout.createSequentialGroup()
-                                .addGroup(StudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(studentGenderLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(studentGenderSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(68, 68, 68)
-                                .addGroup(StudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(studentEmailLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(studentEmailText, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGroup(StudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StudentLayout.createSequentialGroup()
+                        .addGap(359, 359, 359)
+                        .addComponent(studentUpdateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(343, 343, 343))
+                    .addGroup(StudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(StudentLayout.createSequentialGroup()
-                            .addGroup(StudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(studentCourseSelect, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(studentAddressText)
-                                .addGroup(StudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(studentCourseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, StudentLayout.createSequentialGroup()
-                                    .addGap(4, 4, 4)
-                                    .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(StudentLayout.createSequentialGroup()
+                            .addComponent(studentFirstNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(314, 314, 314)
+                            .addComponent(studentLastNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(StudentLayout.createSequentialGroup()
+                            .addGap(4, 4, 4)
+                            .addComponent(studentAddressLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(310, 310, 310)
+                            .addComponent(studentContactLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(StudentLayout.createSequentialGroup()
+                            .addGroup(StudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(studentFirstNameText, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGap(68, 68, 68)
-                            .addGroup(StudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(studentBatchSelect, javax.swing.GroupLayout.Alignment.LEADING, 0, 384, Short.MAX_VALUE)
-                                .addComponent(jSeparator6, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(studentBatchLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(studentContactText, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jSeparator8)))))
+                            .addGroup(StudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jSeparator2)
+                                .addComponent(studentLastNameText, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(StudentLayout.createSequentialGroup()
+                            .addGroup(StudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(studentGenderLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(studentGenderSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(68, 68, 68)
+                            .addGroup(StudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(studentEmailLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(studentEmailText, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(StudentLayout.createSequentialGroup()
+                        .addGroup(StudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(studentCourseSelect, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(studentAddressText)
+                            .addGroup(StudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(studentCourseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, StudentLayout.createSequentialGroup()
+                                .addGap(4, 4, 4)
+                                .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(68, 68, 68)
+                        .addGroup(StudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(studentBatchSelect, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jSeparator6, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(studentBatchLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(studentContactText, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGroup(StudentLayout.createSequentialGroup()
-                    .addGap(15, 15, 15)
                     .addComponent(studentSelectLabel)
                     .addGap(18, 18, 18)
                     .addComponent(studentIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(18, 18, 18)
                     .addComponent(loadStudentDataBtn)))
             .addContainerGap(42, Short.MAX_VALUE))
-        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StudentLayout.createSequentialGroup()
-            .addGap(0, 0, Short.MAX_VALUE)
-            .addComponent(studentUpdateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(385, 385, 385))
     );
     StudentLayout.setVerticalGroup(
         StudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StudentLayout.createSequentialGroup()
-            .addGap(20, 20, 20)
+            .addGap(21, 21, 21)
             .addGroup(StudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(studentSelectLabel)
                 .addComponent(studentIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(loadStudentDataBtn))
-            .addGap(30, 30, 30)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
             .addGroup(StudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(studentFirstNameLabel)
                 .addComponent(studentLastNameLabel))
@@ -408,7 +402,7 @@ studentBatchSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] 
                 .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(18, 18, 18)
             .addComponent(studentUpdateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(42, 42, 42))
+            .addGap(27, 27, 27))
     );
 
     tabbedPane.addTab("tab1", Student);
@@ -490,127 +484,139 @@ teacherEmailLabel.setText("Email");
 teacherAddressLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 teacherAddressLabel.setText("Address");
 
+teacherDepartmentLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+teacherDepartmentLabel1.setText("Modules");
+
 javax.swing.GroupLayout TeacherLayout = new javax.swing.GroupLayout(Teacher);
 Teacher.setLayout(TeacherLayout);
 TeacherLayout.setHorizontalGroup(
 TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 .addGroup(TeacherLayout.createSequentialGroup()
+    .addGap(32, 32, 32)
     .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(TeacherLayout.createSequentialGroup()
-            .addGap(32, 32, 32)
-            .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(TeacherLayout.createSequentialGroup()
-                        .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(TeacherLayout.createSequentialGroup()
-                        .addComponent(teacherFirstNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(314, 314, 314)
-                        .addComponent(teacherLastNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(TeacherLayout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(teacherAddressLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(311, 311, 311)
-                        .addComponent(teacherContactLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(TeacherLayout.createSequentialGroup()
-                        .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(teacherFirstNameText, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(68, 68, 68)
-                        .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jSeparator10)
-                            .addComponent(teacherLastNameText, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(TeacherLayout.createSequentialGroup()
-                        .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(teacherGenderLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(teacherGender, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(68, 68, 68)
-                        .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(teacherEmailLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(teacherEmailText, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))))
+        .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TeacherLayout.createSequentialGroup()
+                .addGap(359, 359, 359)
+                .addComponent(teacherUpdateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(343, 343, 343))
+            .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                 .addGroup(TeacherLayout.createSequentialGroup()
-                    .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(teacherDepartment, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(teacherAddressText)
-                        .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(teacherDepartmentLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, TeacherLayout.createSequentialGroup()
-                            .addGap(4, 4, 4)
-                            .addComponent(jSeparator15, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(TeacherLayout.createSequentialGroup()
+                    .addComponent(teacherFirstNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(314, 314, 314)
+                    .addComponent(teacherLastNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(TeacherLayout.createSequentialGroup()
+                    .addGap(4, 4, 4)
+                    .addComponent(teacherAddressLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(311, 311, 311)
+                    .addComponent(teacherContactLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(TeacherLayout.createSequentialGroup()
+                    .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(teacherFirstNameText, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGap(68, 68, 68)
+                    .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jSeparator10)
+                        .addComponent(teacherLastNameText, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(TeacherLayout.createSequentialGroup()
+                    .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(teacherGenderLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(teacherGender, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(68, 68, 68)
+                    .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(teacherEmailLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(teacherEmailText, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))))
+            .addGroup(TeacherLayout.createSequentialGroup()
+                .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(teacherDepartment, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(teacherAddressText)
+                    .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(teacherDepartmentLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, TeacherLayout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(jSeparator15, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(68, 68, 68)
+                .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(teacherModules, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jSeparator14, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(teacherContactText, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE)))))
+                        .addComponent(teacherContactText, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(teacherDepartmentLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSeparator17))))
         .addGroup(TeacherLayout.createSequentialGroup()
-            .addGap(15, 15, 15)
             .addComponent(teacherSelectLabel)
             .addGap(18, 18, 18)
             .addComponent(teacherIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(18, 18, 18)
             .addComponent(loadTeacherDataBtn)))
     .addContainerGap(42, Short.MAX_VALUE))
-    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TeacherLayout.createSequentialGroup()
-        .addGap(0, 0, Short.MAX_VALUE)
-        .addComponent(teacherUpdateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(385, 385, 385))
     );
     TeacherLayout.setVerticalGroup(
         TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TeacherLayout.createSequentialGroup()
-            .addGap(20, 20, 20)
+            .addGap(21, 21, 21)
             .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(teacherSelectLabel)
                 .addComponent(teacherIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(loadTeacherDataBtn))
-            .addGap(30, 30, 30)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
             .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(teacherFirstNameLabel)
-                .addComponent(teacherLastNameLabel))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-            .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(teacherFirstNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(teacherLastNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGap(33, 33, 33)
-            .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(teacherGenderLabel)
-                .addComponent(teacherEmailLabel))
-            .addGap(12, 12, 12)
-            .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(teacherGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(teacherEmailText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGap(31, 31, 31)
-            .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(teacherAddressLabel)
-                .addGroup(TeacherLayout.createSequentialGroup()
-                    .addGap(8, 8, 8)
-                    .addComponent(teacherContactLabel)))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(teacherAddressText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(teacherContactText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGap(9, 9, 9)
-            .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(jSeparator14, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGap(23, 23, 23)
-            .addComponent(teacherDepartmentLabel)
-            .addGap(3, 3, 3)
-            .addComponent(teacherDepartment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-            .addComponent(jSeparator15, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TeacherLayout.createSequentialGroup()
+                    .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(teacherFirstNameLabel)
+                        .addComponent(teacherLastNameLabel))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(teacherFirstNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(teacherLastNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(33, 33, 33)
+                    .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(teacherGenderLabel)
+                        .addComponent(teacherEmailLabel))
+                    .addGap(12, 12, 12)
+                    .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(teacherGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(teacherEmailText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(31, 31, 31)
+                    .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(teacherAddressLabel)
+                        .addGroup(TeacherLayout.createSequentialGroup()
+                            .addGap(8, 8, 8)
+                            .addComponent(teacherContactLabel)))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(teacherAddressText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(teacherContactText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(9, 9, 9)
+                    .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jSeparator14, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(23, 23, 23)
+                    .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(teacherDepartmentLabel)
+                        .addComponent(teacherDepartmentLabel1))
+                    .addGap(3, 3, 3)
+                    .addGroup(TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(teacherModules, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(teacherDepartment))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jSeparator15, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jSeparator17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(27, 27, 27)
             .addComponent(teacherUpdateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(42, 42, 42))
+            .addGap(27, 27, 27))
     );
 
     tabbedPane.addTab("tab2", Teacher);
@@ -619,6 +625,19 @@ TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
     Admin.setMaximumSize(new java.awt.Dimension(910, 608));
     Admin.setMinimumSize(new java.awt.Dimension(910, 608));
     Admin.setPreferredSize(new java.awt.Dimension(910, 608));
+
+    adminLastNameText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    adminLastNameText.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+    adminEmailText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    adminEmailText.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+    adminAddressText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    adminAddressText.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+    adminContactText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    adminContactText.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+    adminContactText.addActionListener(this::adminContactTextActionPerformed);
 
     adminFirstNameLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
     adminFirstNameLabel.setText("FIrst Name");
@@ -629,10 +648,6 @@ TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
     adminFirstNameText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
     adminFirstNameText.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
     adminFirstNameText.addActionListener(this::adminFirstNameTextActionPerformed);
-
-    adminLastNameText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    adminLastNameText.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-    adminLastNameText.addActionListener(this::adminLastNameTextActionPerformed);
 
     adminGenderLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
     adminGenderLabel.setText("Gender");
@@ -648,149 +663,136 @@ TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
     adminEmailLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
     adminEmailLabel.setText("Email");
 
-    adminEmailText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    adminEmailText.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+    adminContactLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    adminContactLabel.setText("Contact");
 
     adminAddressLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
     adminAddressLabel.setText("Address");
 
-    adminAddressText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    adminAddressText.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+    teacherSelectLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    teacherSelectLabel1.setText("Enter Admin Id:");
 
-    adminContactLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    adminContactLabel.setText("Contact");
+    adminIdTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-    adminContactText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    adminContactText.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-    adminContactText.addActionListener(this::adminContactTextActionPerformed);
-
-    adminDepartmentLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    adminDepartmentLabel.setText("Department");
-
-    adminDepartmentSelect.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    adminDepartmentSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male","Female","Other" }));
-    adminDepartmentSelect.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-    adminDepartmentSelect.setFocusable(false);
-    adminDepartmentSelect.setOpaque(true);
-    adminDepartmentSelect.setRequestFocusEnabled(false);
-    adminDepartmentSelect.addActionListener(this::adminDepartmentSelectActionPerformed);
+    loadAdminDataBtn.setBackground(new java.awt.Color(102, 0, 255));
+    loadAdminDataBtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    loadAdminDataBtn.setForeground(new java.awt.Color(255, 255, 255));
+    loadAdminDataBtn.setText("Load Data");
+    loadAdminDataBtn.setFocusPainted(false);
 
     adminUpdateBtn.setBackground(new java.awt.Color(0, 0, 0));
     adminUpdateBtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
     adminUpdateBtn.setForeground(new java.awt.Color(255, 255, 255));
     adminUpdateBtn.setText("Update");
-    adminUpdateBtn.addActionListener(this::adminUpdateBtnActionPerformed);
-
-    adminSelectLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    adminSelectLabel.setText("Enter Admin Id:");
-
-    adminIdTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-
-    loadAdminDataBtn.setBackground(new java.awt.Color(51, 51, 51));
-    loadAdminDataBtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    loadAdminDataBtn.setForeground(new java.awt.Color(255, 255, 255));
-    loadAdminDataBtn.setText("Load Data");
-    loadAdminDataBtn.setFocusPainted(false);
+    adminUpdateBtn.setFocusPainted(false);
 
     javax.swing.GroupLayout AdminLayout = new javax.swing.GroupLayout(Admin);
     Admin.setLayout(AdminLayout);
     AdminLayout.setHorizontalGroup(
         AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(AdminLayout.createSequentialGroup()
-            .addGap(27, 27, 27)
+            .addGap(32, 32, 32)
             .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AdminLayout.createSequentialGroup()
+                        .addGap(359, 359, 359)
+                        .addComponent(adminUpdateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(343, 343, 343))
+                    .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(AdminLayout.createSequentialGroup()
+                            .addComponent(jSeparator36, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jSeparator37, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(AdminLayout.createSequentialGroup()
+                            .addComponent(adminFirstNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(314, 314, 314)
+                            .addComponent(adminLastNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(AdminLayout.createSequentialGroup()
+                            .addGap(4, 4, 4)
+                            .addComponent(adminAddressLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(311, 311, 311)
+                            .addComponent(adminContactLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(AdminLayout.createSequentialGroup()
+                            .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jSeparator34, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(adminFirstNameText, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(68, 68, 68)
+                            .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jSeparator35)
+                                .addComponent(adminLastNameText, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(AdminLayout.createSequentialGroup()
+                            .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(adminGenderLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(adminGenderSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(68, 68, 68)
+                            .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(adminEmailLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(adminEmailText, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(AdminLayout.createSequentialGroup()
+                        .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(adminAddressText, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSeparator31, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(68, 68, 68)
+                        .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jSeparator32, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(adminContactText, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGroup(AdminLayout.createSequentialGroup()
-                    .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(adminFirstNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(adminFirstNameText, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(adminGenderLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(adminGenderSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(adminAddressLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(adminAddressText, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jSeparator17, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(adminDepartmentLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(adminDepartmentSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jSeparator19, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jSeparator21, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jSeparator23, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(109, 109, 109)
-                    .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(adminContactText, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(adminContactLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(adminEmailText, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(adminEmailLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(adminLastNameText, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(adminLastNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jSeparator18, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jSeparator20, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jSeparator22, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(AdminLayout.createSequentialGroup()
-                    .addComponent(adminSelectLabel)
-                    .addGap(18, 18, 18)
+                    .addComponent(teacherSelectLabel1)
+                    .addGap(28, 28, 28)
                     .addComponent(adminIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(26, 26, 26)
+                    .addGap(18, 18, 18)
                     .addComponent(loadAdminDataBtn)))
-            .addContainerGap(14, Short.MAX_VALUE))
-        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AdminLayout.createSequentialGroup()
-            .addGap(0, 0, Short.MAX_VALUE)
-            .addComponent(adminUpdateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(366, 366, 366))
+            .addContainerGap(42, Short.MAX_VALUE))
     );
     AdminLayout.setVerticalGroup(
         AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(AdminLayout.createSequentialGroup()
-            .addGap(15, 15, 15)
+        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AdminLayout.createSequentialGroup()
+            .addGap(21, 21, 21)
             .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(adminSelectLabel)
+                .addComponent(teacherSelectLabel1)
                 .addComponent(adminIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(loadAdminDataBtn))
-            .addGap(34, 34, 34)
-            .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+            .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(adminFirstNameLabel)
                 .addComponent(adminLastNameLabel))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
             .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(adminFirstNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(adminLastNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(AdminLayout.createSequentialGroup()
-                    .addComponent(jSeparator17, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(26, 26, 26)
-                    .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(adminGenderLabel)
-                        .addComponent(adminEmailLabel))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(adminGenderSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(adminEmailText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addComponent(jSeparator18, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jSeparator34, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jSeparator35, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(33, 33, 33)
+            .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(adminGenderLabel)
+                .addComponent(adminEmailLabel))
+            .addGap(12, 12, 12)
+            .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(adminGenderSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(adminEmailText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(AdminLayout.createSequentialGroup()
-                    .addComponent(jSeparator19, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(15, 15, 15)
-                    .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(adminAddressLabel)
-                        .addComponent(adminContactLabel))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(adminAddressText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(adminContactText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addComponent(jSeparator20, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator37, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jSeparator36, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(31, 31, 31)
             .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jSeparator21, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(jSeparator22, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGap(24, 24, 24)
-            .addComponent(adminDepartmentLabel)
+                .addComponent(adminAddressLabel)
+                .addGroup(AdminLayout.createSequentialGroup()
+                    .addGap(8, 8, 8)
+                    .addComponent(adminContactLabel)))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(adminDepartmentSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(jSeparator23, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-            .addComponent(adminUpdateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(87, 87, 87))
+            .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(adminAddressText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(adminContactText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(9, 9, 9)
+            .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jSeparator31, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jSeparator32, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(131, 131, 131)
+            .addComponent(adminUpdateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(27, 27, 27))
     );
 
     tabbedPane.addTab("tab3", Admin);
@@ -803,10 +805,112 @@ TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
     courseSelect.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
     courseSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Add A New Course", "Update Course" }));
 
+    courseContentPanel.setMaximumSize(new java.awt.Dimension(910, 495));
+    courseContentPanel.setMinimumSize(new java.awt.Dimension(910, 495));
+    courseContentPanel.setPreferredSize(new java.awt.Dimension(910, 495));
     courseContentPanel.setLayout(new java.awt.CardLayout());
 
-    updateCoursePanel.setMaximumSize(new java.awt.Dimension(859, 450));
-    updateCoursePanel.setMinimumSize(new java.awt.Dimension(859, 450));
+    addCoursePanel.setBackground(new java.awt.Color(255, 255, 255));
+    addCoursePanel.setMaximumSize(new java.awt.Dimension(910, 450));
+    addCoursePanel.setMinimumSize(new java.awt.Dimension(910, 450));
+    addCoursePanel.setPreferredSize(new java.awt.Dimension(910, 450));
+
+    addCourseNameLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    addCourseNameLabel.setText("Course Name");
+
+    CourseDurationTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    CourseDurationTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+    CourseNameTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    CourseNameTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+    addDepartmentIdLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    addDepartmentIdLabel.setText("Enter Departmetn Id:");
+
+    DepartmentIdTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    DepartmentIdTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+    DepartmentIdTextField.addActionListener(this::DepartmentIdTextFieldActionPerformed);
+
+    courseAddBtn.setBackground(new java.awt.Color(51, 178, 66));
+    courseAddBtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    courseAddBtn.setForeground(new java.awt.Color(255, 255, 255));
+    courseAddBtn.setText("Add");
+    courseAddBtn.setFocusPainted(false);
+    courseAddBtn.addActionListener(this::courseAddBtnActionPerformed);
+
+    addCourseNameLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    addCourseNameLabel1.setText("Duration");
+
+    jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+    jLabel1.setForeground(new java.awt.Color(196, 0, 98));
+    jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    jLabel1.setText("Add New Course");
+
+    javax.swing.GroupLayout addCoursePanelLayout = new javax.swing.GroupLayout(addCoursePanel);
+    addCoursePanel.setLayout(addCoursePanelLayout);
+    addCoursePanelLayout.setHorizontalGroup(
+        addCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addCoursePanelLayout.createSequentialGroup()
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(courseAddBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(309, 309, 309))
+        .addGroup(addCoursePanelLayout.createSequentialGroup()
+            .addGroup(addCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(addCoursePanelLayout.createSequentialGroup()
+                    .addGap(311, 311, 311)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(addCoursePanelLayout.createSequentialGroup()
+                    .addGap(32, 32, 32)
+                    .addGroup(addCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(addCourseNameLabel1)
+                        .addGroup(addCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jSeparator27, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CourseDurationTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(addCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jSeparator26, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CourseNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(addCourseNameLabel)
+                        .addGroup(addCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(DepartmentIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(addCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(addDepartmentIdLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jSeparator33, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+            .addContainerGap(312, Short.MAX_VALUE))
+    );
+    addCoursePanelLayout.setVerticalGroup(
+        addCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(addCoursePanelLayout.createSequentialGroup()
+            .addGap(25, 25, 25)
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+            .addComponent(addDepartmentIdLabel)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addComponent(DepartmentIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jSeparator33, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(26, 26, 26)
+            .addComponent(addCourseNameLabel)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(CourseNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jSeparator26, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(27, 27, 27)
+            .addComponent(addCourseNameLabel1)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addComponent(CourseDurationTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jSeparator27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(30, 30, 30)
+            .addComponent(courseAddBtn)
+            .addGap(33, 33, 33))
+    );
+
+    courseContentPanel.add(addCoursePanel, "addCourse");
+
+    updateCoursePanel.setBackground(new java.awt.Color(255, 255, 255));
+    updateCoursePanel.setMaximumSize(new java.awt.Dimension(910, 450));
+    updateCoursePanel.setMinimumSize(new java.awt.Dimension(910, 450));
+    updateCoursePanel.setPreferredSize(new java.awt.Dimension(910, 495));
 
     updateCourseDurationLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
     updateCourseDurationLabel.setText("Course Duration");
@@ -818,6 +922,7 @@ TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
     updateCourseIdLabel.setText("Enter Course Id:");
 
     updateCourseNameTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    updateCourseNameTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
     courseUpdateBtn.setBackground(new java.awt.Color(51, 51, 51));
     courseUpdateBtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -829,8 +934,8 @@ TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
     updateCourseNameLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
     updateCourseNameLabel.setText("Course Name");
 
-    updateCourseIdTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    updateCourseIdTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+    CourseIdTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    CourseIdTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
     courseDeleteBtn.setBackground(new java.awt.Color(182, 51, 51));
     courseDeleteBtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -838,193 +943,98 @@ TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
     courseDeleteBtn.setText("Delete");
     courseDeleteBtn.setFocusPainted(false);
 
-    updateCourseLoadDataBtn.setBackground(new java.awt.Color(51, 51, 51));
-    updateCourseLoadDataBtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    updateCourseLoadDataBtn.setForeground(new java.awt.Color(255, 255, 255));
-    updateCourseLoadDataBtn.setText("Load Data");
-    updateCourseLoadDataBtn.setFocusPainted(false);
+    CourseLoadBtn.setBackground(new java.awt.Color(51, 51, 51));
+    CourseLoadBtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    CourseLoadBtn.setForeground(new java.awt.Color(255, 255, 255));
+    CourseLoadBtn.setText("Load Data");
+    CourseLoadBtn.setFocusPainted(false);
+
+    jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+    jLabel2.setForeground(new java.awt.Color(196, 0, 98));
+    jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    jLabel2.setText("Update Course");
 
     javax.swing.GroupLayout updateCoursePanelLayout = new javax.swing.GroupLayout(updateCoursePanel);
     updateCoursePanel.setLayout(updateCoursePanelLayout);
     updateCoursePanelLayout.setHorizontalGroup(
         updateCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(updateCoursePanelLayout.createSequentialGroup()
-            .addGap(21, 21, 21)
             .addGroup(updateCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(updateCoursePanelLayout.createSequentialGroup()
-                    .addGroup(updateCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(updateCourseNameTextField)
-                        .addComponent(updateCourseDurationTextField)
-                        .addGroup(updateCoursePanelLayout.createSequentialGroup()
-                            .addGroup(updateCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jSeparator25, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(updateCoursePanelLayout.createSequentialGroup()
-                                    .addComponent(updateCourseIdLabel)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(updateCourseIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGap(0, 0, Short.MAX_VALUE)))
-                    .addGap(40, 40, 40)
-                    .addComponent(updateCourseLoadDataBtn)
-                    .addGap(301, 301, 301))
+                    .addGap(330, 330, 330)
+                    .addComponent(courseUpdateBtn)
+                    .addGap(18, 18, 18)
+                    .addComponent(courseDeleteBtn))
                 .addGroup(updateCoursePanelLayout.createSequentialGroup()
+                    .addGap(32, 32, 32)
                     .addGroup(updateCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(updateCourseNameLabel)
                         .addComponent(updateCourseDurationLabel)
+                        .addComponent(updateCourseNameLabel)
+                        .addGroup(updateCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(updateCourseNameTextField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator25, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jSeparator24, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(updateCourseDurationTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(updateCoursePanelLayout.createSequentialGroup()
-                            .addGroup(updateCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(updateCoursePanelLayout.createSequentialGroup()
-                                    .addComponent(jSeparator24, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(115, 115, 115))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, updateCoursePanelLayout.createSequentialGroup()
-                                    .addComponent(courseUpdateBtn)
-                                    .addGap(72, 72, 72)))
-                            .addComponent(courseDeleteBtn)))
-                    .addGap(283, 283, 283))))
+                            .addComponent(updateCourseIdLabel)
+                            .addGap(18, 18, 18)
+                            .addComponent(CourseIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(CourseLoadBtn))))
+                .addGroup(updateCoursePanelLayout.createSequentialGroup()
+                    .addGap(311, 311, 311)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addContainerGap(312, Short.MAX_VALUE))
     );
     updateCoursePanelLayout.setVerticalGroup(
         updateCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(updateCoursePanelLayout.createSequentialGroup()
-            .addGap(36, 36, 36)
+            .addGap(25, 25, 25)
+            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
             .addGroup(updateCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(updateCourseIdLabel)
                 .addGroup(updateCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(updateCourseIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(updateCourseLoadDataBtn)))
-            .addGap(64, 64, 64)
+                    .addComponent(CourseIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CourseLoadBtn)))
+            .addGap(47, 47, 47)
             .addComponent(updateCourseNameLabel)
             .addGap(4, 4, 4)
             .addComponent(updateCourseNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(jSeparator25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+            .addComponent(jSeparator25, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(18, 18, 18)
             .addComponent(updateCourseDurationLabel)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
             .addComponent(updateCourseDurationTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(jSeparator24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+            .addComponent(jSeparator24, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(54, 54, 54)
             .addGroup(updateCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(courseUpdateBtn)
                 .addComponent(courseDeleteBtn))
             .addGap(40, 40, 40))
     );
 
-    courseContentPanel.add(updateCoursePanel, "card3");
-
-    addCoursePanel.setMaximumSize(new java.awt.Dimension(859, 450));
-    addCoursePanel.setMinimumSize(new java.awt.Dimension(859, 450));
-    addCoursePanel.setPreferredSize(new java.awt.Dimension(859, 450));
-
-    addCourseIdLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    addCourseIdLabel.setText("Enter Course Id:");
-
-    addCourseIdTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    addCourseIdTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-    addCourseNameLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    addCourseNameLabel.setText("Course Name");
-
-    addCourseDurationTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    addCourseDurationTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-    addCourseDurationLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    addCourseDurationLabel.setText("Course Duration");
-
-    addCourseNameTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    addCourseNameTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-    addDepartmentIdLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    addDepartmentIdLabel.setText("Enter Departmetn Id:");
-
-    addDepartmentIdTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    addDepartmentIdTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-    addDepartmentIdTextField.addActionListener(this::addDepartmentIdTextFieldActionPerformed);
-
-    courseAddBtn.setBackground(new java.awt.Color(51, 178, 66));
-    courseAddBtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    courseAddBtn.setForeground(new java.awt.Color(255, 255, 255));
-    courseAddBtn.setText("Add");
-    courseAddBtn.setFocusPainted(false);
-    courseAddBtn.addActionListener(this::courseAddBtnActionPerformed);
-
-    javax.swing.GroupLayout addCoursePanelLayout = new javax.swing.GroupLayout(addCoursePanel);
-    addCoursePanel.setLayout(addCoursePanelLayout);
-    addCoursePanelLayout.setHorizontalGroup(
-        addCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(addCoursePanelLayout.createSequentialGroup()
-            .addGroup(addCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(addCoursePanelLayout.createSequentialGroup()
-                    .addGap(14, 14, 14)
-                    .addGroup(addCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(addCourseDurationLabel)
-                        .addComponent(addCourseNameLabel)
-                        .addComponent(addCourseDurationTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE)
-                        .addComponent(addCourseNameTextField)
-                        .addComponent(jSeparator26)
-                        .addComponent(jSeparator27)))
-                .addGroup(addCoursePanelLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(addCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(addDepartmentIdLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(addCourseIdLabel))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(addCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(addCourseIdTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
-                        .addComponent(addDepartmentIdTextField))))
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addCoursePanelLayout.createSequentialGroup()
-            .addGap(0, 385, Short.MAX_VALUE)
-            .addComponent(courseAddBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(339, 339, 339))
-    );
-    addCoursePanelLayout.setVerticalGroup(
-        addCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(addCoursePanelLayout.createSequentialGroup()
-            .addGap(36, 36, 36)
-            .addGroup(addCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(addCourseIdLabel)
-                .addComponent(addCourseIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGap(28, 28, 28)
-            .addGroup(addCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(addDepartmentIdLabel)
-                .addComponent(addDepartmentIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGap(56, 56, 56)
-            .addComponent(addCourseNameLabel)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(addCourseNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(jSeparator26, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(43, 43, 43)
-            .addComponent(addCourseDurationLabel)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(addCourseDurationTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(jSeparator27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-            .addComponent(courseAddBtn)
-            .addGap(32, 32, 32))
-    );
-
-    courseContentPanel.add(addCoursePanel, "card2");
+    courseContentPanel.add(updateCoursePanel, "updateCourse");
 
     javax.swing.GroupLayout CourseLayout = new javax.swing.GroupLayout(Course);
     Course.setLayout(CourseLayout);
     CourseLayout.setHorizontalGroup(
         CourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(CourseLayout.createSequentialGroup()
-            .addGap(25, 25, 25)
-            .addGroup(CourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(courseContentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(courseSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGap(25, 25, 25))
+            .addGap(56, 56, 56)
+            .addComponent(courseSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        .addComponent(courseContentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
     );
     CourseLayout.setVerticalGroup(
         CourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(CourseLayout.createSequentialGroup()
-            .addGap(49, 49, 49)
+            .addGap(23, 23, 23)
             .addComponent(courseSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
-            .addComponent(courseContentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+            .addComponent(courseContentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE))
     );
 
     tabbedPane.addTab("tab4", Course);
@@ -1036,15 +1046,18 @@ TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 
     batchSelect.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
     batchSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Add A New Batch", "Update Batch" }));
+    batchSelect.addActionListener(this::batchSelectActionPerformed);
 
-    batchContentPanel.setMaximumSize(new java.awt.Dimension(859, 450));
-    batchContentPanel.setMinimumSize(new java.awt.Dimension(859, 450));
+    batchContentPanel.setMaximumSize(new java.awt.Dimension(910, 495));
+    batchContentPanel.setMinimumSize(new java.awt.Dimension(910, 495));
     batchContentPanel.setOpaque(false);
-    batchContentPanel.setPreferredSize(new java.awt.Dimension(859, 450));
+    batchContentPanel.setPreferredSize(new java.awt.Dimension(910, 495));
     batchContentPanel.setLayout(new java.awt.CardLayout());
 
-    addBatchPanel.setMaximumSize(new java.awt.Dimension(859, 450));
-    addBatchPanel.setMinimumSize(new java.awt.Dimension(859, 450));
+    addBatchPanel.setBackground(new java.awt.Color(255, 255, 255));
+    addBatchPanel.setMaximumSize(new java.awt.Dimension(910, 450));
+    addBatchPanel.setMinimumSize(new java.awt.Dimension(910, 450));
+    addBatchPanel.setPreferredSize(new java.awt.Dimension(910, 450));
 
     batchCourseIdLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
     batchCourseIdLabel.setText("Enter Course Id:");
@@ -1071,77 +1084,75 @@ TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
     batchAddBtn.setFocusPainted(false);
     batchAddBtn.addActionListener(this::batchAddBtnActionPerformed);
 
-    addBatchRoutineLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    addBatchRoutineLabel.setText("Routine");
-
-    addBatchFileChooserBtn1.setBackground(new java.awt.Color(51, 51, 51));
-    addBatchFileChooserBtn1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    addBatchFileChooserBtn1.setForeground(new java.awt.Color(255, 255, 255));
-    addBatchFileChooserBtn1.setText("Select New Routine");
-    addBatchFileChooserBtn1.addActionListener(this::addBatchFileChooserBtn1ActionPerformed);
+    addBatchTItle.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+    addBatchTItle.setForeground(new java.awt.Color(196, 0, 98));
+    addBatchTItle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    addBatchTItle.setText("Add a new Batch");
 
     javax.swing.GroupLayout addBatchPanelLayout = new javax.swing.GroupLayout(addBatchPanel);
     addBatchPanel.setLayout(addBatchPanelLayout);
     addBatchPanelLayout.setHorizontalGroup(
         addBatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(addBatchPanelLayout.createSequentialGroup()
-            .addGap(15, 15, 15)
             .addGroup(addBatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(addBatchPanelLayout.createSequentialGroup()
-                    .addComponent(batchCourseIdLabel)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(batchCourseIdTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
-                    .addGap(474, 474, 474))
-                .addGroup(addBatchPanelLayout.createSequentialGroup()
+                    .addGap(15, 15, 15)
                     .addGroup(addBatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(addBatchNameTextField)
+                        .addComponent(batchCourseIdLabel)
+                        .addComponent(addBatchNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(addBatchSectionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(addBatchSectionTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
-                        .addComponent(addBatchNameTextField)
+                        .addComponent(jSeparator28)
                         .addComponent(jSeparator16)
-                        .addComponent(jSeparator28))
-                    .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(batchCourseIdTextField)
+                        .addComponent(jSeparator18)))
                 .addGroup(addBatchPanelLayout.createSequentialGroup()
-                    .addGroup(addBatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(addBatchRoutineLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(addBatchPanelLayout.createSequentialGroup()
-                            .addComponent(addBatchFileChooserBtn1)
-                            .addGap(175, 175, 175)
-                            .addComponent(batchAddBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(addBatchNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGap(311, 311, 311)
+                    .addComponent(addBatchTItle)))
+            .addGap(0, 332, Short.MAX_VALUE))
+        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addBatchPanelLayout.createSequentialGroup()
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(batchAddBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(371, 371, 371))
     );
     addBatchPanelLayout.setVerticalGroup(
         addBatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(addBatchPanelLayout.createSequentialGroup()
-            .addGap(58, 58, 58)
-            .addGroup(addBatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(batchCourseIdLabel)
-                .addComponent(batchCourseIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGap(60, 60, 60)
+            .addGap(25, 25, 25)
+            .addComponent(addBatchTItle)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
+            .addComponent(batchCourseIdLabel)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(batchCourseIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jSeparator18, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(2, 2, 2)
             .addComponent(addBatchNameLabel)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(addBatchNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jSeparator16, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(41, 41, 41)
+            .addGap(2, 2, 2)
             .addComponent(addBatchSectionLabel)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(addBatchSectionTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jSeparator28, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-            .addComponent(addBatchRoutineLabel)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addGroup(addBatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(batchAddBtn)
-                .addComponent(addBatchFileChooserBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addContainerGap(31, Short.MAX_VALUE))
+            .addComponent(batchAddBtn)
+            .addGap(41, 41, 41))
     );
 
-    batchContentPanel.add(addBatchPanel, "card2");
+    batchContentPanel.add(addBatchPanel, "addBatch");
+
+    updateBatchPanel.setBackground(new java.awt.Color(255, 255, 255));
+    updateBatchPanel.setMaximumSize(new java.awt.Dimension(910, 450));
+    updateBatchPanel.setMinimumSize(new java.awt.Dimension(910, 450));
+    updateBatchPanel.setPreferredSize(new java.awt.Dimension(910, 450));
 
     batchCourseYearLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    batchCourseYearLabel.setText("Enter Course Year:");
+    batchCourseYearLabel.setText("Enter Batch Id");
 
     addCourseIdTextField4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
     addCourseIdTextField4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -1172,14 +1183,10 @@ TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
     batchUpdateBtn.setFocusPainted(false);
     batchUpdateBtn.addActionListener(this::batchUpdateBtnActionPerformed);
 
-    updateBatchRoutineLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    updateBatchRoutineLabel.setText("Routine");
-
-    updateBatchFileChooserBtn.setBackground(new java.awt.Color(51, 51, 51));
-    updateBatchFileChooserBtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    updateBatchFileChooserBtn.setForeground(new java.awt.Color(255, 255, 255));
-    updateBatchFileChooserBtn.setText("Select New Routine");
-    updateBatchFileChooserBtn.addActionListener(this::updateBatchFileChooserBtnActionPerformed);
+    Title.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+    Title.setForeground(new java.awt.Color(196, 0, 98));
+    Title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    Title.setText("Update Batch");
 
     javax.swing.GroupLayout updateBatchPanelLayout = new javax.swing.GroupLayout(updateBatchPanel);
     updateBatchPanel.setLayout(updateBatchPanelLayout);
@@ -1189,150 +1196,86 @@ TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(30, 30, 30)
             .addGroup(updateBatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(updateBatchPanelLayout.createSequentialGroup()
-                    .addComponent(updateBatchFileChooserBtn)
-                    .addGap(164, 164, 164)
-                    .addComponent(batchUpdateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGroup(updateBatchPanelLayout.createSequentialGroup()
-                    .addGroup(updateBatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, updateBatchPanelLayout.createSequentialGroup()
+                    .addComponent(jSeparator29, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE))
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, updateBatchPanelLayout.createSequentialGroup()
+                    .addGroup(updateBatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(updateBatchNameLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(batchSemesterLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, updateBatchPanelLayout.createSequentialGroup()
                             .addGroup(updateBatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jSeparator29, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(updateBatchNameTextField, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, updateBatchPanelLayout.createSequentialGroup()
                                     .addGap(6, 6, 6)
                                     .addComponent(batchCourseYearLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(addCourseIdTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(0, 0, Short.MAX_VALUE))
-                                .addComponent(updateBatchNameLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(batchSemesterLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(batchSemesterTextField, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jSeparator30, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addGap(540, 540, 540))
-                        .addGroup(updateBatchPanelLayout.createSequentialGroup()
-                            .addComponent(updateBatchRoutineLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(batchLoadDataBtn)
+                                    .addComponent(addCourseIdTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(batchLoadDataBtn))
+                                .addComponent(updateBatchNameTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(batchSemesterTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jSeparator30, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(0, 0, Short.MAX_VALUE)))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(updateBatchPanelLayout.createSequentialGroup()
+                    .addGap(331, 331, 331)
+                    .addComponent(batchUpdateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, updateBatchPanelLayout.createSequentialGroup()
+            .addContainerGap(374, Short.MAX_VALUE)
+            .addComponent(Title)
+            .addGap(322, 322, 322))
     );
     updateBatchPanelLayout.setVerticalGroup(
         updateBatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(updateBatchPanelLayout.createSequentialGroup()
-            .addGroup(updateBatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(updateBatchPanelLayout.createSequentialGroup()
-                    .addGap(40, 40, 40)
-                    .addComponent(batchLoadDataBtn)
-                    .addGap(52, 52, 52))
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, updateBatchPanelLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(updateBatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(batchCourseYearLabel)
-                        .addComponent(addCourseIdTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(37, 37, 37)))
+            .addGap(23, 23, 23)
+            .addComponent(Title)
+            .addGap(48, 48, 48)
+            .addGroup(updateBatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(batchCourseYearLabel)
+                .addComponent(addCourseIdTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(batchLoadDataBtn))
+            .addGap(34, 34, 34)
             .addComponent(updateBatchNameLabel)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(updateBatchNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jSeparator29, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(24, 24, 24)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(batchSemesterLabel)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(batchSemesterTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(5, 5, 5)
             .addComponent(jSeparator30, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(18, 18, 18)
-            .addComponent(updateBatchRoutineLabel)
-            .addGap(18, 18, 18)
-            .addGroup(updateBatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(updateBatchFileChooserBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(batchUpdateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGap(61, 61, 61))
+            .addGap(61, 61, 61)
+            .addComponent(batchUpdateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addContainerGap(10, Short.MAX_VALUE))
     );
 
-    batchContentPanel.add(updateBatchPanel, "card3");
+    batchContentPanel.add(updateBatchPanel, "updateBatch");
 
     javax.swing.GroupLayout BatchLayout = new javax.swing.GroupLayout(Batch);
     Batch.setLayout(BatchLayout);
     BatchLayout.setHorizontalGroup(
         BatchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(BatchLayout.createSequentialGroup()
-            .addGap(25, 25, 25)
             .addGroup(BatchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(batchSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(batchContentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addContainerGap(26, Short.MAX_VALUE))
+                .addGroup(BatchLayout.createSequentialGroup()
+                    .addGap(27, 27, 27)
+                    .addComponent(batchSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(batchContentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 910, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(916, 916, 916))
     );
     BatchLayout.setVerticalGroup(
         BatchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(BatchLayout.createSequentialGroup()
-            .addGap(56, 56, 56)
+            .addGap(23, 23, 23)
             .addComponent(batchSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
             .addComponent(batchContentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE))
     );
 
     tabbedPane.addTab("tab5", Batch);
-
-    Module_Chapters.setMaximumSize(new java.awt.Dimension(910, 608));
-    Module_Chapters.setMinimumSize(new java.awt.Dimension(910, 608));
-    Module_Chapters.setPreferredSize(new java.awt.Dimension(910, 608));
-
-    batchSelect1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    batchSelect1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Add A New Chapter", "Update Chapter" }));
-
-    moduleChaptersContentPanel.setMaximumSize(new java.awt.Dimension(859, 450));
-    moduleChaptersContentPanel.setMinimumSize(new java.awt.Dimension(859, 450));
-    moduleChaptersContentPanel.setPreferredSize(new java.awt.Dimension(859, 450));
-    moduleChaptersContentPanel.setLayout(new java.awt.CardLayout());
-
-    javax.swing.GroupLayout addModuleChaptersLayout = new javax.swing.GroupLayout(addModuleChapters);
-    addModuleChapters.setLayout(addModuleChaptersLayout);
-    addModuleChaptersLayout.setHorizontalGroup(
-        addModuleChaptersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGap(0, 859, Short.MAX_VALUE)
-    );
-    addModuleChaptersLayout.setVerticalGroup(
-        addModuleChaptersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGap(0, 455, Short.MAX_VALUE)
-    );
-
-    moduleChaptersContentPanel.add(addModuleChapters, "card2");
-
-    javax.swing.GroupLayout updateModuleChaptersLayout = new javax.swing.GroupLayout(updateModuleChapters);
-    updateModuleChapters.setLayout(updateModuleChaptersLayout);
-    updateModuleChaptersLayout.setHorizontalGroup(
-        updateModuleChaptersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGap(0, 859, Short.MAX_VALUE)
-    );
-    updateModuleChaptersLayout.setVerticalGroup(
-        updateModuleChaptersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGap(0, 455, Short.MAX_VALUE)
-    );
-
-    moduleChaptersContentPanel.add(updateModuleChapters, "card3");
-
-    javax.swing.GroupLayout Module_ChaptersLayout = new javax.swing.GroupLayout(Module_Chapters);
-    Module_Chapters.setLayout(Module_ChaptersLayout);
-    Module_ChaptersLayout.setHorizontalGroup(
-        Module_ChaptersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(Module_ChaptersLayout.createSequentialGroup()
-            .addGap(25, 25, 25)
-            .addGroup(Module_ChaptersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(moduleChaptersContentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(batchSelect1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addContainerGap())
-    );
-    Module_ChaptersLayout.setVerticalGroup(
-        Module_ChaptersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(Module_ChaptersLayout.createSequentialGroup()
-            .addGap(54, 54, 54)
-            .addComponent(batchSelect1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(56, 56, 56)
-            .addComponent(moduleChaptersContentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 455, Short.MAX_VALUE))
-    );
-
-    tabbedPane.addTab("tab6", Module_Chapters);
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
     this.setLayout(layout);
@@ -1366,37 +1309,13 @@ TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         // TODO add your handling code here:
     }//GEN-LAST:event_studentContactTextActionPerformed
 
-    private void adminLastNameTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminLastNameTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_adminLastNameTextActionPerformed
-
-    private void adminFirstNameTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminFirstNameTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_adminFirstNameTextActionPerformed
-
-    private void adminGenderSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminGenderSelectActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_adminGenderSelectActionPerformed
-
-    private void adminDepartmentSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminDepartmentSelectActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_adminDepartmentSelectActionPerformed
-
-    private void adminUpdateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminUpdateBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_adminUpdateBtnActionPerformed
-
-    private void adminContactTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminContactTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_adminContactTextActionPerformed
-
     private void courseUpdateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseUpdateBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_courseUpdateBtnActionPerformed
 
-    private void addDepartmentIdTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addDepartmentIdTextFieldActionPerformed
+    private void DepartmentIdTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DepartmentIdTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_addDepartmentIdTextFieldActionPerformed
+    }//GEN-LAST:event_DepartmentIdTextFieldActionPerformed
 
     private void courseAddBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseAddBtnActionPerformed
         // TODO add your handling code here:
@@ -1410,36 +1329,10 @@ TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         // TODO add your handling code here:
     }//GEN-LAST:event_batchUpdateBtnActionPerformed
 
-    private void updateBatchFileChooserBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBatchFileChooserBtnActionPerformed
-        // TODO add your handling code here:
-        JFileChooser chooser = new JFileChooser();
-        int result = chooser.showOpenDialog(this);
-        if (result == JFileChooser.APPROVE_OPTION) {
-            String filePath = chooser.getSelectedFile().getAbsolutePath();
-            System.out.println("Selected file " + filePath);
-        }
-        
-       
-        
-
-       
-    }//GEN-LAST:event_updateBatchFileChooserBtnActionPerformed
-
     private void addCourseIdTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCourseIdTextField4ActionPerformed
         // TODO add your handling code here:
         
     }//GEN-LAST:event_addCourseIdTextField4ActionPerformed
-
-    private void addBatchFileChooserBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBatchFileChooserBtn1ActionPerformed
-        // TODO add your handling code here:
-         JFileChooser chooser = new JFileChooser();
-        int result = chooser.showOpenDialog(this);
-        if (result == JFileChooser.APPROVE_OPTION) {
-            String filePath = chooser.getSelectedFile().getAbsolutePath();
-            System.out.println("Selected file " + filePath);
-        }
-        
-    }//GEN-LAST:event_addBatchFileChooserBtn1ActionPerformed
 
     private void studentUpdateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentUpdateBtnActionPerformed
         // TODO add your handling code here:
@@ -1461,38 +1354,50 @@ TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         // TODO add your handling code here:
     }//GEN-LAST:event_teacherFirstNameTextActionPerformed
 
+    private void adminContactTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminContactTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_adminContactTextActionPerformed
+
+    private void adminFirstNameTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminFirstNameTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_adminFirstNameTextActionPerformed
+
+    private void adminGenderSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminGenderSelectActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_adminGenderSelectActionPerformed
+
+    private void batchSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_batchSelectActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_batchSelectActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Admin;
     private javax.swing.JPanel Batch;
     private javax.swing.JPanel Course;
-    private javax.swing.JPanel Module_Chapters;
+    private javax.swing.JTextField CourseDurationTextField;
+    private javax.swing.JTextField CourseIdTextField;
+    private javax.swing.JButton CourseLoadBtn;
+    private javax.swing.JTextField CourseNameTextField;
+    private javax.swing.JTextField DepartmentIdTextField;
     private javax.swing.JPanel Student;
     private javax.swing.JPanel Teacher;
-    private javax.swing.JButton addBatchFileChooserBtn1;
+    private javax.swing.JLabel Title;
     private javax.swing.JLabel addBatchNameLabel;
     private javax.swing.JTextField addBatchNameTextField;
     private javax.swing.JPanel addBatchPanel;
-    private javax.swing.JLabel addBatchRoutineLabel;
     private javax.swing.JLabel addBatchSectionLabel;
     private javax.swing.JTextField addBatchSectionTextField;
-    private javax.swing.JLabel addCourseDurationLabel;
-    private javax.swing.JTextField addCourseDurationTextField;
-    private javax.swing.JLabel addCourseIdLabel;
-    private javax.swing.JTextField addCourseIdTextField;
+    private javax.swing.JLabel addBatchTItle;
     private javax.swing.JTextField addCourseIdTextField4;
     private javax.swing.JLabel addCourseNameLabel;
-    private javax.swing.JTextField addCourseNameTextField;
+    private javax.swing.JLabel addCourseNameLabel1;
     private javax.swing.JPanel addCoursePanel;
     private javax.swing.JLabel addDepartmentIdLabel;
-    private javax.swing.JTextField addDepartmentIdTextField;
-    private javax.swing.JPanel addModuleChapters;
     private javax.swing.JLabel adminAddressLabel;
     private javax.swing.JTextField adminAddressText;
     private javax.swing.JLabel adminContactLabel;
     private javax.swing.JTextField adminContactText;
-    private javax.swing.JLabel adminDepartmentLabel;
-    private javax.swing.JComboBox<String> adminDepartmentSelect;
     private javax.swing.JLabel adminEmailLabel;
     private javax.swing.JTextField adminEmailText;
     private javax.swing.JLabel adminFirstNameLabel;
@@ -1502,7 +1407,6 @@ TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
     private javax.swing.JTextField adminIdTextField;
     private javax.swing.JLabel adminLastNameLabel;
     private javax.swing.JTextField adminLastNameText;
-    private javax.swing.JLabel adminSelectLabel;
     private javax.swing.JButton adminUpdateBtn;
     private javax.swing.JButton batchAddBtn;
     private javax.swing.JPanel batchContentPanel;
@@ -1511,7 +1415,6 @@ TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
     private javax.swing.JLabel batchCourseYearLabel;
     private javax.swing.JButton batchLoadDataBtn;
     private javax.swing.JComboBox<String> batchSelect;
-    private javax.swing.JComboBox<String> batchSelect1;
     private javax.swing.JLabel batchSemesterLabel;
     private javax.swing.JTextField batchSemesterTextField;
     private javax.swing.JButton batchUpdateBtn;
@@ -1521,6 +1424,8 @@ TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
     private javax.swing.JComboBox<String> courseSelect;
     private javax.swing.JButton courseUpdateBtn;
     private javax.swing.JFileChooser fileChooser;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
@@ -1531,12 +1436,7 @@ TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
     private javax.swing.JSeparator jSeparator16;
     private javax.swing.JSeparator jSeparator17;
     private javax.swing.JSeparator jSeparator18;
-    private javax.swing.JSeparator jSeparator19;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JSeparator jSeparator20;
-    private javax.swing.JSeparator jSeparator21;
-    private javax.swing.JSeparator jSeparator22;
-    private javax.swing.JSeparator jSeparator23;
     private javax.swing.JSeparator jSeparator24;
     private javax.swing.JSeparator jSeparator25;
     private javax.swing.JSeparator jSeparator26;
@@ -1545,6 +1445,13 @@ TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
     private javax.swing.JSeparator jSeparator29;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator30;
+    private javax.swing.JSeparator jSeparator31;
+    private javax.swing.JSeparator jSeparator32;
+    private javax.swing.JSeparator jSeparator33;
+    private javax.swing.JSeparator jSeparator34;
+    private javax.swing.JSeparator jSeparator35;
+    private javax.swing.JSeparator jSeparator36;
+    private javax.swing.JSeparator jSeparator37;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
@@ -1554,7 +1461,6 @@ TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
     private javax.swing.JButton loadAdminDataBtn;
     private javax.swing.JButton loadStudentDataBtn;
     private javax.swing.JButton loadTeacherDataBtn;
-    private javax.swing.JPanel moduleChaptersContentPanel;
     private javax.swing.JLabel studentAddressLabel;
     private javax.swing.JTextField studentAddressText;
     private javax.swing.JLabel studentBatchLabel;
@@ -1581,6 +1487,7 @@ TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
     private javax.swing.JTextField teacherContactText;
     private javax.swing.JComboBox<String> teacherDepartment;
     private javax.swing.JLabel teacherDepartmentLabel;
+    private javax.swing.JLabel teacherDepartmentLabel1;
     private javax.swing.JLabel teacherEmailLabel;
     private javax.swing.JTextField teacherEmailText;
     private javax.swing.JLabel teacherFirstNameLabel;
@@ -1590,22 +1497,19 @@ TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
     private javax.swing.JTextField teacherIdTextField;
     private javax.swing.JLabel teacherLastNameLabel;
     private javax.swing.JTextField teacherLastNameText;
+    private view.ComboBoxMultiSelection teacherModules;
     private javax.swing.JLabel teacherSelectLabel;
+    private javax.swing.JLabel teacherSelectLabel1;
     private javax.swing.JButton teacherUpdateBtn;
-    private javax.swing.JButton updateBatchFileChooserBtn;
     private javax.swing.JLabel updateBatchNameLabel;
     private javax.swing.JTextField updateBatchNameTextField;
     private javax.swing.JPanel updateBatchPanel;
-    private javax.swing.JLabel updateBatchRoutineLabel;
     private javax.swing.JLabel updateCourseDurationLabel;
     private javax.swing.JTextField updateCourseDurationTextField;
     private javax.swing.JLabel updateCourseIdLabel;
-    private javax.swing.JTextField updateCourseIdTextField;
-    private javax.swing.JButton updateCourseLoadDataBtn;
     private javax.swing.JLabel updateCourseNameLabel;
     private javax.swing.JTextField updateCourseNameTextField;
     private javax.swing.JPanel updateCoursePanel;
-    private javax.swing.JPanel updateModuleChapters;
     // End of variables declaration//GEN-END:variables
 
 
@@ -1619,8 +1523,7 @@ TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
     public JTextField getAdminContactText() { return adminContactText; }
     public JTextField getAdminAddressText() { return adminAddressText; }
 
-    // ---- ComboBoxes ----
-    public JComboBox<String> getAdminDepartmentSelect() { return adminDepartmentSelect; }
+    // ---- ComboBoxes ---
     public JComboBox<String> getAdminGenderSelect() { return adminGenderSelect; }
 
     // ---- Buttons ----
@@ -1631,7 +1534,11 @@ TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
     public void addAdminUpdateListener(ActionListener l) {
         adminUpdateBtn.addActionListener(l);
     }
-
+        
+    public JButton getAdminUpdateBtn()
+    {
+        return adminUpdateBtn;
+    }
 
 
     // ================= STUDENT =================
@@ -1662,7 +1569,7 @@ TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         return studentUpdateBtn;
     }
 
-    public void addStudentUpdatListener(ActionListener actionListener)
+    public void addStudentUpdateListener(ActionListener actionListener)
     {
         studentUpdateBtn.addActionListener(actionListener);
     }
@@ -1679,6 +1586,8 @@ TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
     public JTextField getTeacherAddressText() { return teacherAddressText; }
 
     // ---- ComboBoxes ----
+
+
     public JComboBox<String> getTeacherDepartment() { return teacherDepartment; }
     public JComboBox<String> getTeacherGender() { return teacherGender; }
 
@@ -1702,16 +1611,30 @@ TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
     // ================= COURSE =================
 
     // ---- TextFields ----
-    public JTextField getAddCourseIdTextField() { return addCourseIdTextField; }
-    public JTextField getAddCourseNameTextField() { return addCourseNameTextField; }
-    public JTextField getAddCourseDurationTextField() { return addCourseDurationTextField; }
+    public JTextField getDepartmentIdTextField(){return DepartmentIdTextField;}
+    public JTextField getCourseNameTextField() { return CourseNameTextField; }
+    public JTextField getCourseDurationTextField() { return CourseDurationTextField; }
 
-    public JTextField getUpdateCourseIdTextField() { return updateCourseIdTextField; }
+    public JTextField getUpdateCourseIdTextField() { return CourseIdTextField; }
     public JTextField getUpdateCourseNameTextField() { return updateCourseNameTextField; }
     public JTextField getUpdateCourseDurationTextField() { return updateCourseDurationTextField; }
 
+    public JPanel getCourseContentPanel()
+    {
+        return courseContentPanel;
+    }
+    public java.awt.CardLayout getCourseContentPanelLayout()
+    {
+        return (CardLayout) courseContentPanel.getLayout();
+    }
+
     // ---- ComboBoxes ----
     public JComboBox<String> getCourseSelect() { return courseSelect; }
+
+    public void addCourseSelectActionListener(ActionListener actionListener)
+    {
+        courseSelect.addActionListener(actionListener);
+    }
 
     // ---- Buttons ----
     public void addCourseAddListener(ActionListener l) {
@@ -1722,12 +1645,17 @@ TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         courseUpdateBtn.addActionListener(l);
     }
 
+
+    public JButton getCourseUpdateBtn()
+    {
+        return courseUpdateBtn;
+    }
     public void addCourseDeleteListener(ActionListener l) {
         courseDeleteBtn.addActionListener(l);
     }
 
-    public void addUpdateCourseLoadListener(ActionListener l) {
-        updateCourseLoadDataBtn.addActionListener(l);
+    public void addCourseLoadBtnListener(ActionListener l) {
+        CourseLoadBtn.addActionListener(l);
     }
 
 
@@ -1741,10 +1669,22 @@ TeacherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
     public JTextField getBatchSemesterTextField() { return batchSemesterTextField; }
     public JTextField getUpdateBatchNameTextField() { return updateBatchNameTextField; }
 
+
+    public JPanel getBatchContentPanel()
+    {
+        return batchContentPanel;
+    }
+    public CardLayout getBatchLayout()
+    {
+        return (CardLayout) batchContentPanel.getLayout();
+    }
+
     // ---- ComboBoxes ----
     public JComboBox<String> getBatchSelect() { return batchSelect; }
-    public JComboBox<String> getBatchSelect1() { return batchSelect1; }
-
+    public void addBatchSelectListener(ActionListener actionListener)
+    {
+        batchSelect.addActionListener(actionListener);
+    }
     // ---- Buttons ----
     public void addBatchAddListener(ActionListener l) {
         batchAddBtn.addActionListener(l);

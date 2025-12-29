@@ -54,7 +54,6 @@ public class UserData {
             if (user.getRole().equalsIgnoreCase("Student"))
             {
                 studentId= result.getInt("studentId");
-                System.out.print("StudentId is "+studentId);
                 courseId= result.getInt("courseId");
                 courseName=result.getString("courseName");
                 year=result.getInt("courseYear");
@@ -75,8 +74,8 @@ public class UserData {
                 return new Teacher(user.getUserId(),teacherId,firstName,lastName,email,password,address,contact,gender,departmentId,departmentName);
             }
             else
-            {
-                return new Admin(user.getUserId(),firstName,lastName,email,password,address,contact,gender);
+            {   adminId=result.getInt("adminId");
+                return new Admin(user.getUserId(),adminId,firstName,lastName,email,password,address,contact,gender);
             }
 
         }
@@ -180,4 +179,40 @@ public class UserData {
         }
 
     }
+
+    public boolean updateAdmin(model.Admin admin) {
+        Connection conn = mySql.openConnection();
+        try {CallableStatement ps = conn.prepareCall("{CALL UpdateAdmin(?,?,?,?,?,?,?)}");
+            ps.setInt(1, admin.getAdminId());
+            ps.setString(2, admin.getFirstName());
+            ps.setString(3, admin.getLastName());
+            ps.setString(4, admin.getAddress());
+            ps.setString(5, admin.getContact());
+            ps.setString(6, admin.getEmail());
+            ps.setString(7, admin.getGender());
+
+            System.out.println("AdminId: " + admin.getAdminId());
+            System.out.println("FirstName: " + admin.getFirstName());
+            System.out.println("LastName: " + admin.getLastName());
+            System.out.println("Address: " + admin.getAddress());
+            System.out.println("Contact: " + admin.getContact());
+            System.out.println("Email: " + admin.getEmail());
+            System.out.println("Gender: " + admin.getGender());
+
+            ps.executeUpdate(); // run procedure
+
+            return true;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            mySql.closeConnection(conn);
+        }
+    }
+
+
+
+
+
 }

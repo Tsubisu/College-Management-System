@@ -4,6 +4,7 @@ public class Course {
     private int courseId;
     private String courseName;
     private int departmentId;
+    private int duration;
 
     public Course(int courseId,String courseName,int departmentId)
     {
@@ -11,6 +12,8 @@ public class Course {
         this.courseName=courseName;
         this.departmentId=departmentId;
     }
+    public Course(){}
+
 
 
     public int getCourseId() {
@@ -35,5 +38,13 @@ public class Course {
 
     public void setDepartmentId(int departmentId) {
         this.departmentId = departmentId;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
     }
 }

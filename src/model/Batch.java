@@ -10,7 +10,7 @@ public class Batch {
     private String courseName;
 
 
-
+    public Batch(){}
     public String toString()
     {
         return (batchName+"  "+section);
