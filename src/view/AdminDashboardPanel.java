@@ -48,12 +48,12 @@ public class AdminDashboardPanel extends DashboardPanel {
         initComponents();
         componentList.add(new MenuItems(logo));
         componentList.add(new MenuItems(name));
-        componentList.add(new MenuGap(80));
+        componentList.add(new MenuGap(110));
         componentList.add(new MenuItems(profile));
         componentList.add(new MenuItems(module));
         componentList.add(new MenuItems(attendance));
         componentList.add(new MenuItems(notice));
-        componentList.add(new MenuItems(routine));
+
 
         javax.swing.JButton enroll = new javax.swing.JButton();
         buttonDecorator(enroll,"Enroll");
@@ -76,8 +76,8 @@ public class AdminDashboardPanel extends DashboardPanel {
         contentPanel.add(enrollPanel, "Enroll");
         contentPanel.add(adminModulePanel,"Module");
         contentPanel.add(moduleDisplay,"ModuleDisplay");
-        contentPanel.add(adminNoticePanel,"Notice");
         contentPanel.add(managementView,"Management");
+        contentPanel.add(adminNoticePanel,"Notice");
 
 
 

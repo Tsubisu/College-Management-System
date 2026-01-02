@@ -59,8 +59,8 @@ public abstract class DashboardPanel extends javax.swing.JPanel{
         contentPanel.setBackground(Color.white);
         
         logo= new javax.swing.JLabel();
-        //logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/collegeLogo.png")));
-        logo.setText("Logo");
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/collegeLogo.png")));
+        //logo.setText("Logo");
         logo.setHorizontalAlignment((int)CENTER_ALIGNMENT);
         logo.setFont( new Font("Century Gothic",Font.PLAIN,30));
         logo.setForeground(Color.white);

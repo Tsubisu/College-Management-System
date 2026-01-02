@@ -27,9 +27,11 @@ public class TeacherProfile extends javax.swing.JPanel {
         setMaximumSize(new java.awt.Dimension(910, 630));
         setMinimumSize(new java.awt.Dimension(910, 630));
 
+        photo.setBackground(new java.awt.Color(255, 255, 255));
         photo.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        photo.setForeground(new java.awt.Color(0, 0, 0));
         photo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        photo.setText("Photo");
+        photo.setText("Profile");
 
         lastName.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lastName.setText("Last Name");

@@ -458,7 +458,7 @@ public class AdminManagementController {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     JFileChooser fileChooser = new JFileChooser();
-                    FileNameExtensionFilter filter = new FileNameExtensionFilter("PDF Files","pdf");
+                    FileNameExtensionFilter filter = new FileNameExtensionFilter("Image Files","png","jpeg");
                     fileChooser.setFileFilter(filter);
 
                     int result = fileChooser.showOpenDialog(null);
@@ -1501,7 +1501,7 @@ public class AdminManagementController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFileChooser fileChooser = new JFileChooser();
-                FileNameExtensionFilter filter = new FileNameExtensionFilter("PDF Files","pdf");
+                FileNameExtensionFilter filter = new FileNameExtensionFilter("Image Files","png","jpeg");
                 fileChooser.setFileFilter(filter);
 
                 int result = fileChooser.showOpenDialog(null);

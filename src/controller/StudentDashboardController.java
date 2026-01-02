@@ -1,10 +1,13 @@
 package controller;
 
 
+import dao.BatchDao;
 import dao.Module;
 import dao.Notice;
+import dao.UserData;
 import view.*;
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -16,6 +19,7 @@ import javax.swing.*;
 public class StudentDashboardController extends DashboardController {
     StudentDashboard studentDashboard;
     Student student;
+    BatchDao batchDao= new BatchDao();
 
     public StudentDashboardController(StudentDashboard studentDashboard, Student student) {
         this.studentDashboard = studentDashboard;
@@ -25,6 +29,17 @@ public class StudentDashboardController extends DashboardController {
         modulePageSetter();
         profilePageSetter();
         noticePageSetter();
+        routinePageSetter();
+    }
+
+    private void routinePageSetter()
+    {
+        String routinePath= batchDao.getBatchRoutine(student);
+        JLabel routineLabel=((StudentDashboardPanel) studentDashboard.getDashPanel()).getRoutinePanel().getRoutine();
+        ImageIcon icon = new ImageIcon(routinePath);
+        Image img = icon.getImage().getScaledInstance(833, 497, Image.SCALE_SMOOTH);
+        routineLabel.setIcon(new ImageIcon(img));
+
     }
 
 
@@ -46,8 +61,6 @@ public class StudentDashboardController extends DashboardController {
             });
 
             noticePanel.getNoticeContentPanel().add(noticeContainer);
-
-
         }
 
     }

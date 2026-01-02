@@ -177,6 +177,27 @@ public class BatchDao {
         return success;
     }
 
+    public String getBatchRoutine(model.Student student) {
+        String routinePath = null;
+        Connection conn = mySql.openConnection();
+        String sql = "SELECT routinePdfPath FROM Batch WHERE batchId = ?";
+
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, student.getBatchId());
+            ResultSet rs = mySql.runQuery(conn,ps);
+
+            if (rs.next()) {
+                routinePath = rs.getString("routinePdfPath");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error fetching batch routine: " + e.getMessage());
+        } finally {
+            mySql.closeConnection(conn);
+        }
+
+        return routinePath;
+    }
+
 
 
 
