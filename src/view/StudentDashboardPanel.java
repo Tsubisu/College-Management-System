@@ -16,10 +16,13 @@ public class StudentDashboardPanel extends DashboardPanel {
     private final STModulePanel modulePanel;
     private final StudentProfile studentProfile;
     private final ModuleDisplay moduleDisplay;
+    private final Routine routinePanel;
 
     public NoticePanel getNoticePanel() {
         return noticePanel;
     }
+    
+    public Routine getRoutinePanel(){return routinePanel;}
 
     private final NoticePanel noticePanel;
 
@@ -31,7 +34,7 @@ public class StudentDashboardPanel extends DashboardPanel {
         initComponents();
         componentList.add(new MenuItems(logo));
          componentList.add(new MenuItems(name));
-          componentList.add(new MenuGap(120));
+          componentList.add(new MenuGap(140));
            componentList.add(new MenuItems(profile));
             componentList.add(new MenuItems(module));
              componentList.add(new MenuItems(attendance));
@@ -44,11 +47,14 @@ public class StudentDashboardPanel extends DashboardPanel {
         modulePanel = new STModulePanel();
         moduleDisplay = new ModuleDisplay();
         noticePanel= new NoticePanel();
+        routinePanel=new Routine();
 
         contentPanel.add(studentProfile,"Profile");
         contentPanel.add(modulePanel,"Module");
         contentPanel.add(moduleDisplay,"ModuleDisplay");
         contentPanel.add(noticePanel,"Notice");
+        contentPanel.add(routinePanel,"Routine");
+
 
 
 

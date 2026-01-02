@@ -9,6 +9,7 @@ import view.*;
 import model.Teacher;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -39,6 +40,16 @@ public class TeacherDashboardController extends DashboardController{
         profile.setGender(teacher.getGender());
         profile.setEmail(teacher.getEmail());
         profile.setDepartment(teacher.getDepartmentName());
+
+    }
+
+    private void routinePageSetter()
+    {
+        String routinePath= teacher.getRoutinePdfPath();
+        JLabel routineLabel=((TeacherDashboardPanel) teacherDashboard.getDashPanel()).getRoutinePanel().getRoutine();
+        ImageIcon icon = new ImageIcon(routinePath);
+        Image img = icon.getImage().getScaledInstance(833, 497, Image.SCALE_SMOOTH);
+        routineLabel.setIcon(new ImageIcon(img));
 
     }
 
