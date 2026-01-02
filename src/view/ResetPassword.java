@@ -34,10 +34,10 @@ public class ResetPassword extends javax.swing.JFrame {
         LoginPanel5 = new javax.swing.JPanel();
         resetPassword = new javax.swing.JLabel();
         newLabel = new javax.swing.JLabel();
-        newPassword = new javax.swing.JTextField();
         rePassword = new javax.swing.JPasswordField();
         reLabel = new javax.swing.JLabel();
         confirmButton = new javax.swing.JButton();
+        newPassword = new javax.swing.JPasswordField();
         bgImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -60,14 +60,6 @@ public class ResetPassword extends javax.swing.JFrame {
         newLabel.setForeground(new java.awt.Color(0, 0, 0));
         newLabel.setText("Enter New Password");
 
-        newPassword.setBackground(new java.awt.Color(255, 255, 255));
-        newPassword.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        newPassword.setForeground(new java.awt.Color(0, 0, 0));
-        newPassword.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        newPassword.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        newPassword.setPreferredSize(new java.awt.Dimension(64, 30));
-        newPassword.addActionListener(this::newPasswordActionPerformed);
-
         rePassword.setBackground(new java.awt.Color(255, 255, 255));
         rePassword.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         rePassword.setForeground(new java.awt.Color(0, 0, 0));
@@ -85,6 +77,13 @@ public class ResetPassword extends javax.swing.JFrame {
         confirmButton.setText("Confirm");
         confirmButton.addActionListener(this::confirmButtonActionPerformed);
 
+        newPassword.setBackground(new java.awt.Color(255, 255, 255));
+        newPassword.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        newPassword.setForeground(new java.awt.Color(0, 0, 0));
+        newPassword.setText("PasswordFIeld");
+        newPassword.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        newPassword.setPreferredSize(new java.awt.Dimension(108, 30));
+
         javax.swing.GroupLayout LoginPanel5Layout = new javax.swing.GroupLayout(LoginPanel5);
         LoginPanel5.setLayout(LoginPanel5Layout);
         LoginPanel5Layout.setHorizontalGroup(
@@ -97,15 +96,16 @@ public class ResetPassword extends javax.swing.JFrame {
                     .addGroup(LoginPanel5Layout.createSequentialGroup()
                         .addGap(70, 70, 70)
                         .addGroup(LoginPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(newPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(resetPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(rePassword, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(LoginPanel5Layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(reLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(LoginPanel5Layout.createSequentialGroup()
                         .addGap(103, 103, 103)
-                        .addComponent(confirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(confirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(LoginPanel5Layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addGroup(LoginPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(newPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(reLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(82, 82, 82))
         );
         LoginPanel5Layout.setVerticalGroup(
@@ -115,9 +115,9 @@ public class ResetPassword extends javax.swing.JFrame {
                 .addComponent(resetPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(newLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(newPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addGap(20, 20, 20)
                 .addComponent(reLabel)
                 .addGap(12, 12, 12)
                 .addComponent(rePassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -147,10 +147,6 @@ public class ResetPassword extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void newPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newPasswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_newPasswordActionPerformed
 
     private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
         // TODO add your handling code here:
@@ -187,7 +183,7 @@ public class ResetPassword extends javax.swing.JFrame {
     private javax.swing.JLabel bgImage;
     private javax.swing.JButton confirmButton;
     private javax.swing.JLabel newLabel;
-    private javax.swing.JTextField newPassword;
+    private javax.swing.JPasswordField newPassword;
     private javax.swing.JLabel reLabel;
     private javax.swing.JPasswordField rePassword;
     private javax.swing.JLabel resetPassword;
