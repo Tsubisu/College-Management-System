@@ -14,6 +14,7 @@ public class Batch {
     private String courseName;
     private model.Teacher currentModuleTeacher;
     private String routinePdfPath;
+    private int moduleId;
 
 
 
@@ -117,7 +118,19 @@ public class Batch {
         return routinePdfPath;
     }
 
+    public String toString()
+    {
+        return batchName+" "+"("+section+")"+" "+moduleId;
+    }
     public void setRoutinePdfPath(String routinePdfPath) {
         this.routinePdfPath = routinePdfPath;
+    }
+
+    public int getModuleId() {
+        return moduleId;
+    }
+
+    public void setModuleId(int moduleId) {
+        this.moduleId = moduleId;
     }
 }

@@ -217,10 +217,10 @@ public class BatchDao {
                 int semester = rs.getInt("semester");
                 String courseName=rs.getString("courseName");
                 String routinePdfPath = rs.getString("routinePdfPath");
-
+                int moduleId= rs.getInt("moduleId");
                 model.Batch batch = new model.Batch(batchId, batchName, section, courseId,courseName, courseYear, semester);
+                batch.setModuleId(moduleId);
                 batch.setRoutinePdfPath(routinePdfPath);
-
                 batches.add(batch);
             }
         } catch (SQLException e) {
@@ -231,6 +231,39 @@ public class BatchDao {
 
         return batches;
     }
+
+    public ArrayList<model.Student> getStudentsByBatch(int batchId) {
+
+        ArrayList<model.Student> students = new ArrayList<>();
+        Connection conn = mySql.openConnection();
+
+        String sql = "CALL GetStudentsByBatch(?)";
+
+        try (CallableStatement cs = conn.prepareCall(sql)) {
+
+            cs.setInt(1, batchId);
+            ResultSet rs = cs.executeQuery();
+
+            while (rs.next()) {
+
+                model.Student student = new model.Student();
+
+                student.setStudentId(rs.getInt("studentId"));
+                student.setFirstName(rs.getString("firstName"));
+                student.setLastName(rs.getString("lastName"));
+                student.setBatchId(rs.getInt("batchId"));
+                students.add(student);
+            }
+
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            mySql.closeConnection(conn);
+        }
+
+        return students;
+    }
+
 
 
 

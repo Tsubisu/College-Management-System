@@ -4,10 +4,12 @@
  */
 package view;
 
+import com.toedter.calendar.JDateChooser;
 import controller.AttendanceActionEvent;
 import controller.TableActionEvent;
 
 import javax.swing.*;
+import java.awt.event.ActionListener;
 
 /**
  *
@@ -25,8 +27,8 @@ public class TeacherAttendance extends javax.swing.JPanel {
 
     public void setTable(AttendanceActionEvent event)
     {
-        attendanceTable.getColumnModel().getColumn(5).setCellRenderer(new AttendanceTableActionCellRender());
-        attendanceTable.getColumnModel().getColumn(5).setCellEditor(new AttendanceTableActionCellEditor(event));
+        attendanceTable.getColumnModel().getColumn(2).setCellRenderer(new AttendanceTableActionCellRender());
+        attendanceTable.getColumnModel().getColumn(2).setCellEditor(new AttendanceTableActionCellEditor(event));
     }
 
     /**
@@ -57,17 +59,25 @@ public class TeacherAttendance extends javax.swing.JPanel {
                 "studentId", "StudentName", "Status"
             }
         ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class
+            };
             boolean[] canEdit = new boolean [] {
                 false, false, true
             };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
+        attendanceTable.setRowHeight(40);
         attendanceScrollPane.setViewportView(attendanceTable);
 
-        teachableBatch.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {}));
+        teachableBatch.setModel(new javax.swing.DefaultComboBoxModel<>());
 
         dateChooser.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
 
@@ -124,4 +134,10 @@ public class TeacherAttendance extends javax.swing.JPanel {
     {
         return teachableBatch;
     }
+    public void addTeachableBatchActionListener(ActionListener actionListener){teachableBatch.addActionListener(actionListener);}
+    public JDateChooser getDateChooser(){return dateChooser;}
+    public JTable getAttendanceTable(){return attendanceTable;}
+    public void addSubmitActionListener(ActionListener actionListener){submit.addActionListener(actionListener);}
+    public JButton getSubmitButton(){return  submit;}
 }
+
