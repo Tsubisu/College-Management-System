@@ -92,10 +92,6 @@ public abstract class DashboardController {
     {
         dashboard.getDashPanel().getContentLayout().show(dashboard.getDashPanel().getContentPanel(),"ModuleDisplay");
         moduleDisplaySetter(moduleDisplay,module);
-
-
-
-
     }
 
     private void moduleDisplaySetter(ModuleDisplay moduleDisplay ,model.Module module)

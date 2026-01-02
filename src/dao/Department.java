@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 public class Department {
     private MySqlConnection mySql = database.MySqlConnection.getMySqlConnection();
+
     public ArrayList<model.Department> getDepartment()
     {
         Connection conn = mySql.openConnection();

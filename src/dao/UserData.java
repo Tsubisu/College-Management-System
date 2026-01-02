@@ -34,7 +34,8 @@ public class UserData {
                     role,
                     courseName,
                     batchName,
-                    departmentName;
+                    departmentName,
+                    teacherRoutinePath;
             int courseId,
                 year,
                 semester,
@@ -70,8 +71,12 @@ public class UserData {
                 teacherId=result.getInt("teacherId");
                 departmentId=result.getInt("departmentId");
                 departmentName=result.getString("departmentName");
+                teacherRoutinePath=result.getString("routinePdfPath");
 
-                return new Teacher(user.getUserId(),teacherId,firstName,lastName,email,password,address,contact,gender,departmentId,departmentName);
+                model.Teacher teacher= new Teacher(user.getUserId(),teacherId,firstName,lastName,email,password,address,contact,gender,departmentId,departmentName);
+                teacher.setRoutinePdfPath(teacherRoutinePath);
+
+                return teacher;
             }
             else
             {   adminId=result.getInt("adminId");
@@ -149,7 +154,7 @@ public class UserData {
 
     public boolean updateTeacher(Teacher teacher)
     { Connection conn= mySql.openConnection();
-        String sql = "{CALL UpdateTeacher(?,?,?,?,?,?,?,?)}";
+        String sql = "{CALL UpdateTeacher(?,?,?,?,?,?,?,?,?)}";
 
         try (CallableStatement cs = conn.prepareCall(sql)){
 
@@ -161,6 +166,7 @@ public class UserData {
                 cs.setString(6, teacher.getContact());
                 cs.setString(7, teacher.getGender());
                 cs.setInt(8, teacher.getDepartmentId());
+                cs.setString(9,teacher.getRoutinePdfPath());
 
             mySql.executeUpdate(conn,cs);
             return true;

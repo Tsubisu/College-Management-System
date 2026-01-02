@@ -7,5 +7,5 @@ public interface Database {
 
     ResultSet runQuery(Connection conn, PreparedStatement pstm);
 
-    int executeUpdate(Connection conn, PreparedStatement pstm);
+    int executeUpdate(Connection conn, PreparedStatement pstm) throws SQLException;
 }

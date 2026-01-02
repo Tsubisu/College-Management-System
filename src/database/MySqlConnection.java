@@ -62,16 +62,9 @@ public class MySqlConnection implements Database{
         }
     }
 
-    @Override
-    public int executeUpdate(Connection conn, PreparedStatement pstm) {
-        try{
 
-            return pstm.executeUpdate();
-        }
-        catch(Exception e){
-            System.out.println(e);
-            return -1;
-        }
+    public int executeUpdate(Connection conn, PreparedStatement pstm) throws SQLException {
+        return pstm.executeUpdate();
     }
 
 }

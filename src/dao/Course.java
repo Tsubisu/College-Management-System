@@ -125,6 +125,33 @@ public class Course {
         }
     }
 
+    public ArrayList<model.Course> getCourseByDepartmentId(int id)
+    {
+        Connection conn = mySql.openConnection();
+        String sql ="CALL GetCoursesByDepartmentId(?)";
+
+        ArrayList<model.Course> courses= new ArrayList<>();
+        try(CallableStatement cs = conn.prepareCall(sql))
+        {
+            cs.setInt(1,id);
+            ResultSet resultSet= mySql.runQuery(conn,cs);
+            while(resultSet.next()){
+                int courseId= resultSet.getInt("courseId");
+                String courseName= resultSet.getString("courseName");
+                int departmentId=resultSet.getInt("departmentId");
+                courses.add(new model.Course(courseId,courseName,departmentId));
+            }
+        }
+        catch(SQLException e){
+            System.out.print(e);
+        }
+        finally {
+            mySql.closeConnection(conn);
+        }
+        return courses;
+
+    }
+
 
 
 

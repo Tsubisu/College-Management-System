@@ -261,7 +261,6 @@ public class AdminDashboardController extends DashboardController {
         newModule.addAddButtonListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.print("testing addition of new module");
                 model.Module module1=getModuleFromFields(newModule);
                 if(module1!=null)
                 {

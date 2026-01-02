@@ -47,8 +47,9 @@ public class AdminModulePanel extends javax.swing.JPanel {
         moduleHomePage.setMinimumSize(new java.awt.Dimension(910, 630));
         moduleHomePage.setPreferredSize(new java.awt.Dimension(910, 630));
 
-        moduleName.setBackground(new java.awt.Color(255, 51, 51));
+        moduleName.setBackground(new java.awt.Color(48, 139, 222));
         moduleName.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        moduleName.setForeground(new java.awt.Color(255, 255, 255));
         moduleName.setText("  Module Name");
         moduleName.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         moduleName.setMaximumSize(new java.awt.Dimension(290, 40));
@@ -56,14 +57,16 @@ public class AdminModulePanel extends javax.swing.JPanel {
         moduleName.setOpaque(true);
         moduleName.setPreferredSize(new java.awt.Dimension(290, 40));
 
-        moduleYear.setBackground(new java.awt.Color(255, 51, 51));
+        moduleYear.setBackground(new java.awt.Color(48, 139, 222));
         moduleYear.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        moduleYear.setForeground(new java.awt.Color(255, 255, 255));
         moduleYear.setText(" Year");
         moduleYear.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         moduleYear.setOpaque(true);
 
-        action.setBackground(new java.awt.Color(255, 51, 51));
+        action.setBackground(new java.awt.Color(48, 139, 222));
         action.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        action.setForeground(new java.awt.Color(255, 255, 255));
         action.setText("Action");
         action.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         action.setOpaque(true);
@@ -78,8 +81,9 @@ public class AdminModulePanel extends javax.swing.JPanel {
         moduleContainer.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 0, 1));
         moduleScrollPane.setViewportView(moduleContainer);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(196, 0, 98));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("My Modules");
 
         add.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -112,14 +116,15 @@ public class AdminModulePanel extends javax.swing.JPanel {
                                 .addGap(11, 11, 11)))
                         .addGap(15, 15, 15))
                     .addGroup(moduleHomePageLayout.createSequentialGroup()
-                        .addGroup(moduleHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
-                            .addComponent(courseComboBox, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(courseComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(add, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(delete)
                         .addGap(73, 73, 73))))
+            .addGroup(moduleHomePageLayout.createSequentialGroup()
+                .addGap(337, 337, 337)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         moduleHomePageLayout.setVerticalGroup(
             moduleHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
