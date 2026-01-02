@@ -53,6 +53,12 @@ public class TeacherDashboardController extends DashboardController{
 
     }
 
+
+    private void attendancePageSetter()
+    {
+
+    }
+
     private void modulePageSetter(){
         dao.Module moduleDao = new Module();
         ArrayList<model.Module> teacherModules = moduleDao.getAllTeacherModules(teacher.getTeacherId());

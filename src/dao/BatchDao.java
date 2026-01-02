@@ -199,6 +199,41 @@ public class BatchDao {
     }
 
 
+    public ArrayList<model.Batch> getBatchesByTeacher(int teacherId) {
+        ArrayList<model.Batch> batches = new ArrayList<>();
+        Connection conn = mySql.openConnection();
+        String sql = "CALL GetBatchesByTeacher(?)";
+
+        try (CallableStatement cs = conn.prepareCall(sql)) {
+            cs.setInt(1, teacherId);
+
+            ResultSet rs = cs.executeQuery();
+            while (rs.next()) {
+                int batchId = rs.getInt("batchId");
+                String batchName = rs.getString("batch_name");
+                char section = rs.getString("section").charAt(0);
+                int courseId = rs.getInt("courseId");
+                int courseYear = rs.getInt("courseYear");
+                int semester = rs.getInt("semester");
+                String courseName=rs.getString("courseName");
+                String routinePdfPath = rs.getString("routinePdfPath");
+
+                model.Batch batch = new model.Batch(batchId, batchName, section, courseId,courseName, courseYear, semester);
+                batch.setRoutinePdfPath(routinePdfPath);
+
+                batches.add(batch);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error fetching batches for teacher: " + e.getMessage());
+        } finally {
+            mySql.closeConnection(conn);
+        }
+
+        return batches;
+    }
+
+
+
 
 
 

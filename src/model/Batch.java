@@ -37,6 +37,17 @@ public class Batch {
         this.semester=semester;
     }
 
+    public Batch(int batchId, String batchName,char section,int courseId,String courseName, int courseYear, int semester)
+    {
+        this.batchId=batchId;
+        this.batchName=batchName;
+        this.section=section;
+        this.courseYear=courseYear;
+        this.semester=semester;
+        this.courseId=courseId;
+        this.courseName=courseName;
+    }
+
     public int getBatchId() {
         return batchId;
     }
