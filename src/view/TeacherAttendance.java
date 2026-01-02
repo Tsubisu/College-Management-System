@@ -5,7 +5,6 @@
 package view;
 
 import com.toedter.calendar.JDateChooser;
-import controller.AttendanceActionEvent;
 import controller.TableActionEvent;
 
 import javax.swing.*;
@@ -23,12 +22,6 @@ public class TeacherAttendance extends javax.swing.JPanel {
     public TeacherAttendance() {
         initComponents();
         dateChooser.getJCalendar().setWeekOfYearVisible(false);
-    }
-
-    public void setTable(AttendanceActionEvent event)
-    {
-        attendanceTable.getColumnModel().getColumn(2).setCellRenderer(new AttendanceTableActionCellRender());
-        attendanceTable.getColumnModel().getColumn(2).setCellEditor(new AttendanceTableActionCellEditor(event));
     }
 
     /**
