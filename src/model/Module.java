@@ -6,7 +6,8 @@ public class Module {
     private int courseYear;
     private int courseSemester;
     private int moduleDuration;
-    private final int courseId;
+    private int courseId;
+    private String courseName;
 
 
     public Module(int moduleId,int courseId,String moduleName,int courseYear,int courseSemester,int moduleDuration )
@@ -17,6 +18,23 @@ public class Module {
         this.moduleDuration= moduleDuration;
         this.courseYear= courseYear;
     }
+    public Module(int moduleId,int courseId,String moduleName,String courseName,int courseYear,int courseSemester,int moduleDuration )
+    {   this.moduleId=moduleId;
+        this.courseId= courseId;
+        this.moduleName= moduleName;
+        this.courseName=courseName;
+        this.courseSemester= courseSemester;
+        this.moduleDuration= moduleDuration;
+        this.courseYear= courseYear;
+    }
+    public Module(int moduleId,String moduleName,int courseYear,int courseSemester,int moduleDuration )
+    {   this.moduleId=moduleId;
+        this.moduleName= moduleName;
+        this.courseSemester= courseSemester;
+        this.moduleDuration= moduleDuration;
+        this.courseYear= courseYear;
+    }
+
 
 
     public int getModuleId() {
@@ -68,33 +86,10 @@ public class Module {
         this.courseSemester = courseSemester;
     }
 
-
-
-
-
-
-
-
-
-
-
-//    private String intToWord(int n) {
-//        return switch (n) {
-//            case 0 -> "zero";
-//            case 1 -> "one";
-//            case 2 -> "two";
-//            case 3 -> "three";
-//            case 4 -> "four";
-//            case 5 -> "five";
-//            case 6 -> "six";
-//            case 7 -> "seven";
-//            case 8 -> "eight";
-//            default -> "unknown";
-//        };
-//    }
-
-
-
-
+    @Override
+    public String toString()
+    {
+        return this.moduleName;
+    }
 
 }

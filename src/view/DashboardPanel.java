@@ -47,8 +47,7 @@ public abstract class DashboardPanel extends javax.swing.JPanel{
         menuPanel.setMinimumSize(new Dimension(210,630));
         menuPanel.setMaximumSize(new Dimension(210,630));
         menuPanel.setPreferredSize(new Dimension(210,630));
-        //menuPanel.setBackground(Color.blue);
-       menuPanel.setBackground(Color.decode("#308BDE"));
+        menuPanel.setBackground(Color.decode("#308BDE"));
         
         
         contentPanel= new javax.swing.JPanel();
@@ -60,7 +59,9 @@ public abstract class DashboardPanel extends javax.swing.JPanel{
         contentPanel.setBackground(Color.white);
         
         logo= new javax.swing.JLabel();
+        //logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/collegeLogo.png")));
         logo.setText("Logo");
+        logo.setHorizontalAlignment((int)CENTER_ALIGNMENT);
         logo.setFont( new Font("Century Gothic",Font.PLAIN,30));
         logo.setForeground(Color.white);
         logo.setPreferredSize(new Dimension(210,170));
@@ -69,6 +70,7 @@ public abstract class DashboardPanel extends javax.swing.JPanel{
         
         name= new javax.swing.JLabel();
         name.setText("Hardwarica");
+        name.setHorizontalAlignment((int) CENTER_ALIGNMENT);
         name.setFont( new Font("Century Gothic",Font.PLAIN,24));
         name.setForeground(Color.white);
         name.setPreferredSize(new Dimension(210,40));

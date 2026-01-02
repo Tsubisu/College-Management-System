@@ -15,6 +15,7 @@ import view.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.Inet4Address;
 import java.util.ArrayList;
 
 import model.Admin;
@@ -23,14 +24,14 @@ import javax.swing.*;
 
 
 public class AdminDashboardController extends DashboardController {
-    AdminDashboard adminDashboard;
-    Admin admin;
-    LogInDAO logInDAO = new LogInDAO();
-    Enroll enroll = new Enroll();
-    dao.Course  course= new dao.Course();
-    Department department= new Department();
-    Module module= new Module();
-    int[] batchId;
+   private final AdminDashboard adminDashboard;
+   private final Admin admin;
+   private final LogInDAO logInDAO = new LogInDAO();
+   private final Enroll enroll = new Enroll();
+   private final dao.Course  course= new dao.Course();
+   private final Department department= new Department();
+   private final Module module= new Module();
+   private final AdminManagementController adminManagementController;
 
 
     public AdminDashboardController(AdminDashboard adminDashboard, Admin admin) {
@@ -42,6 +43,7 @@ public class AdminDashboardController extends DashboardController {
         modulePageSetter();
         noticePageSetter();
         buttonListener();
+        adminManagementController= new AdminManagementController(adminDashboard);
 
 
     }
@@ -259,7 +261,6 @@ public class AdminDashboardController extends DashboardController {
         newModule.addAddButtonListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.print("testing addition of new module");
                 model.Module module1=getModuleFromFields(newModule);
                 if(module1!=null)
                 {
@@ -359,17 +360,19 @@ public class AdminDashboardController extends DashboardController {
 
 
         courseComboBox.setModel(new DefaultComboBoxModel<>(courseNames));
+        ArrayList<Integer> batchId = new ArrayList<>();
         studentEnroll.addCourseComboBoxActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                batchId.clear();
 
                 int index = courseComboBox.getSelectedIndex();
-                ArrayList<model.Batch> batches = enroll.getBatchByCourse(index);
+                ArrayList<model.Batch> batches = enroll.getBatchByCourse(index+1);
                 String[] batchNames = new String[batches.size()];
-                batchId = new int[batches.size()];
+
                 for (int i = 0; i < batches.size(); i++) {
                     batchNames[i] = batches.get(i).getBatchName() + " " + "\"" + batches.get(i).getSection() + "\"";
-                    batchId[i] = batches.get(i).getBatchId();
+                    batchId.add(batches.get(i).getBatchId());
                 }
 
 
@@ -381,7 +384,7 @@ public class AdminDashboardController extends DashboardController {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                enrollStudent(studentEnroll);
+                enrollStudent(studentEnroll,batchId);
             }
         });
 
@@ -390,15 +393,14 @@ public class AdminDashboardController extends DashboardController {
 
     }
 
-    private void enrollStudent(StudentEnroll studentEnroll) {
+    private void enrollStudent(StudentEnroll studentEnroll, ArrayList<Integer> batchId) {
         String firstName = studentEnroll.getFirstName().getText().trim();
         String lastName = studentEnroll.getLastName().getText().trim();
         String gender = (String) studentEnroll.getGender().getSelectedItem();
         String email = studentEnroll.getEmail().getText().trim();
         String contact = studentEnroll.getContact().getText().trim();
         String address = studentEnroll.getAddress().getText().trim();
-        //String batch = ((String)studentEnroll.getBatch().getSelectedItem()).split("\\s+")[0];
-        int batch = batchId[studentEnroll.getBatch().getSelectedIndex()];
+        int batch = batchId.get(studentEnroll.getBatch().getSelectedIndex());
         String course = ((String) studentEnroll.getCourse().getSelectedItem()).split("\\s+")[0];
 
 

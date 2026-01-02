@@ -119,7 +119,7 @@ public class Module {
                 int moduleDuration = result.getInt(3);
                 int courseYear = result.getInt(4);
                 int courseSemester=  result.getInt(5);
-                model.Module module = new model.Module(moduleId,0,moduleName,courseYear,courseSemester,moduleDuration);
+                model.Module module = new model.Module(moduleId,courseId,moduleName,courseYear,courseSemester,moduleDuration);
                 allStudentModule.add(module);
             }
 
@@ -186,6 +186,160 @@ public class Module {
             mySql.closeConnection(conn);
         }
     }
+
+
+    public ArrayList<model.Module> getModulesByDepartment(int departmentId)
+    {       ArrayList<model.Module> modules= new ArrayList<>();
+        Connection conn = mySql.openConnection();
+        String sql = "CALL getModulesByDepartmentId(?)";
+        try(CallableStatement cs = conn.prepareCall(sql)) {
+
+            cs.setInt(1,departmentId);
+            ResultSet result=mySql.runQuery(conn, cs);
+            while(result.next())
+            {
+                int moduleId= result.getInt(1);
+                String moduleName= result.getString(2);
+                int moduleDuration = result.getInt(3);
+                int courseYear = result.getInt(4);
+                int courseSemester=  result.getInt(5);
+                int courseId=result.getInt("courseId");
+                String courseName= result.getString("courseName");
+                model.Module module = new model.Module(moduleId,courseId,moduleName,courseName,courseYear,courseSemester,moduleDuration);
+                modules.add(module);
+            }
+
+
+
+        }
+        catch(SQLException e){
+            System.out.print(e);
+        }
+        finally {
+            mySql.closeConnection(conn);
+        }
+        return modules;
+    }
+
+    public boolean addNewTeacherModules(model.Teacher teacher) {
+        Connection conn = mySql.openConnection();
+        boolean success = true;
+
+        try {
+            String sql = "CALL AddTeacherModule(?, ?)";
+            for (model.Module module : teacher.getNewTeacherModulesToAdd()) {
+                try (CallableStatement cs = conn.prepareCall(sql)) {
+                    cs.setInt(1, teacher.getTeacherId());
+                    cs.setInt(2, module.getModuleId());
+                    mySql.executeUpdate(conn,cs);
+                } catch (Exception e) {
+                    System.out.println("Error adding module " + module.getModuleId() + ": " + e);
+                    success = false;
+                }
+            }
+        } finally {
+            mySql.closeConnection(conn);
+        }
+
+        return success;
+    }
+
+
+
+    public boolean deleteTeacherModules(model.Teacher teacher) {
+        Connection conn = mySql.openConnection();
+        boolean success = true;
+
+        try {
+            String sql = "CALL DeleteTeacherModule(?, ?)";
+            for (model.Module module : teacher.getTeacherModulesToDelete()) {
+                try (CallableStatement cs = conn.prepareCall(sql)) {
+                    cs.setInt(1, teacher.getTeacherId());
+                    cs.setInt(2, module.getModuleId());
+                    cs.execute();
+                } catch (Exception e) {
+                    System.out.println("Error deleting module " + module.getModuleId() + ": " + e);
+                    success = false;
+                }
+            }
+        } finally {
+            mySql.closeConnection(conn);
+        }
+
+        return success;
+    }
+
+    public ArrayList<model.Module> getBatchModules(model.Batch batch)
+    {
+        ArrayList<model.Module> modules= new ArrayList<>();
+        Connection conn = mySql.openConnection();
+        String sql = "CALL GetBatchModules(?)";
+        try(CallableStatement cs = conn.prepareCall(sql)) {
+
+            cs.setInt(1,batch.getBatchId());
+            ResultSet result=mySql.runQuery(conn, cs);
+            while(result.next())
+            {
+                int moduleId= result.getInt(1);
+                String moduleName= result.getString(2);
+                int moduleDuration = result.getInt(3);
+                int courseYear = result.getInt(4);
+                int courseSemester=  result.getInt(5);
+//
+                model.Module module = new model.Module(moduleId,moduleName,courseYear,courseSemester,moduleDuration);
+                modules.add(module);
+            }
+
+
+
+        }
+        catch(SQLException e){
+            System.out.print(e);
+        }
+        finally {
+            mySql.closeConnection(conn);
+        }
+        return modules;
+
+    }
+
+    public ArrayList<model.Teacher> getTeachersByModule(int moduleId) {
+        ArrayList<model.Teacher> teachers = new ArrayList<>();
+        Connection conn = mySql.openConnection();
+        String sql = "{CALL GetTeachersByModule(?)}";
+        try (CallableStatement cs = conn.prepareCall(sql)) {
+            cs.setInt(1, moduleId);
+            ResultSet rs = cs.executeQuery();
+            while (rs.next()) {
+                int teacherId = rs.getInt("teacherId");
+                String firstName = rs.getString("firstName");
+                String lastName = rs.getString("lastName");
+                String departmentName = rs.getString("departmentName");
+
+                model.Teacher teacher = new model.Teacher(teacherId, firstName, lastName, departmentName);
+                teachers.add(teacher);
+            }
+
+            rs.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            mySql.closeConnection(conn);
+        }
+
+        return teachers;
+    }
+
+
+
+
+
+
+
+
+
+
 
 
 

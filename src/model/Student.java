@@ -23,6 +23,11 @@ public class Student extends User{
         this.semester=semester;
     }
 
+    public Student()
+    {
+
+    }
+
     public int getBatchId() {
         return batchId;
     }

@@ -1,5 +1,9 @@
 package model;
 
+import controller.AdminManagementController;
+
+import java.util.ArrayList;
+
 public class Batch {
     private int batchId;
     private String batchName;
@@ -8,6 +12,20 @@ public class Batch {
     private int courseYear;
     private int semester;
     private String courseName;
+    private model.Teacher currentModuleTeacher;
+    private String routinePdfPath;
+
+
+
+
+    public Batch(){}
+
+    public Batch(int id, String batchName,char section)
+    {
+        this.batchId=id;
+        this.batchName=batchName;
+        this.section=section;
+    }
 
 
     public Batch(int batchId, String batchName,char section, int courseYear, int semester)
@@ -75,5 +93,20 @@ public class Batch {
         this.courseName = courseName;
     }
 
+    public model.Teacher getCurrentModuleTeacher() {
+        return currentModuleTeacher;
+    }
 
+    public void setCurrentModuleTeacher(model.Teacher currentModuleTeacher) {
+        this.currentModuleTeacher = currentModuleTeacher;
+    }
+
+
+    public String getRoutinePdfPath() {
+        return routinePdfPath;
+    }
+
+    public void setRoutinePdfPath(String routinePdfPath) {
+        this.routinePdfPath = routinePdfPath;
+    }
 }

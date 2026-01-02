@@ -19,6 +19,8 @@ public class User {
         this.role=role;
     }
 
+    public User(){}
+
     public User(int userId, String firstName,String lastName, String email, String password, String address, String contact, String gender, String role)
     {
      this.userId=userId;

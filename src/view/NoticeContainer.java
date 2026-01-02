@@ -31,7 +31,7 @@ public class NoticeContainer extends javax.swing.JPanel {
         date = new javax.swing.JLabel();
         message = new javax.swing.JTextArea();
 
-        setBackground(new java.awt.Color(210, 158, 231));
+        setBackground(new java.awt.Color(48, 141, 190));
         setMaximumSize(new java.awt.Dimension(273, 235));
         setMinimumSize(new java.awt.Dimension(273, 235));
         setPreferredSize(new java.awt.Dimension(273, 235));
@@ -42,7 +42,7 @@ public class NoticeContainer extends javax.swing.JPanel {
         readMore.setFocusPainted(false);
         readMore.addActionListener(this::readMoreActionPerformed);
 
-        title.setBackground(new java.awt.Color(210, 158, 231));
+        title.setBackground(new java.awt.Color(48, 141, 190));
         title.setColumns(20);
         title.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         title.setLineWrap(true);
@@ -58,7 +58,7 @@ public class NoticeContainer extends javax.swing.JPanel {
         date.setForeground(new java.awt.Color(0, 0, 0));
         date.setText("jLabel1");
 
-        message.setBackground(new java.awt.Color(210, 158, 231));
+        message.setBackground(new java.awt.Color(48, 141, 190));
         message.setColumns(20);
         message.setFont(new java.awt.Font("Segoe UI", 0, 17)); // NOI18N
         message.setLineWrap(true);

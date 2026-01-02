@@ -86,14 +86,12 @@ public abstract class DashboardController {
             }
         });
     }
+
+
     protected void moduleActionListener(ModuleDisplay moduleDisplay,model.Module module)
     {
         dashboard.getDashPanel().getContentLayout().show(dashboard.getDashPanel().getContentPanel(),"ModuleDisplay");
         moduleDisplaySetter(moduleDisplay,module);
-
-
-
-
     }
 
     private void moduleDisplaySetter(ModuleDisplay moduleDisplay ,model.Module module)

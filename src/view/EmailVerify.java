@@ -65,8 +65,11 @@ public class EmailVerify extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("E_mail Address");
 
+        returnButton.setBackground(new java.awt.Color(0, 0, 0));
         returnButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        returnButton.setForeground(new java.awt.Color(255, 255, 255));
         returnButton.setText("Return");
+        returnButton.setOpaque(true);
         returnButton.addActionListener(this::returnButtonActionPerformed);
 
         javax.swing.GroupLayout otpPanelLayout = new javax.swing.GroupLayout(otpPanel);

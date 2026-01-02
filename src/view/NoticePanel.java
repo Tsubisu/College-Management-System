@@ -35,7 +35,7 @@ public class NoticePanel extends javax.swing.JPanel {
 
         noticeLabel.setBackground(new java.awt.Color(255, 255, 255));
         noticeLabel.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        noticeLabel.setForeground(new java.awt.Color(196, 0, 98));
+        noticeLabel.setForeground(new java.awt.Color(0, 0, 0));
         noticeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         noticeLabel.setText("Notices");
 
