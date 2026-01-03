@@ -199,6 +199,74 @@ public class BatchDao {
     }
 
 
+    public ArrayList<model.Batch> getBatchesByTeacher(int teacherId) {
+        ArrayList<model.Batch> batches = new ArrayList<>();
+        Connection conn = mySql.openConnection();
+        String sql = "CALL GetBatchesByTeacher(?)";
+
+        try (CallableStatement cs = conn.prepareCall(sql)) {
+            cs.setInt(1, teacherId);
+
+            ResultSet rs = cs.executeQuery();
+            while (rs.next()) {
+                int batchId = rs.getInt("batchId");
+                String batchName = rs.getString("batch_name");
+                char section = rs.getString("section").charAt(0);
+                int courseId = rs.getInt("courseId");
+                int courseYear = rs.getInt("courseYear");
+                int semester = rs.getInt("semester");
+                String courseName=rs.getString("courseName");
+                String routinePdfPath = rs.getString("routinePdfPath");
+                int moduleId= rs.getInt("moduleId");
+                model.Batch batch = new model.Batch(batchId, batchName, section, courseId,courseName, courseYear, semester);
+                batch.setModuleId(moduleId);
+                batch.setRoutinePdfPath(routinePdfPath);
+                batches.add(batch);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error fetching batches for teacher: " + e.getMessage());
+        } finally {
+            mySql.closeConnection(conn);
+        }
+
+        return batches;
+    }
+
+    public ArrayList<model.Student> getStudentsByBatch(int batchId) {
+
+        ArrayList<model.Student> students = new ArrayList<>();
+        Connection conn = mySql.openConnection();
+
+        String sql = "CALL GetStudentsByBatch(?)";
+
+        try (CallableStatement cs = conn.prepareCall(sql)) {
+
+            cs.setInt(1, batchId);
+            ResultSet rs = cs.executeQuery();
+
+            while (rs.next()) {
+
+                model.Student student = new model.Student();
+
+                student.setStudentId(rs.getInt("studentId"));
+                student.setFirstName(rs.getString("firstName"));
+                student.setLastName(rs.getString("lastName"));
+                student.setBatchId(rs.getInt("batchId"));
+                students.add(student);
+            }
+
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            mySql.closeConnection(conn);
+        }
+
+        return students;
+    }
+
+
+
+
 
 
 

@@ -17,10 +17,14 @@ public class StudentDashboardPanel extends DashboardPanel {
     private final StudentProfile studentProfile;
     private final ModuleDisplay moduleDisplay;
     private final Routine routinePanel;
+    private final StudentAttendance studentAttendance;
+
 
     public NoticePanel getNoticePanel() {
         return noticePanel;
     }
+
+
     
     public Routine getRoutinePanel(){return routinePanel;}
 
@@ -48,12 +52,14 @@ public class StudentDashboardPanel extends DashboardPanel {
         moduleDisplay = new ModuleDisplay();
         noticePanel= new NoticePanel();
         routinePanel=new Routine();
+        studentAttendance= new StudentAttendance();
 
         contentPanel.add(studentProfile,"Profile");
         contentPanel.add(modulePanel,"Module");
         contentPanel.add(moduleDisplay,"ModuleDisplay");
         contentPanel.add(noticePanel,"Notice");
         contentPanel.add(routinePanel,"Routine");
+        contentPanel.add(studentAttendance,"Attendance");
 
 
 
@@ -106,5 +112,9 @@ public class StudentDashboardPanel extends DashboardPanel {
     }
     public ModuleDisplay getModuleDisplay() {
         return moduleDisplay;
+    }
+
+    public StudentAttendance getStudentAttendance() {
+        return studentAttendance;
     }
 }
