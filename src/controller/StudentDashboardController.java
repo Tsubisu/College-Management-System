@@ -1,10 +1,8 @@
 package controller;
 
 
-import dao.BatchDao;
+import dao.*;
 import dao.Module;
-import dao.Notice;
-import dao.UserData;
 import view.*;
 
 import java.awt.*;
@@ -20,6 +18,8 @@ public class StudentDashboardController extends DashboardController {
     StudentDashboard studentDashboard;
     Student student;
     BatchDao batchDao= new BatchDao();
+    dao.Module moduleDao = new Module();
+    Attendance attendanceDao= new Attendance();
 
     public StudentDashboardController(StudentDashboard studentDashboard, Student student) {
         this.studentDashboard = studentDashboard;
@@ -30,6 +30,7 @@ public class StudentDashboardController extends DashboardController {
         profilePageSetter();
         noticePageSetter();
         routinePageSetter();
+        attendancePageSetter();
     }
 
     private void routinePageSetter()
@@ -40,6 +41,24 @@ public class StudentDashboardController extends DashboardController {
         Image img = icon.getImage().getScaledInstance(833, 497, Image.SCALE_SMOOTH);
         routineLabel.setIcon(new ImageIcon(img));
 
+    }
+
+    public void attendancePageSetter()
+    {
+        ArrayList<model.Module> studentModules = moduleDao.getAllStudentModules(student.getStudentId());
+        StudentAttendance studentAttendance= ((StudentDashboardPanel )studentDashboard.getDashPanel()).getStudentAttendance();
+        for(model.Module module :studentModules)
+        {
+            System.out.println(module.getModuleName());
+            StudentAttendanceContainer studentAttendanceContainer= new StudentAttendanceContainer();
+            model.Attendance attendance= attendanceDao.getStudentModuleAttendanceSummary(student.getStudentId(),module.getModuleId());
+            System.out.println(attendance.getTotalPresent()+" "+attendance.getTotalAbsent()+" "+attendance.getTotalDays());
+            studentAttendanceContainer.setPresentLabel(attendance.getTotalPresent());
+            studentAttendanceContainer.setAbsentLabel(attendance.getTotalAbsent());
+            studentAttendanceContainer.setModuleName(module.getModuleName());
+            studentAttendanceContainer.setPercentage((double)(attendance.getTotalPresent()*100)/attendance.getTotalDays());
+            studentAttendance.getAttendanceContentPanel().add(studentAttendanceContainer);
+        }
     }
 
 
@@ -67,7 +86,6 @@ public class StudentDashboardController extends DashboardController {
 
 
     private void modulePageSetter(){
-        dao.Module moduleDao = new Module();
         ArrayList<model.Module> studentModules = moduleDao.getAllStudentModules(student.getStudentId());
         STModulePanel stModulePanel = ((StudentDashboardPanel)studentDashboard.getDashPanel()).getModulePanel();
         for(model.Module module : studentModules)

@@ -5,6 +5,8 @@
 package controller;
 
 
+import College_Management_System.EmailService;
+import com.toedter.calendar.JDateChooser;
 import dao.*;
 import dao.Enroll;
 import dao.Module;
@@ -21,6 +23,8 @@ import java.util.ArrayList;
 import model.Admin;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
 
 
 public class AdminDashboardController extends DashboardController {
@@ -30,6 +34,7 @@ public class AdminDashboardController extends DashboardController {
    private final Enroll enroll = new Enroll();
    private final dao.Course  course= new dao.Course();
    private final Department department= new Department();
+   private final Attendance attendanceDao= new Attendance();
    private final Module module= new Module();
    private final AdminManagementController adminManagementController;
 
@@ -43,6 +48,7 @@ public class AdminDashboardController extends DashboardController {
         modulePageSetter();
         noticePageSetter();
         buttonListener();
+        attendanceController();
         adminManagementController= new AdminManagementController(adminDashboard);
 
 
@@ -394,6 +400,7 @@ public class AdminDashboardController extends DashboardController {
     }
 
     private void enrollStudent(StudentEnroll studentEnroll, ArrayList<Integer> batchId) {
+
         String firstName = studentEnroll.getFirstName().getText().trim();
         String lastName = studentEnroll.getLastName().getText().trim();
         String gender = (String) studentEnroll.getGender().getSelectedItem();
@@ -403,22 +410,52 @@ public class AdminDashboardController extends DashboardController {
         int batch = batchId.get(studentEnroll.getBatch().getSelectedIndex());
         String course = ((String) studentEnroll.getCourse().getSelectedItem()).split("\\s+")[0];
 
+        if (firstName.isEmpty() || lastName.isEmpty() || gender == null ||
+                email.isEmpty() || contact.isEmpty() || address.isEmpty() ||
+                batch == 0 || course.equalsIgnoreCase("Select")) {
 
-        if (!firstName.isEmpty() && !lastName.isEmpty() && gender != null && !email.isEmpty() && !contact.isEmpty() && !address.isEmpty() && batch != 0 && !course.equalsIgnoreCase("Select")) {
-            if (isValidEmail(email)) {
-                boolean emailFlag = logInDAO.userCheck(email);
-                if (emailFlag) {
-                    javax.swing.JOptionPane.showMessageDialog(studentEnroll, "User with such email already exists");
-                } else {
-                    System.out.println("Adding student");
-                    javax.swing.JOptionPane.showMessageDialog(studentEnroll, "New Student "+firstName+ " added");
-                    enroll.addStudent(firstName, lastName, gender, address, contact, email, batch);
-                }
-            } else {
-                JOptionPane.showMessageDialog(studentEnroll, "Enter a valid email address");
-            }
+            JOptionPane.showMessageDialog(studentEnroll, "All fields are required");
+            return;
         }
+
+        if (!firstName.matches("[A-Za-z]+")) {
+            JOptionPane.showMessageDialog(studentEnroll, "First name must contain only letters");
+            return;
+        }
+
+        if (!lastName.matches("[A-Za-z]+")) {
+            JOptionPane.showMessageDialog(studentEnroll, "Last name must contain only letters");
+            return;
+        }
+
+        if (!address.matches("[A-Za-z ]+")) {
+            JOptionPane.showMessageDialog(studentEnroll, "Address must contain only letters and spaces");
+            return;
+        }
+
+        if (!isValidEmail(email)) {
+            JOptionPane.showMessageDialog(studentEnroll, "Enter a valid email address");
+            return;
+        }
+
+        if (!contact.matches("\\d{10}")) {
+            JOptionPane.showMessageDialog(studentEnroll, "Contact number must be exactly 10 digits");
+            return;
+        }
+
+        boolean emailExists = logInDAO.userCheck(email);
+        if (emailExists) {
+            JOptionPane.showMessageDialog(studentEnroll, "User with this email already exists");
+            return;
+        }
+
+        enroll.addStudent(firstName, lastName, gender, address, contact, email, batch);
+        JOptionPane.showMessageDialog(studentEnroll, "New Student " + firstName + " added successfully");
+        EmailService.sendEmail(email,"Enrollment","You have been enrolled to Hardwarica \n"+"Your app password is hardwarica123. Reset your password from the login page");
+
+
     }
+
 
     private void setAdminEnroll(AdminEnroll adminEnroll)
     {
@@ -430,8 +467,8 @@ public class AdminDashboardController extends DashboardController {
         });
     }
 
-    private void enrollAdmin(AdminEnroll adminEnroll)
-    {
+    private void enrollAdmin(AdminEnroll adminEnroll) {
+
         String firstName = adminEnroll.getFirstName().getText().trim();
         String lastName = adminEnroll.getLastName().getText().trim();
         String gender = (String) adminEnroll.getGender().getSelectedItem();
@@ -439,21 +476,50 @@ public class AdminDashboardController extends DashboardController {
         String contact = adminEnroll.getContact().getText().trim();
         String address = adminEnroll.getAddress().getText().trim();
 
-        if (!firstName.isEmpty() && !lastName.isEmpty() && gender != null && !email.isEmpty() && !contact.isEmpty() && !address.isEmpty() ) {
-            if (isValidEmail(email)) {
-                boolean emailFlag = logInDAO.userCheck(email);
-                if (emailFlag) {
-                    javax.swing.JOptionPane.showMessageDialog(adminEnroll, "User with such email already exists");
-                } else {
-                    System.out.println("Adding student");
-                    javax.swing.JOptionPane.showMessageDialog(adminEnroll, "New Admin "+firstName+ " added");
-                    enroll.addAdmin(firstName, lastName, gender, address, contact, email);
-                }
-            } else {
-                JOptionPane.showMessageDialog(adminEnroll, "Enter a valid email address");
-            }
+        if (firstName.isEmpty() || lastName.isEmpty() || gender == null ||
+                email.isEmpty() || contact.isEmpty() || address.isEmpty()) {
+
+            JOptionPane.showMessageDialog(adminEnroll, "All fields are required");
+            return;
         }
+
+        if (!firstName.matches("[A-Za-z]+")) {
+            JOptionPane.showMessageDialog(adminEnroll, "First name must contain only letters");
+            return;
+        }
+
+        if (!lastName.matches("[A-Za-z]+")) {
+            JOptionPane.showMessageDialog(adminEnroll, "Last name must contain only letters");
+            return;
+        }
+
+        if (!address.matches("[A-Za-z ]+")) {
+            JOptionPane.showMessageDialog(adminEnroll, "Address must contain only letters and spaces");
+            return;
+        }
+
+        if (!isValidEmail(email)) {
+            JOptionPane.showMessageDialog(adminEnroll, "Enter a valid email address");
+            return;
+        }
+
+        if (!contact.matches("\\d{10}")) {
+            JOptionPane.showMessageDialog(adminEnroll, "Contact number must be exactly 10 digits");
+            return;
+        }
+
+        boolean emailExists = logInDAO.userCheck(email);
+        if (emailExists) {
+            JOptionPane.showMessageDialog(adminEnroll, "User with this email already exists");
+            return;
+        }
+
+        enroll.addAdmin(firstName, lastName, gender, address, contact, email);
+        JOptionPane.showMessageDialog(adminEnroll, "New Admin " + firstName + " added successfully");
+        EmailService.sendEmail(email,"Enrollment","You have been enrolled to Hardwarica \n"+"Your app password is hardwarica123. Reset your password from the login page");
+
     }
+
 
 
     private void setTeacherEnroll(TeacherEnroll teacherEnroll)
@@ -482,38 +548,163 @@ public class AdminDashboardController extends DashboardController {
     }
 
 
-    private void enrollTeacher(TeacherEnroll teacherEnroll,int[] departmentId)
-    {
+    private void enrollTeacher(TeacherEnroll teacherEnroll, int[] departmentId) {
+
         String firstName = teacherEnroll.getFirstName().getText().trim();
         String lastName = teacherEnroll.getLastName().getText().trim();
         String gender = (String) teacherEnroll.getGender().getSelectedItem();
         String email = teacherEnroll.getEmail().getText().trim();
         String contact = teacherEnroll.getContact().getText().trim();
         String address = teacherEnroll.getAddress().getText().trim();
-        int id= departmentId[teacherEnroll.getDepartment().getSelectedIndex()];
+        int id = departmentId[teacherEnroll.getDepartment().getSelectedIndex()];
 
-        if (!firstName.isEmpty() && !lastName.isEmpty() && gender != null && !email.isEmpty() && !contact.isEmpty() && !address.isEmpty() && id!=0)
-        {
-            if (isValidEmail(email))
-            {
-                boolean emailFlag = logInDAO.userCheck(email);
-                if (emailFlag) {
-                    JOptionPane.showMessageDialog(teacherEnroll, "User with such email already exists");
-                } else {
-                    System.out.println("Adding Teacher");
-                    javax.swing.JOptionPane.showMessageDialog(teacherEnroll, "New Teacher "+firstName+ " added");
-                    enroll.addTeacher(firstName, lastName, gender, address, contact, email,id);
-                }
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(teacherEnroll, "Enter a valid email address");
-            }
+        if (firstName.isEmpty() || lastName.isEmpty() || gender == null ||
+                email.isEmpty() || contact.isEmpty() || address.isEmpty() || id == 0) {
+
+            JOptionPane.showMessageDialog(teacherEnroll, "All fields are required");
+            return;
         }
+
+        if (!firstName.matches("[A-Za-z]+")) {
+            JOptionPane.showMessageDialog(teacherEnroll, "First name must contain only letters");
+            return;
+        }
+
+        if (!lastName.matches("[A-Za-z]+")) {
+            JOptionPane.showMessageDialog(teacherEnroll, "Last name must contain only letters");
+            return;
+        }
+
+        if (!address.matches("[A-Za-z ]+")) {
+            JOptionPane.showMessageDialog(teacherEnroll, "Address must contain only letters and spaces");
+            return;
+        }
+
+        if (!isValidEmail(email)) {
+            JOptionPane.showMessageDialog(teacherEnroll, "Enter a valid email address");
+            return;
+        }
+
+        if (!contact.matches("\\d{10}")) {
+            JOptionPane.showMessageDialog(teacherEnroll, "Contact number must be exactly 10 digits");
+            return;
+        }
+
+        boolean emailExists = logInDAO.userCheck(email);
+        if (emailExists) {
+            JOptionPane.showMessageDialog(teacherEnroll, "User with this email already exists");
+            return;
+        }
+
+        enroll.addTeacher(firstName, lastName, gender, address, contact, email, id);
+        JOptionPane.showMessageDialog(teacherEnroll, "New Teacher " + firstName + " added successfully");
+        EmailService.sendEmail(email,"Enrollment","You have been enrolled to Hardwarica \n"+"Your app password is hardwarica123. Reset your password from the login page");
     }
+
     private boolean isValidEmail(String email) {
         return email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$");
     }
+
+
+    private void attendanceController()
+    {
+        AdminAttendance attendancePanel=( (AdminDashboardPanel)adminDashboard.getDashPanel()).getAttendance();
+
+        JTextField batchId= attendancePanel.getBatchIdInput();
+        JTextField moduleId= attendancePanel.getModuleIdInput();
+        JTable attendanceTable= attendancePanel.getAttendanceTable();
+        DefaultTableModel tableModel= (DefaultTableModel) attendanceTable.getModel();
+        JDateChooser dateChooser= attendancePanel.getDateChooser();
+
+
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+        attendanceTable.getColumnModel().getColumn(0).setCellRenderer(centerRenderer);
+        attendanceTable.getColumnModel().getColumn(1).setCellRenderer(centerRenderer);
+
+        final Boolean[] updatable = {false};
+
+
+
+
+        attendancePanel.addLoadBtnActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                tableModel.setRowCount(0);
+
+                java.util.Date selectedDate = dateChooser.getDate();
+                java.sql.Date sqlDate = null;
+                if (selectedDate != null) {
+                    sqlDate = new java.sql.Date(selectedDate.getTime());
+                }
+                boolean valid=true;
+
+                if (!batchId.getText().matches("\\d+")) {
+                    JOptionPane.showMessageDialog(null, "Batch ID must be an integer");
+                    batchId.requestFocus();
+                    valid=false;
+                    return;
+                }
+
+                if (!moduleId.getText().matches("\\d+")) {
+                    JOptionPane.showMessageDialog(null, "Module ID must be an integer");
+                    moduleId.requestFocus();
+                    valid=false;
+                    return;
+                }
+
+                if(valid)
+                    if(attendanceDao.validateBatchAndModule(Integer.parseInt(batchId.getText().trim()),Integer.parseInt(moduleId.getText().trim())))
+                        {
+                            ArrayList<model.Student> studentList= attendanceDao.getBatchModuleAttendance(Integer.parseInt(batchId.getText().trim()),Integer.parseInt(moduleId.getText().trim()),sqlDate);
+                            if(!studentList.isEmpty())
+                            {
+                                updatable[0] =true;
+                                for (int i = 0; i < studentList.size(); i++)
+
+                                    tableModel.addRow(new Object[]{studentList.get(i).getStudentId(),
+                                            studentList.get(i).getFirstName()+" "+ studentList.get(i).getLastName(),
+                                            studentList.get(i).getAttendanceStatus().equals("Present") ? Boolean.TRUE : Boolean.FALSE}
+                                    );
+                            }
+                        }
+            }
+        });
+
+        attendancePanel.addUpdateBtnActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(updatable[0])
+                    {
+                        java.util.Date selectedDate = dateChooser.getDate();
+                        java.sql.Date sqlDate = null;
+                        if (selectedDate != null) {
+                            sqlDate = new java.sql.Date(selectedDate.getTime());
+                        }
+                        submitAttendance(attendanceTable,Integer.parseInt(moduleId.getText()),Integer.parseInt(batchId.getText()),sqlDate);
+                    }
+            }
+        });
+
+    }
+
+    private void submitAttendance(JTable attendanceTable,int moduleId,int batchId,java.sql.Date selectedDate) {
+
+
+        DefaultTableModel tableModel = (DefaultTableModel) attendanceTable.getModel();
+
+        for (int i = 0; i < tableModel.getRowCount(); i++) {
+            int studentId = (int) tableModel.getValueAt(i, 0); // studentId
+            Boolean isPresent = (Boolean) tableModel.getValueAt(i, 2); // checkbox column
+            String status = isPresent != null && isPresent ? "Present" : "Absent";
+
+            attendanceDao.markAttendance(studentId, moduleId, batchId, selectedDate, status);
+        }
+
+        JOptionPane.showMessageDialog(null, "Attendance saved successfully!");
+    }
+
+
 
 }
 

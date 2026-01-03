@@ -7,6 +7,7 @@ public class Student extends User{
     private String batchName;
     private int batchId;
     private int studentId;
+    private String attendanceStatus;
 
 
     public Student(int userId,int studentId, String firstName, String lastName,String email,
@@ -28,6 +29,13 @@ public class Student extends User{
 
     }
 
+    public Student(int studentId,String firstName,String lastName,String attendanceStatus)
+    {
+        this.studentId=studentId;
+        this.firstName=firstName;
+        this.lastName=lastName;
+        this.attendanceStatus=attendanceStatus;
+    }
     public int getBatchId() {
         return batchId;
     }
@@ -83,5 +91,13 @@ public class Student extends User{
 
     public void setStudentId(int studentId) {
         this.studentId = studentId;
+    }
+
+    public String getAttendanceStatus() {
+        return attendanceStatus;
+    }
+
+    public void setAttendanceStatus(String attendanceStatus) {
+        this.attendanceStatus = attendanceStatus;
     }
 }

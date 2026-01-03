@@ -16,8 +16,8 @@ public class EmailService {
 
             // ====== 1. GMAIL SMTP SETTINGS ======
 
-            final String fromEmail = "HardwaricaCollege@gmail.com"; // your email
-            final String appPassword = "qfuhrphryanvkarb"; // Gmail App Password ONLY
+            final String fromEmail = "snewgr@gmail.com"; // your email
+            final String appPassword = "elnqnbrhsixfemxj"; // Gmail App Password ONLY
 
             Properties props = new Properties();
             props.put("mail.smtp.auth", "true");

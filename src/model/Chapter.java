@@ -25,6 +25,7 @@ public class Chapter {
         this.pdfPath = pdfPath;
     }
 
+
     // 🔹 Getters & Setters
 
     public int getChapterId() {

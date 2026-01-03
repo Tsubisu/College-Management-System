@@ -37,8 +37,16 @@ public class TeacherDashboardPanel extends DashboardPanel {
         return profilePanel;
     }
 
-    private Routine routinePanel;
+    private final Routine routinePanel;
     public Routine getRoutinePanel(){return routinePanel;}
+
+
+    private final TeacherAttendance teacherAttendance;
+    public TeacherAttendance getTeacherAttendance() {
+        return teacherAttendance;
+    }
+
+
 
     /**
      * Creates new form StudentDashboardPanel
@@ -61,11 +69,13 @@ public class TeacherDashboardPanel extends DashboardPanel {
         modulePanel=new STModulePanel();
         noticePanel= new NoticePanel();
         routinePanel= new Routine();
+        teacherAttendance= new TeacherAttendance();
         contentPanel.add(profilePanel, "Profile");
         contentPanel.add(modulePanel, "Module");
         contentPanel.add(routinePanel,"Routine");
         contentPanel.add(moduleDisplay, "ModuleDisplay");
         contentPanel.add(noticePanel,"Notice");
+        contentPanel.add(teacherAttendance,"Attendance");
 
 
 
