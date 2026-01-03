@@ -3,6 +3,7 @@ package dao;
 import database.MySqlConnection;
 import model.Chapter;
 
+import javax.swing.*;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -331,17 +332,100 @@ public class Module {
         return teachers;
     }
 
+    public boolean addNewChapter(Chapter chapter)
+    {
+        Connection conn= mySql.openConnection();
+        System.out.println(chapter.getModuleId()+" "+chapter.getChapterName()+ " "+ chapter.getPdfPath());
+        String sql="CALL AddChapterSafe(?,?,?)";
+        try(CallableStatement cs= conn.prepareCall(sql))
+        {
+            cs.setInt(1,chapter.getModuleId());
+            cs.setString(2, chapter.getChapterName());
+            cs.setString(3,chapter.getPdfPath());
+            mySql.executeUpdate(conn,cs);
+            return true;
+        }
+        catch (SQLException e)
+        {
+            JOptionPane.showMessageDialog(
+                    null,
+                    "Database error: " + e.getMessage(),
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE
+
+            );
+            return  false;
+        }
+        finally {
+            mySql.closeConnection(conn);
+        }
+    }
+
+    public boolean deleteChapterById(int chapterId) {
+        Connection conn = mySql.openConnection();
+        String sql = "DELETE FROM Chapters WHERE chapterId = ?";
+
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, chapterId);
+
+          mySql.executeUpdate(conn,ps);
+          return  true;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 
 
+    public Chapter getChapterById(int chapterId) {
+        Connection conn= mySql.openConnection();
 
+        String sql = """
+        SELECT chapterId, chapterName, pdfPath
+        FROM Chapters
+        WHERE chapterId = ?
+    """;
 
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
 
+            ps.setInt(1, chapterId);
+            ResultSet rs = mySql.runQuery(conn,ps);
 
+            if (rs.next()) {
+                Chapter chapter = new Chapter();
+                chapter.setChapterId(rs.getInt("chapterId"));
+                chapter.setChapterName(rs.getString("chapterName"));
+                chapter.setPdfPath(rs.getString("pdfPath")); // nullable
+                return chapter;
+            }
 
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
+        return null; // not found
+    }
 
+    public boolean updateChapter(Chapter chapter) {
+        Connection conn= mySql.openConnection();
 
+        String sql = "UPDATE Chapters SET chapterName = ?, pdfPath = ? WHERE chapterId = ?";
 
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
 
+            ps.setString(1, chapter.getChapterName());
+            ps.setString(2, chapter.getPdfPath());
+            ps.setInt(3, chapter.getChapterId());
+            mySql.executeUpdate(conn,ps);
+
+            return true;
+
+        } catch (SQLException e) {
+            System.out.println(e);
+            return false;
+        }
+    }
 
 }
+

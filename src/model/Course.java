@@ -14,6 +14,8 @@ public class Course {
     }
     public Course(){}
 
+    public String toString(){return courseName+ " ("+courseId+")";}
+
 
 
     public int getCourseId() {

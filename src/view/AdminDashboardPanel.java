@@ -5,6 +5,7 @@
 package view;
 
 import javax.swing.*;
+import java.awt.*;
 
 /**
  *
@@ -13,6 +14,9 @@ import javax.swing.*;
 public class AdminDashboardPanel extends DashboardPanel {
     private final Enroll enrollPanel;
     private final AdminProfile adminProfile;
+    private final AdminAttendance attendancePanel;
+
+    public AdminAttendance getAttendance(){return attendancePanel;}
 
     public Management getManagement() {
         return managementView;
@@ -54,12 +58,11 @@ public class AdminDashboardPanel extends DashboardPanel {
         componentList.add(new MenuItems(attendance));
         componentList.add(new MenuItems(notice));
 
-
-        javax.swing.JButton enroll = new javax.swing.JButton();
+        JButton enroll = new JButton();
         buttonDecorator(enroll,"Enroll");
         componentList.add(new MenuItems(enroll));
 
-        javax.swing.JButton management = new javax.swing.JButton();
+        JButton management = new JButton();
         buttonDecorator(management,"Management");
         componentList.add(new MenuItems(management));
 
@@ -72,12 +75,14 @@ public class AdminDashboardPanel extends DashboardPanel {
         moduleDisplay= new ModuleDisplay();
         adminNoticePanel= new AdminNoticePanel();
         managementView = new Management();
+        attendancePanel= new AdminAttendance();
         contentPanel.add(adminProfile,"Profile");
         contentPanel.add(enrollPanel, "Enroll");
         contentPanel.add(adminModulePanel,"Module");
         contentPanel.add(moduleDisplay,"ModuleDisplay");
         contentPanel.add(managementView,"Management");
         contentPanel.add(adminNoticePanel,"Notice");
+        contentPanel.add(attendancePanel,"Attendance");
 
 
 
@@ -85,7 +90,7 @@ public class AdminDashboardPanel extends DashboardPanel {
         
         super.menuBuilder(componentList);
         
-        javax.swing.GroupLayout layout =(javax.swing.GroupLayout) this.getLayout();
+        GroupLayout layout =(GroupLayout) this.getLayout();
         layout.setHorizontalGroup(
             layout.createSequentialGroup()
             .addComponent(menuPanel)
@@ -108,17 +113,17 @@ public class AdminDashboardPanel extends DashboardPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setMaximumSize(new java.awt.Dimension(1120, 630));
-        setMinimumSize(new java.awt.Dimension(1120, 630));
+        setMaximumSize(new Dimension(1120, 630));
+        setMinimumSize(new Dimension(1120, 630));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        GroupLayout layout = new GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            layout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGap(0, 1120, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            layout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGap(0, 630, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents

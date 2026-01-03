@@ -52,11 +52,12 @@ public class StudentDashboardController extends DashboardController {
             System.out.println(module.getModuleName());
             StudentAttendanceContainer studentAttendanceContainer= new StudentAttendanceContainer();
             model.Attendance attendance= attendanceDao.getStudentModuleAttendanceSummary(student.getStudentId(),module.getModuleId());
+            System.out.println(attendance.getTotalPresent()+" "+attendance.getTotalAbsent()+" "+attendance.getTotalDays());
             studentAttendanceContainer.setPresentLabel(attendance.getTotalPresent());
             studentAttendanceContainer.setAbsentLabel(attendance.getTotalAbsent());
             studentAttendanceContainer.setModuleName(module.getModuleName());
-            studentAttendanceContainer.setPercentage((attendance.getTotalPresent()/attendance.getTotalDays())*100);
-            studentAttendance.add(studentAttendanceContainer);
+            studentAttendanceContainer.setPercentage((double)(attendance.getTotalPresent()*100)/attendance.getTotalDays());
+            studentAttendance.getAttendanceContentPanel().add(studentAttendanceContainer);
         }
     }
 

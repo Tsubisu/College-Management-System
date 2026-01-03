@@ -98,9 +98,9 @@ public class StudentAttendanceContainer extends javax.swing.JPanel {
     public void setPresentLabel(int presentDays){presentLabel.setText("Present :"+ presentDays);}
 
 
-    public void setAbsentLabel(int absentDays){presentLabel.setText("Absent :"+ absentDays);}
+    public void setAbsentLabel(int absentDays){absentLabel.setText("Absent :"+ absentDays);}
 
-    public void setPercentage(int percentageText){presentLabel.setText(percentageText+"%");}
+    public void setPercentage(double percentageText){percentage.setText(String.format("%.2f", percentageText)+"%");}
 
 
 }

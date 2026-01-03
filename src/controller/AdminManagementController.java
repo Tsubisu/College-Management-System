@@ -4,7 +4,7 @@ import dao.BatchDao;
 import dao.Department;
 import dao.Enroll;
 import dao.UserData;
-import model.Batch;
+import model.Chapter;
 import model.Course;
 import model.Student;
 import model.User;
@@ -18,7 +18,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class AdminManagementController {
@@ -43,6 +42,7 @@ public class AdminManagementController {
         adminUpdateController();
         courseManagementController();
         batchController();
+        chapterController();
     }
 
 
@@ -1276,11 +1276,11 @@ public class AdminManagementController {
                 DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
                 centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
 
-                batchTable.getColumnModel().getColumn(0).setCellRenderer(centerRenderer); // ID
-                batchTable.getColumnModel().getColumn(1).setCellRenderer(centerRenderer); // Section
+                batchTable.getColumnModel().getColumn(0).setCellRenderer(centerRenderer);
+                batchTable.getColumnModel().getColumn(1).setCellRenderer(centerRenderer);
                 batchTable.getColumnModel().getColumn(2).setCellRenderer(centerRenderer);
                 batchTable.getColumnModel().getColumn(3).setCellRenderer(centerRenderer);
-                batchTable.getColumnModel().getColumn(4).setCellRenderer(centerRenderer); // Semester
+                batchTable.getColumnModel().getColumn(4).setCellRenderer(centerRenderer);
 
 
                 if (!courseIdList.isEmpty()) {
@@ -1657,6 +1657,267 @@ public class AdminManagementController {
 
         return updatedBatch;
     }
+
+    private void chapterController()
+    {
+        JComboBox<model.Course> courseJComboBox= management.getModuleCourseComboBox();
+        JComboBox<model.Module> moduleJComboBox=management.getModuleSelectionComboBOx();
+        JTable chapterTable= management.getChapterTable();
+        DefaultTableModel tableModel= (DefaultTableModel) chapterTable.getModel();
+        JButton addBtn= management.getChapterAddBtn();
+        addBtn.setEnabled(false);
+
+
+        ArrayList<model.Course> allCourses= courseDao.getAllCourse();
+        if(!allCourses.isEmpty())
+            courseJComboBox.setModel(new DefaultComboBoxModel<>(allCourses.toArray(new model.Course[0])));
+
+
+
+        management.addModuleCourseComboBoxActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                model.Course selectedCourse=(model.Course) courseJComboBox.getSelectedItem();
+                ArrayList<model.Module> courseModules= moduleDao.getModulesByCourse(selectedCourse.getCourseId());
+                if(!courseModules.isEmpty())
+                {
+                    moduleJComboBox.setModel(new DefaultComboBoxModel<>(courseModules.toArray(new model.Module[0])));
+                    moduleJComboBox.setSelectedIndex(0);
+                    addBtn.setEnabled(true);
+
+                }
+            }
+        });
+
+        TableActionEvent tableActionEvent = new TableActionEvent() {
+            @Override
+            public void onUpdate(int row) {
+                int chapterId= (int)chapterTable.getValueAt(row,0);
+                ChapterUpdatePopUp chapterUpdatePopUp= new ChapterUpdatePopUp();
+                updateChapter(chapterUpdatePopUp,chapterId);
+            }
+
+            @Override
+            public void onDelete(int row) {
+
+                int chapterId= (int)chapterTable.getValueAt(row,0);
+                int choice = JOptionPane.showConfirmDialog(
+                        null,
+                        "Are you sure you want to delete this chapter?",
+                        "Confirm Delete",
+                        JOptionPane.YES_NO_OPTION,
+                        JOptionPane.WARNING_MESSAGE
+                );
+
+                if (choice == JOptionPane.YES_OPTION) {
+                    moduleDao.deleteChapterById(chapterId);
+                }
+
+            }
+        };
+
+        management.setChapterTable(tableActionEvent);
+
+
+
+        management.addModuleSelectionComboBoxActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                tableModel.setRowCount(0);
+
+                int moduleId=((model.Module) moduleJComboBox.getSelectedItem()).getModuleId();
+                DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+                centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+                chapterTable.getColumnModel().getColumn(0).setCellRenderer(centerRenderer);
+                chapterTable.getColumnModel().getColumn(1).setCellRenderer(centerRenderer);
+
+                ArrayList<model.Chapter> chapters= moduleDao.getChaptersByModule(moduleId);
+
+                if (!chapters.isEmpty()) {
+                    for (int i = 0; i < chapters.size(); i++)
+
+                        tableModel.addRow(new Object[]{chapters.get(i).getChapterId(),
+                                chapters.get(i).getChapterName(),
+                                null}
+                        );
+                }
+            }
+
+        });
+
+
+        management.addAddChapterBtnActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+
+                NewChapterPopUp newChapterPopUp= new NewChapterPopUp();
+                javax.swing.JDialog dialog = new JDialog(adminDashboard, "Add New Chapter", true);
+                dialog.setContentPane(newChapterPopUp);
+                dialog.pack();
+                dialog.setLocationRelativeTo(adminDashboard);
+
+                int moduleId=((model.Module) moduleJComboBox.getSelectedItem()).getModuleId();
+                final String[] pdfPath = { null };
+
+                newChapterPopUp.addChapterPdfActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        JFileChooser fileChooser = new JFileChooser();
+                        FileNameExtensionFilter filter =
+                                new FileNameExtensionFilter("Chapter PDF", "pdf");
+                        fileChooser.setFileFilter(filter);
+
+                        int result = fileChooser.showOpenDialog(null);
+
+                        if (result == JFileChooser.APPROVE_OPTION) {
+                            File selectedFile = fileChooser.getSelectedFile();
+                            pdfPath[0] = selectedFile.getAbsolutePath().replace("\\", "/");
+                        }
+                    }
+                });
+
+                newChapterPopUp.addAddBtnActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+
+                        String chapterName = newChapterPopUp.getChapterName().getText().trim();
+                        System.out.println(moduleId+" "+chapterName+" "+pdfPath[0]);
+
+                        // Chapter name validation
+                        if (chapterName.isEmpty()) {
+                            JOptionPane.showMessageDialog(null,
+                                    "Chapter name cannot be empty",
+                                    "Validation Error",
+                                    JOptionPane.ERROR_MESSAGE);
+                            return;
+                        }
+
+                        if (Character.isDigit(chapterName.charAt(0))) {
+                            JOptionPane.showMessageDialog(null,
+                                    "Chapter name cannot start with a number",
+                                    "Validation Error",
+                                    JOptionPane.ERROR_MESSAGE);
+                            return;
+                        }
+
+                        // PDF validation
+                        if (pdfPath[0] == null || pdfPath[0].isEmpty()) {
+                            JOptionPane.showMessageDialog(null,
+                                    "Please select a chapter PDF",
+                                    "Validation Error",
+                                    JOptionPane.ERROR_MESSAGE);
+                            return;
+                        }
+
+                        // ✅ Safe to proceed
+                        Chapter chapter = new Chapter();
+                        chapter.setModuleId(moduleId);
+                        chapter.setChapterName(chapterName);
+                        chapter.setPdfPath(pdfPath[0]);
+                        if(moduleDao.addNewChapter(chapter))
+                        {
+                            JOptionPane.showMessageDialog(adminDashboard,"Successfully added new chapter");
+                            dialog.dispose();
+                        }
+                    }
+                });
+
+                dialog.setVisible(true);
+            }
+        });
+
+
+    }
+
+    private void updateChapter(ChapterUpdatePopUp chapterUpdatePopUp, int chapterId) {
+
+        JDialog dialog = new JDialog(adminDashboard, "Update chapter", true);
+        dialog.setContentPane(chapterUpdatePopUp);
+        dialog.pack();
+        dialog.setLocationRelativeTo(adminDashboard);
+
+        JTextField chapterNameField = chapterUpdatePopUp.getChapterName();
+        JTextField chapterPdfField = chapterUpdatePopUp.getCurrentPdf();
+
+        Chapter oldChapter = moduleDao.getChapterById(chapterId);
+
+        chapterNameField.setText(oldChapter.getChapterName());
+        chapterPdfField.setText(oldChapter.getPdfPath());
+
+        chapterUpdatePopUp.addChapterPdfActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFileChooser fileChooser = new JFileChooser();
+                fileChooser.setFileFilter(new FileNameExtensionFilter("Chapter PDF", "pdf"));
+
+                if (fileChooser.showOpenDialog(dialog) == JFileChooser.APPROVE_OPTION) {
+                    File file = fileChooser.getSelectedFile();
+                    chapterPdfField.setText(file.getAbsolutePath().replace("\\", "/"));
+                }
+            }
+        });
+
+        chapterUpdatePopUp.addUpdatetBtnActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                String newName = chapterNameField.getText().trim();
+                String newPdf = chapterPdfField.getText().trim();
+
+                if (newName.isEmpty()) {
+                    JOptionPane.showMessageDialog(dialog, "Chapter name cannot be empty");
+                    return;
+                }
+
+                if (Character.isDigit(newName.charAt(0))) {
+                    JOptionPane.showMessageDialog(dialog, "Chapter name cannot start with a number");
+                    return;
+                }
+
+                boolean nameChanged = !newName.equals(oldChapter.getChapterName());
+                boolean pdfChanged = !newPdf.equals(
+                        oldChapter.getPdfPath() == null ? "" : oldChapter.getPdfPath()
+                );
+
+                if (!nameChanged && !pdfChanged) {
+                    JOptionPane.showMessageDialog(dialog, "No changes detected");
+                    return;
+                }
+
+                int confirm = JOptionPane.showConfirmDialog(
+                        dialog,
+                        "Are you sure you want to update this chapter?",
+                        "Confirm Update",
+                        JOptionPane.YES_NO_OPTION
+                );
+
+                if (confirm != JOptionPane.YES_OPTION) {
+                    return;
+                }
+
+                Chapter updatedChapter = new Chapter();
+                updatedChapter.setChapterId(chapterId);
+                updatedChapter.setChapterName(newName);
+                updatedChapter.setPdfPath(newPdf.isEmpty() ? null : newPdf);
+
+                boolean success = moduleDao.updateChapter(updatedChapter);
+
+                if (success) {
+                    JOptionPane.showMessageDialog(dialog, "Chapter updated successfully");
+                    dialog.dispose();
+
+                } else {
+                    JOptionPane.showMessageDialog(dialog, "Failed to update chapter");
+                }
+            }
+        });
+
+        dialog.setVisible(true);
+    }
+
+
 
 
 

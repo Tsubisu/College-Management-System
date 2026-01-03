@@ -129,7 +129,9 @@ public class TeacherDashboardController extends DashboardController{
             return;
         }
 
-        java.util.Date selectedDate = dateChooser.getDate();
+        java.util.Date Date = dateChooser.getDate();
+        java.sql.Date selectedDate=  new java.sql.Date(Date.getTime());
+
         if (selectedDate == null) {
             JOptionPane.showMessageDialog(null, "Please select a date!");
             return;
